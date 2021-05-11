@@ -1,15 +1,11 @@
-# Holo - [Demo](https://demo.vitathemes.com/Holo/) | [Download](https://wordpress.org/themes/Holo/)
-Holo is a Shopping theme and ready to use WooCommerce as your e-commerce WordPress plugin
+# Notation - [Demo](https://demo.vitathemes.com/notation/) | [Download](https://wordpress.org/themes/notation/)
+Notation is a Shopping theme and ready to use WooCommerce as your e-commerce WordPress plugin
 
 ![Home Page](screenshot.png)
 
-![Single Page](screenshot-2.png)
-
 ## Features
-* WooCoomerce Support
 * No additional JS
 * Sass for stylesheets
-* Compatible with [Contact Form 7](https://wordpress.org/plugins/contact-form-7/)
 * Fast & lightweight (Google Speed: 99/100)
 * Theme options built directly into WordPress native live theme customizer
 * Responsive design
@@ -23,7 +19,7 @@ Holo is a Shopping theme and ready to use WooCommerce as your e-commerce WordPre
 * GNU GPL version 2.0 licensed
 * …and much more
 
-See a working example at [https://demo.vitathemes.com/meliora/](https://demo.vitathemes.com/meliora/).
+See a working example at [https://demo.vitathemes.com/notation/](https://demo.vitathemes.com/meliora/).
 
 ## Theme installation
 1. Simply install as a normal WordPress theme and activate.
@@ -33,22 +29,22 @@ See a working example at [https://demo.vitathemes.com/meliora/](https://demo.vit
 ## Theme structure
 
 ```shell
-themes/Holo/        # → Root of your theme
+themes/Shoppe/        # → Root of your theme
 │── css/                  # → Compiled CSS file
 │── js/                   # → Theme js files
 │── sass/                 # → Theme scss files
 ├── languages/            # → Theme Language files
 ├── template-parts/       # → Theme Part files (Include)
 ├── node_modules/         # → Node.js packages
-├── vendor/               # → Third Party Packages (Managed by Composer, Currently we use [Kirki Framework](https://github.com/aristath/kirki) for customizer)
 ├── package.json          # → Node.js dependencies and scripts
 │── classes/              # → Custom PHP classes
 ├── inc/                  # → Theme functions
-│   ├── kirki/            # → Kirki Customization framework
+│   ├── TGMPA/            # → TGMPA library
 │   ├── customizer.php    # → All codes related to WordPress Customizer (We use Kirki Framework)
 │   ├── template-functions.php    # → Custom template tweaks
 │   └── template-tags.php         # → Custom template tags
 │   └── hooks.php         # → Theme custom hooks
+│   └── tgmpa-config.php         # → Configuration file for TGMPA
 └── page-templates/       # → Page Templates
 ```
 
@@ -65,10 +61,6 @@ Edit `functions.php` to enable or disable theme features, setup navigation menus
 
 Contributions are welcome from everyone. We have [contributing guidelines](CONTRIBUTING.md) to help you get started.
 
-## Changelog
-
-See the [Changelog](CHANGELOG.md)
-
 ## License
 
-Holo is licensed under [GNU GPL](LICENSE).
+Notation is licensed under [GNU GPL](LICENSE).
