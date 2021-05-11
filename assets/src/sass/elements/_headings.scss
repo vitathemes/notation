@@ -1,0 +1,45 @@
+// Include styles from Typography Mixins
+
+h1, .h1 {
+  @include h2;
+
+  @include mq(desktop) {
+    @include h1;
+  }
+}
+
+h2, .h2 {
+  @include h3;
+
+  @include mq(desktop) {
+    @include h2;
+  }
+}
+
+h3, .h3 {
+  @include h5;
+
+  @include mq(desktop) {
+    @include h3;
+  }
+}
+
+h4, .h4 {
+  @include h5;
+
+  @include mq(desktop) {
+    @include h4;
+  }
+}
+
+h5, .h5 {
+  @include h6;
+
+  @include mq(desktop) {
+    @include h5;
+  }
+}
+
+h6, .h6 {
+  @include h6;
+}

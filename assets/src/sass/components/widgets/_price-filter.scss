@@ -1,0 +1,54 @@
+.c-widget.woocommerce.widget_price_filter {
+
+
+  .price_slider_wrapper {
+
+    .ui-slider .ui-slider-handle {
+      background-color: $holo_neutral_black;
+      border-radius: 0;
+      width: rem(6px);
+      margin: 0;
+    }
+
+    .ui-slider-horizontal .ui-slider-range {
+      background-color: $holo_neutral_black;
+    }
+
+    .ui-widget-content {
+      background-color: $holo_neutral_secondary_color;
+      height: rem(4px);
+    }
+
+    .ui-widget-header {
+      border-radius: 0;
+    }
+
+    .ui-slider {
+      margin-left: 0;
+    }
+  }
+
+  .price_slider_amount .button {
+    padding: 0;
+    color: $holo_branding_color;
+    float: right;
+    border: none;
+    font-weight: inherit;
+    font-size: rem(14px);
+
+    &:hover {
+      background-color: transparent;
+      color: $holo_neutral_black;
+    }
+  }
+
+  .price_label {
+    float: left;
+    color: $holo_neutral_primary_color;
+    line-height: 1.4;
+  }
+}
+
+.woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
+  top: -.4em;
+}

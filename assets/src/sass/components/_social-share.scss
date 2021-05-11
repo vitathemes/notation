@@ -1,0 +1,57 @@
+.c-social-share {
+  display: flex;
+  flex-direction: row;
+  min-height: 20px;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 rem(16px);
+  margin-top: rem(32px);
+
+  @include mq(desktop) {
+    padding: 0;
+    margin-top: 0;
+
+  }
+
+  span {
+    margin-right: 24px;
+  }
+}
+
+.c-social-share__link {
+  width: 20px;
+  height: 20px;
+  text-decoration: none;
+  margin-right: rem(20px);
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  &:hover {
+    .c-social-share__link__icon {
+      fill: $holo_branding_color;
+    }
+  }
+}
+
+.c-social-share__link__icon {
+  fill: $holo_neutral_primary_color;
+}
+
+.c-social-share__title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: var(--heading-typography-variant);
+}
+
+
+.rtl {
+  .c-social-share__link {
+    margin-right: 1.25rem;
+
+    &:first-child {
+      margin-right: 0;
+    }
+  }
+}

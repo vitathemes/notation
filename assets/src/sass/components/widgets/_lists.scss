@@ -1,0 +1,53 @@
+.c-widget.woocommerce.widget_product_categories, .c-widget.widget_recent_entries, .c-widget.widget_categories , .c-widget.woocommerce.widget_layered_nav.woocommerce-widget-layered-nav, .c-widget.widget_recent_comments, .c-widget.widget_archive, .c-widget.widget_meta, .c-widget.widget_pages {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: rem(10px);
+      font-size: rem(14px);
+
+      @include mq(tablet) {
+        font-size: rem(16px);
+      }
+
+      a {
+        font-size: inherit;
+        color: $holo_neutral_primary_color;
+        text-transform: capitalize;
+        text-decoration: none;
+
+        &:hover {
+          color: $holo_branding_color;
+        }
+      }
+    }
+  }
+}
+
+
+// Tag Cloud
+.c-widget.woocommerce.widget_product_tag_cloud {
+
+  .tagcloud {
+    margin-bottom: rem(10px);
+
+    a {
+      color: $holo_neutral_primary_color;
+      text-transform: capitalize;
+      text-decoration: none;
+
+      &:hover {
+        color: $holo_branding_color;
+      }
+    }
+  }
+}
+
+.woocommerce ul.cart_list li a, .woocommerce ul.product_list_widget li a {
+  font-weight: inherit;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,16 @@
+.c-widget.woocommerce.widget_rating_filter {
+
+  ul {
+
+    li {
+      margin-bottom: rem(8px);
+
+      a {
+        color: $holo_headings_color;
+      }
+    }
+  }
+
+  .star-rating span::before {
+  }
+}

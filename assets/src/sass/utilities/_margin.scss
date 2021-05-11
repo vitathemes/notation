@@ -1,0 +1,13 @@
+.u-margin-bottom-lg-regular {
+  margin-bottom: rem(16px);
+}
+
+.u-margin-bottom-lg-large {
+  @include mq(desktop) {
+    margin-bottom: rem(84px);
+  }
+}
+
+.u-margin-bottom-sm-large {
+    margin-bottom: rem(64px);
+}

@@ -1,0 +1,261 @@
+.c-header {
+  padding: 1rem;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9;
+  transition: $holo_global_transition;
+
+  @include mq(desktop) {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    z-index: unset;
+    background-color: $holo_neutral_tertiary_color;
+    display: block;
+    padding: 3rem 1.5rem;
+    width: calc(18% - 3rem);
+  }
+
+  &.is-search-open {
+    background-color: $holo_neutral_tertiary_color;
+
+    .c-header__Search__wrapper {
+      display: block;
+      position: absolute;
+      width: calc(100% - 2rem);
+      left: 0;
+      top: rem(56px);
+      padding: rem(20px 16px);
+      background-color: $holo_neutral_tertiary_color;
+      transform: translateY(0);
+      visibility: visible;
+      transition-delay: $holo_global_transition;
+    }
+  }
+}
+
+.c-header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  @include mq(desktop) {
+    display: block;
+  }
+}
+
+.c-header__nav {
+  order: 1;
+}
+
+.c-header__branding {
+  order: 2;
+  max-width: 50%;
+
+  img {
+    vertical-align: middle;
+    max-height: rem(28px);
+    width: auto;
+
+    @include mq(desktop) {
+      max-height: rem(35px);
+    }
+  }
+}
+
+.c-header__search {
+  order: 3;
+}
+
+.c-header__branding__title {
+  color: $holo_branding_color;
+  text-decoration: none;
+  margin: 0;
+  @include h2;
+
+  @include mq(desktop) {
+    @include h1;
+  }
+}
+
+.c-header__branding__title__link {
+  color: inherit;
+  text-decoration: none;
+  font-size: inherit;
+
+  &:hover {
+    color: $holo_branding_color;
+  }
+}
+
+.c-header__nav__wrapper {
+  left: -100%;
+  position: fixed;
+  visibility: hidden;
+
+  @include mq(desktop) {
+    position: unset;
+    visibility: unset;
+  }
+}
+
+.c-header__Search__wrapper {
+  display: block;
+  position: absolute;
+  width: calc(100% - 2rem);
+  left: 0;
+  top: rem(56px);
+  padding: rem(20px 16px);
+  background-color: $holo_neutral_tertiary_color;
+  visibility: hidden;
+  transform: translateY(-200%);
+  transition: $holo_global_transition;
+  transition-delay: 0s;
+
+  @include mq(desktop) {
+    visibility: visible;
+    position: unset;
+    padding: 0;
+    width: 100%;
+    transform: unset;
+  }
+}
+
+.c-header__search {
+
+  @include mq(desktop) {
+    margin-top: rem(40px);
+  }
+}
+
+.c-header__link {
+  background-color: transparent;
+  padding: rem(3px);
+  border: 0;
+  cursor: pointer;
+  height: rem(24px);
+  width: rem(24px);
+  display: block;
+
+  @include mq(desktop) {
+    display: none;
+  }
+
+  &:hover {
+    .c-header__link__icon {
+      fill: $holo_branding_color;
+    }
+  }
+
+  &.o-search-btn {
+    display: none;
+
+    @include mq(desktop) {
+      display: block;
+    }
+  }
+}
+
+.c-header__link--search {
+
+  @include mq(desktop) {
+    display: none;
+  }
+
+  .c-header__link__icon--open {
+    display: none;
+  }
+
+  &.is-open {
+    .c-header__link__icon--close {
+      display: none;
+    }
+
+    .c-header__link__icon--open {
+      display: block;
+    }
+  }
+}
+
+.c-header__link__icon {
+  fill: $holo_headings_color;
+  transition: $holo_global_transition;
+}
+
+.c-header__icons {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+}
+
+.c-header__separator {
+  content: '';
+  width: rem(1px);
+  height: rem(17px);
+  background-color: $holo_neutral_primary_color;
+  display: none;
+  margin-left: rem(32px);
+
+  @include mq(desktop) {
+    display: block;
+    margin-left: rem(48px);
+  }
+}
+
+.c-header__grid {
+  border-bottom: 1px solid #D8D8D8;
+  padding: 1rem 0 0.5rem;
+
+  @include mq(desktop) {
+    padding: 0;
+  }
+}
+
+.c-header__menu-toggle {
+  background: transparent;
+  border: none;
+  padding: 0 0 0 rem(5px);
+
+  &:focus, &:hover {
+    background-color: transparent !important;
+  }
+
+  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    background: $holo_neutral_black;
+  }
+
+
+  @include mq(desktop) {
+    display: none;
+  }
+}
+
+.c-header__nav__wrapper {
+  height: 100vh;
+  padding: rem(20px 16px);
+  transition: $holo_global_transition;
+
+  @include mq(desktop) {
+    display: block;
+    padding: 0;
+    height: unset;
+  }
+}
+
+
+.c-header__nav.toggled {
+
+  .c-header__nav__wrapper {
+    visibility: visible;
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: $holo_neutral_tertiary_color;
+    z-index: 9;
+    min-width: 60%;
+  }
+}

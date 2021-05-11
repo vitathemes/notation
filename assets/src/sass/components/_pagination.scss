@@ -1,0 +1,147 @@
+.c-pagination {
+  width: 100%;
+  margin-top: rem(16px);
+}
+
+.s-pagination {
+
+  .nav-links {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+
+    a {
+      color: $holo_neutral_primary_color;
+      text-decoration: none;
+      @include h4;
+
+      &:hover {
+        color: $holo_branding_color;
+      }
+    }
+  }
+}
+
+.c-pagination--post-navigation {
+  margin-bottom: 48px;
+
+  .nav-links {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @include mq(desktop) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  .nav-previous, .nav-next {
+    max-width: 100%;
+    width: 100%;
+
+    svg g path {
+      fill: $holo_neutral_primary_color;
+    }
+
+    @include mq(tablet) {
+      max-width: 48%;
+    }
+  }
+
+
+  .nav-next {
+    margin-top: rem(32px);
+    text-align: left;
+
+    @include mq(tablet) {
+      margin-top: 0;
+      text-align: right;
+    }
+  }
+
+  @include mq(tablet) {
+    margin-bottom: 64px;
+  }
+}
+
+.s-pagination {
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+
+    .page-numbers {
+      color: $holo_neutral_primary_color;
+      font-weight: normal;
+      font-size: rem(16px);
+      line-height: rem(32px);
+      padding: 0 rem(5px);
+      margin: 0 rem(5px) 0 0;
+      text-decoration: none;
+      min-width: rem(30px);
+      height: rem(40px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: $holo_global_radius;
+      border: 1px solid $holo_neutral_secondary_color;
+
+      &:hover {
+        color: $holo_neutral_primary_color;
+        background-color: $holo_neutral_secondary_color;
+      }
+
+      &.current {
+        color: $holo_neutral_primary_color;
+        background-color: $holo_neutral_secondary_color;
+        border-color: $holo_neutral_secondary_color;
+      }
+
+      &.next, &.prev {
+        min-width: rem(30px);
+        height: rem(40px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $holo_neutral_black;
+        border-radius: $holo_global_radius;
+        background-color: transparent;
+        border: none;
+
+        svg g path {
+          fill: $holo_neutral_primary_color;
+        }
+
+        span {
+          font-size: 0;
+          width: rem(15px);
+          height: rem(15px);
+        }
+
+        &:hover {
+          color: $holo_neutral_black;
+          background-color: $holo_neutral_secondary_color;
+        }
+      }
+    }
+  }
+}
+
+// RTL Styles
+.rtl {
+  .pagination .nav-links .page-numbers.next, .pagination .nav-links .page-numbers.prev {
+    transform: rotateY(180deg);
+  }
+
+  .c-pagination--post-navigation {
+
+    .nav-next {
+      text-align: right;
+
+      @include mq(desktop) {
+        text-align: left;
+      }
+    }
+  }
+}

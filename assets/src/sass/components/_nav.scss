@@ -1,0 +1,95 @@
+.c-nav {
+  list-style: none;
+  padding: 0;
+  margin: rem(42px) 0 0;
+
+  @include mq(desktop) {
+    background-color: transparent;
+    height: auto;
+    width: auto;
+    padding: 0;
+    margin: rem(36px) 0 0;
+  }
+}
+
+.s-nav {
+
+  li {
+    padding: rem(0 0 0 12px);
+    position: relative;
+    margin-bottom: rem(14px);
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    line-height: 1.2;
+    text-decoration: none;
+    color: $holo_headings_color;
+    font-size: rem(16px);
+
+    &:hover {
+      color: $holo_branding_color;
+    }
+  }
+}
+
+.s-nav--footer {
+
+  li {
+    padding: 0;
+    margin: 0 rem(20px);
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    color: $holo_neutral_primary_color;
+
+    &:hover {
+      color: $holo_headings_color;
+    }
+  }
+}
+
+
+li.current-menu-item, li.current_page_item {
+  border-left: 3px solid $holo_branding_color;
+}
+
+.c-nav--footer {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+body.admin-bar .c-nav {
+  top: 6.5rem;
+}
+
+.rtl {
+
+  li.current-menu-item, li.current_page_item {
+    border-right: 3px solid $holo_branding_color;
+    border-left: none;
+  }
+
+  .s-nav {
+    li {
+      padding: rem(0 12px 0 0);
+    }
+  }
+}

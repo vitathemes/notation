@@ -1,0 +1,10 @@
+table {
+  border-collapse: collapse;
+  border: 1px solid $holo_neutral_primary_color;
+}
+
+td, th {
+  border: 1px solid $holo_neutral_primary_color;
+  padding: rem(8px);
+}
+

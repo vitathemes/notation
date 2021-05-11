@@ -1,0 +1,103 @@
+.o-popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(255,255,255, 0.85);
+  z-index: 10;
+  transition: $holo_global_transition;
+  visibility: hidden;
+  opacity: 0;
+
+  &.is-open {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.o-popup__close {
+  background-color: transparent;
+  border: 0;
+  padding: 0.75rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 10%;
+  right: 10%;
+
+  @include mq(desktop) {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  &:hover {
+
+    .o-popup__close__icon {
+      fill: $holo_headings_color;
+    }
+  }
+}
+
+.o-popup--filters {
+  padding: rem(64px 16px 16px);
+  overflow-y: scroll;
+  background-color: rgba(255,255,255, 1);
+
+  .o-popup__close {
+    top: rem(16px);
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    right: rem(48px);
+  }
+
+  .o-popup__close__icon {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}
+
+.o-popup__close__icon {
+  width: 3rem;
+  height: 3rem;
+  fill: $holo_neutral_primary_color;
+  transition: $holo_global_transition;
+
+  @include mq(desktop) {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+}
+
+.o-popup__main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.o-popup-btn {
+  background-color: transparent;
+  color: $holo_branding_color;
+  border: none;
+  display: flex;
+  align-items: center;
+  padding: 0;
+
+  @include mq(desktop) {
+    display: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+  }
+}
+
+.o-popup-btn__icon {
+  margin-right: rem(8px);
+  fill: $holo_branding_color;
+}

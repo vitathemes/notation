@@ -1,0 +1,79 @@
+.s-footer-widgets {
+
+  .menu {
+    list-style: none;
+    width: 100%;
+    flex-direction: column;
+    padding: 1rem 0;
+    display: flex;
+    max-width: calc(100% - 2rem);
+    margin: 0;
+
+    @include mq(desktop) {
+      background-color: transparent;
+      height: auto;
+      width: auto;
+      padding: 0;
+      position: unset;
+      flex-direction: row;
+    }
+
+    li {
+      margin: 0.75em 0 !important;
+      padding: 0;
+
+      &:first-child {
+        margin-top: 0 !important;
+      }
+
+      @include mq(desktop) {
+        margin: 0 1.25em !important;
+        padding: rem(27px 0);
+
+        &:first-child {
+          margin-left: 0 !important;
+        }
+
+        &:last-child {
+          margin-right: 0 !important;
+        }
+      }
+    }
+
+    a {
+      line-height: 1.2;
+      text-decoration: none;
+      color: $holo_headings_color;
+
+      &:hover {
+        color: $holo_branding_color;
+      }
+    }
+
+
+    li {
+      padding: 0;
+      margin: 0 rem(20px);
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .current-menu-item {
+      border-bottom: 0;
+    }
+
+    a {
+      color: $holo_neutral_primary_color;
+
+      &:hover {
+        color: $holo_headings_color;
+      }
+    }
+  }
+}

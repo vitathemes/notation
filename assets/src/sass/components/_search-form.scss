@@ -1,0 +1,135 @@
+.c-search-form {
+  position: relative;
+}
+
+.c-search-form__label {
+  display: block;
+  width: 100%;
+}
+
+.c-search-form__label__field {
+  border: none;
+  background-color: $holo_neutral_white;
+  font-size: 1rem;
+  border-radius: $holo_global_radius2x;
+  padding: rem(12px 3px 12px 40px);
+  color: $holo_neutral_primary_color;
+  width: 100%;
+
+  @include mq(tablet) {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.c-search-form__submit {
+  border: none;
+  background-color: transparent;
+  width: 1.45rem;
+  height: 1.45rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  cursor: pointer;
+
+  &:hover {
+
+    .c-search-form__submit__icon {
+      fill: $holo_branding_color;
+    }
+  }
+}
+
+
+.c-search-form__submit__icon {
+  width: 1.45rem;
+  height: 1.45rem;
+  fill: $holo_neutral_primary_color;
+  transition: $holo_global_transition;
+}
+
+.c-widget.widget_search, .c-widget.woocommerce.widget_product_search {
+  .c-search-form__submit__icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .c-search-form__submit {
+    padding-right: 0;
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+
+  .c-search-form__label__field {
+    @include mq(tablet) {
+
+      &::placeholder {
+        font-size: 1rem !important;
+      }
+    }
+  }
+}
+
+
+// Inside Widget
+.c-widget .c-search-form {
+
+  .c-search-form__label__field {
+    border: none;
+    padding: rem(16px);
+    background-color: $holo_neutral_tertiary_color;
+    margin: rem(4px) 0;
+    border-radius: $holo_global_radius2x;
+    font-family: inherit;
+    transition: $holo_global_transition;
+    width: calc(100% - 2rem);
+    font-size: rem(12px);
+
+    @include mq(tablet) {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .c-search-form__submit {
+    border: none;
+    background-color: transparent;
+    width: 1.75rem;
+    height: 1.75rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    left: unset;
+    cursor: pointer;
+    padding-left: 0;
+
+    @include mq(desktop) {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    &:hover {
+
+      .c-search-form__submit__icon {
+        fill: $holo_branding_color;
+      }
+    }
+  }
+
+}
+
+.rtl {
+
+  .c-search-form__submit {
+    right: 0 !important;
+    left: unset;
+    padding-right: rem(8px);
+    padding-left: 0;
+  }
+
+  .c-search-form__label__field {
+    padding: rem(12px 40px 12px 3px);
+  }
+}

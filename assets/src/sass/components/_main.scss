@@ -1,0 +1,17 @@
+.c-main {
+  width: calc(100% - 28px);
+  flex-grow: 1;
+  padding: rem(16px 14px);
+  display: flex;
+  flex-direction: column;
+
+  @include mq(desktop) {
+    width: calc(60% - 20%);
+    padding: rem(48px) 10%;
+  }
+}
+
+.c-main__title {
+  margin: 0 0 rem(14px);
+  padding-left: rem(14px);
+}
