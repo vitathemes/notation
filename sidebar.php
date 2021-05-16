@@ -7,7 +7,7 @@
  * @package Holo
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+if ( ! get_theme_mod('show_sidebar', true) ) {
 	return;
 }
 ?>

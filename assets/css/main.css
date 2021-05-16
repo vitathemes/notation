@@ -1135,7 +1135,7 @@ body.admin-bar .c-nav {
 
 .c-post--single .c-post__content {
   font-size: 1rem;
-  line-height: 1.3125rem;
+  line-height: 1.5;
   font-weight: 400;
   margin: 0.1875rem 0 1rem;
   color: var(--holo-primary-color); }

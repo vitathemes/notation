@@ -660,6 +660,23 @@ if ( function_exists( 'Kirki' ) ) {
 			Kirki::add_field( 'holo',
 				[
 					'type'     => 'toggle',
+					'settings' => 'show_sidebar',
+					'label'    => esc_html__( 'Show Sidebar', 'holo' ),
+					'section'  => 'sidebar_opts',
+					'default'  => 1,
+					'priority' => 10,
+				] );
+
+			Kirki::add_field( 'holo',
+				[
+					'active_callback' => [
+						[
+							'setting'  => 'show_sidebar',
+							'operator' => '==',
+							'value'    => true,
+						],
+					],
+					'type'     => 'toggle',
 					'settings' => 'show_date_sidebar',
 					'label'    => esc_html__( 'Show publish date', 'holo' ),
 					'section'  => 'sidebar_opts',
@@ -669,6 +686,13 @@ if ( function_exists( 'Kirki' ) ) {
 
 			Kirki::add_field( 'holo',
 				[
+					'active_callback' => [
+						[
+							'setting'  => 'show_sidebar',
+							'operator' => '==',
+							'value'    => true,
+						],
+					],
 					'type'     => 'toggle',
 					'settings' => 'show_post_excerpt_sidebar',
 					'label'    => esc_html__( 'Show posts excerpt', 'holo' ),

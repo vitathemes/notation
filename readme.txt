@@ -4,13 +4,13 @@ Contributors: vitathemes, kashani, mrmolaei, mostafas1990
 Tags: custom-background, custom-logo, custom-menu, threaded-comments, translation-ready
 
 Requires at least: 5.6
-Tested up to: 5.7.1
+Tested up to: 5.7.2
 Requires PHP: 5.6
 Stable tag: 1.0.0
 License: GPL-2.0-or-later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A starter theme called Holo.
+A blog theme called Notation.
 
 == Description ==
 
