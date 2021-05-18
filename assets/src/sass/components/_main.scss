@@ -6,8 +6,13 @@
   flex-direction: column;
 
   @include mq(desktop) {
-    width: calc(60% - 20%);
-    padding: rem(48px) 10%;
+    width: calc(60% - 12%);
+    padding: rem(48px) 6%;
+  }
+
+  @include mq(wide) {
+    width: calc(60% - 16%);
+    padding: rem(48px) 8%;
   }
 }
 

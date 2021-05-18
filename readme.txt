@@ -10,11 +10,11 @@ Stable tag: 1.0.0
 License: GPL-2.0-or-later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A blog theme called Notation.
+Notation, is a notebook for everyone to write their notes.
 
 == Description ==
 
-Description
+Notation, is a notebook for everyone to write their notes.
 
 == Features ==
 * No additional JS

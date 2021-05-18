@@ -657,6 +657,9 @@ ul li::marker {
 .c-header__branding {
   order: 2;
   max-width: 50%; }
+  @media (min-width: 64em) {
+    .c-header__branding {
+      max-width: 100%; } }
   .c-header__branding img {
     vertical-align: middle;
     max-height: 1.75rem;
@@ -821,8 +824,12 @@ ul li::marker {
   flex-direction: column; }
   @media (min-width: 64em) {
     .c-main {
-      width: calc(60% - 20%);
-      padding: 3rem 10%; } }
+      width: calc(60% - 12%);
+      padding: 3rem 6%; } }
+  @media (min-width: 80em) {
+    .c-main {
+      width: calc(60% - 16%);
+      padding: 3rem 8%; } }
 
 .c-main__title {
   margin: 0 0 0.875rem;

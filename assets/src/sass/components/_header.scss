@@ -55,6 +55,10 @@
   order: 2;
   max-width: 50%;
 
+  @include mq(desktop) {
+    max-width: 100%;
+  }
+
   img {
     vertical-align: middle;
     max-height: rem(28px);

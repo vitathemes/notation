@@ -45,7 +45,7 @@ function rtlCssConcat(cb) {
 
 function liveServer(cb) {
     browserSync.init({
-        proxy: 'holo.local'
+        proxy: 'notation.local'
     });
     gulp.watch([sassSrc + '**/*.scss']).on('change', gulp.series(css));
     gulp.watch("./**/*.php").on('change', browserSync.reload);
