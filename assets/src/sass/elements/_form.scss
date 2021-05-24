@@ -36,4 +36,23 @@ select {
 
 button, input[type='submit'] {
   cursor: pointer;
+  @include h6;
+  font-weight: 400;
+  font-size: rem(12px);
+  letter-spacing: 0.025em;
+  text-transform: capitalize;
+  box-sizing: border-box;
+  border-radius: $holo_global_radius;
+  transition: $holo_global_transition;
+  padding: rem(10px 16px);
+  text-decoration: none;
+  display: inline-block;
+  background: $holo_branding_color;
+  border: rem(1px) solid $holo_branding_color;
+  color: $holo_neutral_white !important;
+
+  &:hover {
+    background-color: $holo_branding_color_accent;
+    color: $holo_neutral_white !important;
+  }
 }

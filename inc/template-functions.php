@@ -92,6 +92,7 @@ if ( ! function_exists( 'holo_theme_settings' ) ) {
 	function holo_theme_settings() {
 		$vars = ':root {	
 	            --holo-branding-color: ' . get_theme_mod( "color_primary_color", "#EC7160" ) . ';
+	            --holo-branding-color: ' . get_theme_mod( "color_primary_accent_color", "#DA5745" ) . ';
 	            --holo-primary-color: ' . get_theme_mod( "color_1", "#303030" ) . ';
 	            --holo-secondary-color: ' . get_theme_mod( "color_2", "#898989" ) . ';
 	            --holo-tertiary-color: ' . get_theme_mod( "color_3", "#E7E7E9" ) . ';

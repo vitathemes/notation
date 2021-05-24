@@ -270,6 +270,10 @@
   &:hover {
     background-color: $holo_neutral_tertiary_color;
   }
+
+  &.is-selected-post {
+    background-color: $holo_neutral_tertiary_color;
+  }
 }
 
 .c-post__link {
@@ -293,6 +297,18 @@
 
     a {
       margin: 0 rem(4px) 0 0;
+    }
+  }
+}
+
+.s-post-content {
+
+  a {
+    color: $holo_branding_color;
+    text-decoration: none;
+
+    &:hover {
+      color: $holo_branding_color_accent;
     }
   }
 }

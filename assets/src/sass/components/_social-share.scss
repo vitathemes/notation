@@ -55,3 +55,30 @@
     }
   }
 }
+
+.c-social-networks {
+  font-size: rem(13px);
+  line-height: rem(21px);
+  display: flex;
+  align-items: flex-end;
+  margin-top: rem(16px);
+
+  @include mq(desktop) {
+    margin-top: 0;
+  }
+}
+
+.c-social-networks__link {
+  white-space: nowrap;
+  color: $holo_branding_color;
+  text-decoration: none;
+  margin: 0 rem(7px);
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:hover {
+    color: $holo_branding_color_accent;
+  }
+}

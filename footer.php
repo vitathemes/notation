@@ -21,10 +21,10 @@
 							<?php holo_branding(); ?>
                         </div>
 					<?php endif; ?>
-                    <p>
+                    <div class="c-footer__copyright__text">
 						<?php $allowed_html = [
 							'a'      => [
-								'href'  => [],
+								'href' => [],
 								'title' => [],
 							],
 							'br'     => [],
@@ -32,11 +32,32 @@
 							'strong' => [],
 							'p'      => [],
 						];
-						echo wp_kses( get_theme_mod( 'copyright_text', sprintf( '</span>%s <a href="%s" class="customize-unpreviewable">%s</a>.', esc_html__( 'Designed by ', 'holo' ), esc_url( 'https://vitathemes.com' ), esc_html__( 'VitaThemes', 'holo' ) ) ), $allowed_html );
+						echo wp_kses( get_theme_mod( 'copyright_text',
+							sprintf( '<span>%s</span><a href="%s" class="customize-unpreviewable">%s</a>',
+								esc_html__( 'Notation theme by ', 'holo' ),
+								esc_url( 'https://vitathemes.com' ),
+								esc_html__( 'VitaThemes', 'holo' ) ) ),
+							$allowed_html );
 						?>
-                    </p>
+                    </div>
                 </div>
-				<?php holo__share_links(); ?>
+                <div class="c-social-networks">
+                    <?php if (get_theme_mod('instagram', false)): ?>
+                    <a class="c-social-networks__link" target="_blank" href="<?php echo get_theme_mod('instagram') ?>">
+                        Instagram
+                        </span></a>
+	                <?php endif; ?>
+	                <?php if (get_theme_mod('twitter', false)): ?>
+                    <a class="c-social-networks__link" target="_blank" href="<?php echo get_theme_mod('twitter') ?>">
+                        Twitter
+                    </a>
+	                <?php endif; ?>
+	                <?php if (get_theme_mod('facebook', false)): ?>
+                    <a class="c-social-networks__link" target="_blank" href="<?php echo get_theme_mod('facebook') ?>">
+                        Facebook
+                    </a>
+	                <?php endif; ?>
+                </div>
             </div>
         </div><!-- .site-info -->
     </div>

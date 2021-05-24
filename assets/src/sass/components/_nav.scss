@@ -31,7 +31,7 @@
   a {
     line-height: 1.2;
     text-decoration: none;
-    color: $holo_headings_color;
+    color: $holo_neutral_primary_color;
     font-size: rem(16px);
 
     &:hover {
@@ -67,6 +67,10 @@
 
 li.current-menu-item, li.current_page_item {
   border-left: 3px solid $holo_branding_color;
+
+  a {
+    color: $holo_headings_color;
+  }
 }
 
 .c-nav--footer {

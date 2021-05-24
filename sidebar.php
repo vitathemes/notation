@@ -10,6 +10,8 @@
 if ( ! get_theme_mod('show_sidebar', true) ) {
 	return;
 }
+global $post;
+$current_post_id = $post->ID;
 ?>
 <aside class="c-sidebar js-sidebar">
     <button class="c-sidebar__toggle js-sidebar-toggle" aria-label="<?php echo esc_attr_e('Toggle Sidebar', 'holo'); ?>">
@@ -36,7 +38,38 @@ if ( ! get_theme_mod('show_sidebar', true) ) {
 			/* Start the Loop */
 			while ( $sticky_posts->have_posts() ) :
 				$sticky_posts->the_post();
-				get_template_part( 'template-parts/content', 'archive' );
+			?>
+				<?php
+				$active_class = '';
+				if ($current_post_id === get_the_ID()){
+					$active_class = ' is-selected-post';
+				}
+				?>
+                <article id="post-<?php the_ID(); ?>" <?php post_class('c-post c-post--archive'. $active_class); ?>>
+                    <a href="<?php echo esc_url( get_permalink() ); ?>" class="c-post__link" aria-label="<?php the_title(); ?>"></a>
+                    <header class="c-post__header">
+						<?php
+						the_title( '<h3 class="c-post__title h3">','</h2>' );
+						?>
+                    </header><!-- .entry-header -->
+					<?php if ( get_theme_mod( 'show_post_excerpt_sidebar', true ) ): ?>
+                        <div class="c-post__content">
+							<?php
+							the_excerpt();
+							?>
+                        </div><!-- .entry-content -->
+					<?php endif; ?>
+					<?php if ( get_theme_mod( 'show_date_sidebar', true ) ): ?>
+                        <footer class="c-post__footer">
+                            <div class="c-post__footer__meta">
+								<?php
+								holo_posted_on();
+								?>
+                            </div><!-- .entry-meta -->
+                        </footer>
+					<?php endif; ?>
+                </article><!-- #post-<?php the_ID(); ?> -->
+			<?php
 				wp_reset_query();
 			endwhile; ?>
         </div>
@@ -61,7 +94,37 @@ if ( ! get_theme_mod('show_sidebar', true) ) {
 			/* Start the Loop */
 			while ( $recent_posts->have_posts() ) :
 				$recent_posts->the_post();
-				get_template_part( 'template-parts/content', 'archive' );
+
+				$active_class = '';
+				if ($current_post_id === get_the_ID()){
+					$active_class = ' is-selected-post';
+				}
+				?>
+                <article id="post-<?php the_ID(); ?>" <?php post_class('c-post c-post--archive'. $active_class); ?>>
+                    <a href="<?php echo esc_url( get_permalink() ); ?>" class="c-post__link" aria-label="<?php the_title(); ?>"></a>
+                    <header class="c-post__header">
+						<?php
+						the_title( '<h3 class="c-post__title h3">','</h2>' );
+						?>
+                    </header><!-- .entry-header -->
+					<?php if ( get_theme_mod( 'show_post_excerpt_sidebar', true ) ): ?>
+                        <div class="c-post__content">
+							<?php
+							the_excerpt();
+							?>
+                        </div><!-- .entry-content -->
+					<?php endif; ?>
+					<?php if ( get_theme_mod( 'show_date_sidebar', true ) ): ?>
+                        <footer class="c-post__footer">
+                            <div class="c-post__footer__meta">
+								<?php
+								holo_posted_on();
+								?>
+                            </div><!-- .entry-meta -->
+                        </footer>
+					<?php endif; ?>
+                </article><!-- #post-<?php the_ID(); ?> -->
+				<?php
 				wp_reset_query();
 			endwhile; ?>
         </div> <?php

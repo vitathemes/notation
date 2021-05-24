@@ -53,7 +53,7 @@
 }
 
 .c-footer__copyright {
-  padding: 0 15px;
+  //padding: 0 15px;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
@@ -70,8 +70,13 @@
   }
 }
 
-p.c-header__branding__title {
-  margin: 0;
+.c-footer__copyright__text {
+  color: $holo_headings_color;
+
+  a {
+    color: $holo_neutral_primary_color;
+    text-decoration: none;
+  }
 }
 
 .c-footer__socials {
@@ -114,7 +119,7 @@ p.c-header__branding__title {
 
   @include mq(tablet) {
     margin-right: rem(42px);
-    margin-bottom: 0;
+    margin-bottom: rem(16px);
   }
 }
 

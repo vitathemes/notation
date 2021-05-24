@@ -19,7 +19,7 @@ $holo_neutral_white: #fff;
 $holo_neutral_black: var(--holo-primary-color);
 
 $holo_branding_color: var(--holo-branding-color);
-$holo_branding_color_accent: #DA5745;
+$holo_branding_color_accent: var(--holo-branding-accent-color);
 
 $holo_error_color: #D82700;
 

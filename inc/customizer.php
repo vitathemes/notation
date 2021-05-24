@@ -147,6 +147,13 @@ if ( function_exists( 'Kirki' ) ) {
 					'priority' => 6,
 				) );
 
+			Kirki::add_section( 'footer',
+				array(
+					'title'    => esc_html__( 'Footer', 'holo' ),
+					'panel'    => '',
+					'priority' => 6,
+				) );
+
 // </editor-fold>
 
 			// -- Typography Fields --
@@ -530,6 +537,15 @@ if ( function_exists( 'Kirki' ) ) {
 			Kirki::add_field( 'holo',
 				[
 					'type'     => 'color',
+					'settings' => 'color_primary_color',
+					'label'    => __( 'Primary Accent Color', 'holo' ),
+					'section'  => 'colors',
+					'default'  => '#DA5745',
+				] );
+
+			Kirki::add_field( 'holo',
+				[
+					'type'     => 'color',
 					'settings' => 'color_1',
 					'label'    => __( 'Color #1', 'holo' ),
 					'section'  => 'colors',
@@ -702,6 +718,42 @@ if ( function_exists( 'Kirki' ) ) {
 				] );
 		} );
 	// PostsWooCommerce
+
+	// Footer
+	Kirki::add_field( 'holo', [
+		'type'     => 'textarea',
+		'settings' => 'copyright_text',
+		'label'    => esc_html__( 'Copyright Text', 'holo' ),
+		'section'  => 'footer',
+		'default'  => sprintf( '<span>%s</span><a href="%s" class="customize-unpreviewable">%s</a>', esc_html__( 'Notation theme by ', 'holo' ), esc_url( 'https://vitathemes.com' ), esc_html__( 'VitaThemes', 'holo' ) ),
+		'priority' => 10,
+	] );
+
+	Kirki::add_field( 'holo', [
+		'type'     => 'link',
+		'settings' => 'instagram',
+		'label'    => esc_html__( 'Instagram', 'holo' ),
+		'section'  => 'footer',
+		'priority' => 10,
+	] );
+
+	Kirki::add_field( 'holo', [
+		'type'     => 'link',
+		'settings' => 'twitter',
+		'label'    => esc_html__( 'Twitter', 'holo' ),
+		'section'  => 'footer',
+		'priority' => 10,
+	] );
+
+	Kirki::add_field( 'holo', [
+		'type'     => 'link',
+		'settings' => 'facebook',
+		'label'    => esc_html__( 'Facebook', 'holo' ),
+		'section'  => 'footer',
+		'priority' => 10,
+	] );
+
+	// Footer
 
 	function wp_indigo_add_edit_icons( $wp_customize ) {
 		$wp_customize->selective_refresh->add_partial( 'show_slider_menu_index',

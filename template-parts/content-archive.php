@@ -1,4 +1,11 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class('c-post c-post--archive'); ?>>
+<?php
+global $post;
+$active_class = '';
+if ($post->ID === get_the_ID()){
+    $active_class = ' is-selected-post';
+}
+?>
+<article id="post-<?php the_ID(); ?>" <?php post_class('c-post c-post--archive'. $active_class); ?>>
 	<a href="<?php echo esc_url( get_permalink() ); ?>" class="c-post__link" aria-label="<?php the_title(); ?>"></a>
 	<header class="c-post__header">
 		<?php

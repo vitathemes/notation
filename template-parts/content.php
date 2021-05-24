@@ -28,7 +28,7 @@ if ( is_singular() ) :
 		    holo_post_thumbnail();
 		} ?>
 
-        <div class="c-post__content entry-content">
+        <div class="c-post__content s-post-content entry-content">
 			<?php
 			the_content(
 				sprintf(
