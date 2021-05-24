@@ -1,4 +1,8 @@
 .c-site {
-  transition: $holo_global_transition;
+  transition: $notation_global_transition;
   min-height: 100vh;
+}
+
+.c-site.is-menu-open {
+  overflow-x: hidden;
 }

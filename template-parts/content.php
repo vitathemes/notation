@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Holo
+ * @package Notation
  */
 
 if ( is_singular() ) :
@@ -18,14 +18,14 @@ if ( is_singular() ) :
 				?>
                 <div class="c-post__meta">
 					<?php
-					holo_post_meta();
+					notation_post_meta();
 					?>
                 </div><!-- .entry-meta -->
 			<?php endif; ?>
         </header><!-- .entry-header -->
 
 		<?php if ( get_theme_mod( 'show_post_thumbnail', true ) ) {
-		    holo_post_thumbnail();
+		    notation_post_thumbnail();
 		} ?>
 
         <div class="c-post__content s-post-content entry-content">
@@ -34,7 +34,7 @@ if ( is_singular() ) :
 				sprintf(
 					wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'holo' ),
+						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'notation' ),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -47,7 +47,7 @@ if ( is_singular() ) :
 
 			wp_link_pages(
 				array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'holo' ),
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'notation' ),
 					'after'  => '</div>',
 				)
 			);
@@ -55,7 +55,7 @@ if ( is_singular() ) :
         </div><!-- .entry-content -->
 
         <footer class="c-post__footer">
-			<?php holo_entry_footer(); ?>
+			<?php notation_entry_footer(); ?>
         </footer><!-- .entry-footer -->
     </article><!-- #post-<?php the_ID(); ?> -->
 <?php
@@ -79,7 +79,7 @@ else:
             <footer class="c-post__footer">
                 <div class="c-post__footer__meta">
 					<?php
-					holo_posted_on();
+					notation_posted_on();
 					?>
                 </div><!-- .entry-meta -->
             </footer>

@@ -1,4 +1,4 @@
-=== Holo ===
+=== Notation ===
 
 Contributors: vitathemes, kashani, mrmolaei, mostafas1990
 Tags: custom-background, custom-logo, custom-menu, threaded-comments, translation-ready
@@ -44,7 +44,7 @@ Notation, is a notebook for everyone to write their notes.
 
 = Does this theme support any plugins? =
 
-Holo includes support for WooCommerce and for Infinite Scroll in Jetpack.
+Notation includes support for WooCommerce and for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
@@ -58,7 +58,7 @@ Holo includes support for WooCommerce and for Infinite Scroll in Jetpack.
 
 == Copyright ==
 
-Holo is distributed under the terms of the GNU GPL.
+Notation is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -70,9 +70,9 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-Holo is distributed under the terms of the GNU GPL version 2.0
+Notation is distributed under the terms of the GNU GPL version 2.0
 
-Holo bundles the following third-party resources:
+Notation bundles the following third-party resources:
 
 Phosphor by Phosphor Icons
 License: MIT, https://github.com/phosphor-icons/phosphor-icons/blob/master/LICENSE

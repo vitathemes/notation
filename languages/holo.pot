@@ -107,15 +107,15 @@ msgstr ""
 msgid "Next:"
 msgstr ""
 
-#: classes/class_holo_walker_comment.php:62
+#: classes/class_notation_walker_comment.php:62
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: classes/class_holo_walker_comment.php:80
+#: classes/class_notation_walker_comment.php:80
 msgid "Edit"
 msgstr ""
 
-#: classes/class_holo_walker_nav_menu.php:27
+#: classes/class_notation_walker_nav_menu.php:27
 msgid "Toggle sub menu"
 msgstr ""
 

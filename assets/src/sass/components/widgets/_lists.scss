@@ -14,12 +14,12 @@
 
       a {
         font-size: inherit;
-        color: $holo_neutral_primary_color;
+        color: $notation_neutral_primary_color;
         text-transform: capitalize;
         text-decoration: none;
 
         &:hover {
-          color: $holo_branding_color;
+          color: $notation_branding_color;
         }
       }
     }
@@ -34,12 +34,12 @@
     margin-bottom: rem(10px);
 
     a {
-      color: $holo_neutral_primary_color;
+      color: $notation_neutral_primary_color;
       text-transform: capitalize;
       text-decoration: none;
 
       &:hover {
-        color: $holo_branding_color;
+        color: $notation_branding_color;
       }
     }
   }

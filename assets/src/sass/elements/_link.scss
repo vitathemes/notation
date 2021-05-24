@@ -1,9 +1,9 @@
 a {
-  transition: $holo_global_transition;
-  color: $holo_neutral_black;
+  transition: $notation_global_transition;
+  color: $notation_neutral_black;
 
   &:hover {
-    color: $holo_branding_color;
+    color: $notation_branding_color;
   }
 }
 

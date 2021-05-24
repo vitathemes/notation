@@ -5,27 +5,27 @@ $global_media_queries: (
         md: 64em,
         lg: 80em
 ) !default;
-$holo_global_transition: 0.25s !default;
-$holo_global_radius: 0.225rem !default;
-$holo_global_radius2x: 0.45rem !default;
+$notation_global_transition: 0.25s !default;
+$notation_global_radius: 0.225rem !default;
+$notation_global_radius2x: 0.45rem !default;
 
 // Colors
-$holo_headings_color: var(--holo-primary-color);
-$holo_neutral_primary_color: var(--holo-secondary-color);
-$holo_neutral_secondary_color: var(--holo-tertiary-color);
-$holo_neutral_tertiary_color: var(--holo-quaternary-color);
-$holo_neutral_quaternary_color: var(--holo-quinary-color);
-$holo_neutral_white: #fff;
-$holo_neutral_black: var(--holo-primary-color);
+$notation_headings_color: var(--notation-primary-color);
+$notation_neutral_primary_color: var(--notation-secondary-color);
+$notation_neutral_secondary_color: var(--notation-tertiary-color);
+$notation_neutral_tertiary_color: var(--notation-quaternary-color);
+$notation_neutral_quaternary_color: var(--notation-quinary-color);
+$notation_neutral_white: #fff;
+$notation_neutral_black: var(--notation-primary-color);
 
-$holo_branding_color: var(--holo-branding-color);
-$holo_branding_color_accent: var(--holo-branding-accent-color);
+$notation_branding_color: var(--notation-branding-color);
+$notation_branding_color_accent: var(--notation-branding-accent-color);
 
-$holo_error_color: #D82700;
+$notation_error_color: #D82700;
 
 // Typography (Fallback)
-$holo_default_font_family: 'Inter', Arial;
-$holo_default_font_size: 16px;
-$holo_default_line_height: 1.563;
+$notation_default_font_family: 'Inter', Arial;
+$notation_default_font_size: 16px;
+$notation_default_line_height: 1.563;
 
 

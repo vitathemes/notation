@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Holo
+ * @package Notation
  */
 
 if ( ! get_theme_mod('show_sidebar', true) ) {
@@ -14,7 +14,7 @@ global $post;
 $current_post_id = $post->ID;
 ?>
 <aside class="c-sidebar js-sidebar">
-    <button class="c-sidebar__toggle js-sidebar-toggle" aria-label="<?php echo esc_attr_e('Toggle Sidebar', 'holo'); ?>">
+    <button class="c-sidebar__toggle js-sidebar-toggle" aria-label="<?php echo esc_attr_e('Toggle Sidebar', 'notation'); ?>">
         <svg class="c-sidebar__toggle__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M160 216a7.975 7.975 0 0 1-5.657-2.343l-80-80a8 8 0 0 1 0-11.314l80-80a8 8 0 0 1 11.314 11.314L91.314 128l74.343 74.343A8 8 0 0 1 160 216z"/><rect x="0" y="0" width="256" height="256" fill="rgba(0, 0, 0, 0)" /></svg>
     </button>
 	<?php
@@ -31,7 +31,7 @@ $current_post_id = $post->ID;
 
 	if ( $sticky_posts->have_posts() ) :
 
-		echo "<span class='c-sidebar__title'>". esc_html__('Pinned', 'holo') ."</span>";
+		echo "<span class='c-sidebar__title'>". esc_html__('Pinned', 'notation') ."</span>";
 		?>
         <div class="c-sidebar__main">
 			<?php
@@ -63,7 +63,7 @@ $current_post_id = $post->ID;
                         <footer class="c-post__footer">
                             <div class="c-post__footer__meta">
 								<?php
-								holo_posted_on();
+								notation_posted_on();
 								?>
                             </div><!-- .entry-meta -->
                         </footer>
@@ -88,7 +88,7 @@ $current_post_id = $post->ID;
 	<?php
 	if ( $recent_posts->have_posts() ) :
 
-		echo "<span class='c-sidebar__title c-sidebar__title--other'>". esc_html__('Other', 'holo') ."</span>"; ?>
+		echo "<span class='c-sidebar__title c-sidebar__title--other'>". esc_html__('Other', 'notation') ."</span>"; ?>
         <div class="c-sidebar__main">
 			<?php
 			/* Start the Loop */
@@ -118,7 +118,7 @@ $current_post_id = $post->ID;
                         <footer class="c-post__footer">
                             <div class="c-post__footer__meta">
 								<?php
-								holo_posted_on();
+								notation_posted_on();
 								?>
                             </div><!-- .entry-meta -->
                         </footer>
@@ -131,6 +131,6 @@ $current_post_id = $post->ID;
 	endif;
 	?>
     <div class="c-sidebar__footer">
-        <a class="c-btn c-btn--secondary c-btn--fw" href="<?php echo esc_url(holo_get_blog_posts_page_url()); ?>"><?php esc_html_e('All Posts', 'holo'); ?></a>
+        <a class="c-btn c-btn--secondary c-btn--fw" href="<?php echo esc_url(notation_get_blog_posts_page_url()); ?>"><?php esc_html_e('All Posts', 'notation'); ?></a>
     </div>
 </aside>

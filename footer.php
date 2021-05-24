@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Holo
+ * @package Notation
  */
 
 ?>
@@ -18,7 +18,7 @@
                 <div class="c-footer__copyright">
 					<?php if ( get_theme_mod( 'show_branding_in_footer', true ) ) : ?>
                         <div class="c-footer__branding s-footer-branding">
-							<?php holo_branding(); ?>
+							<?php notation_branding(); ?>
                         </div>
 					<?php endif; ?>
                     <div class="c-footer__copyright__text">
@@ -34,9 +34,9 @@
 						];
 						echo wp_kses( get_theme_mod( 'copyright_text',
 							sprintf( '<span>%s</span><a href="%s" class="customize-unpreviewable">%s</a>',
-								esc_html__( 'Notation theme by ', 'holo' ),
+								esc_html__( 'Notation theme by ', 'notation' ),
 								esc_url( 'https://vitathemes.com' ),
-								esc_html__( 'VitaThemes', 'holo' ) ) ),
+								esc_html__( 'VitaThemes', 'notation' ) ) ),
 							$allowed_html );
 						?>
                     </div>

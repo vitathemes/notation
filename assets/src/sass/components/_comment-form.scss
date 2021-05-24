@@ -12,18 +12,18 @@
     font-size: rem(13px);
     letter-spacing: 0.025em;
     text-transform: capitalize;
-    background: $holo_branding_color;
-    color: $holo_neutral_white;
+    background: $notation_branding_color;
+    color: $notation_neutral_white;
     box-sizing: border-box;
-    border-radius: $holo_global_radius;
-    transition: $holo_global_transition;
+    border-radius: $notation_global_radius;
+    transition: $notation_global_transition;
     padding: rem(12px) rem(16px);
     cursor: pointer;
     font-weight: 500;
     border: none;
 
     &:hover {
-      background-color: $holo_branding_color_accent;
+      background-color: $notation_branding_color_accent;
     }
   }
 
@@ -37,10 +37,10 @@
 }
 
 #cancel-comment-reply-link {
-  color: $holo_branding_color;
+  color: $notation_branding_color;
   text-decoration: none;
 
   &:hover {
-    color: $holo_neutral_black;
+    color: $notation_neutral_black;
   }
 }

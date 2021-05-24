@@ -31,11 +31,11 @@
   a {
     line-height: 1.2;
     text-decoration: none;
-    color: $holo_neutral_primary_color;
+    color: $notation_neutral_primary_color;
     font-size: rem(16px);
 
     &:hover {
-      color: $holo_branding_color;
+      color: $notation_branding_color;
     }
   }
 }
@@ -56,20 +56,20 @@
   }
 
   a {
-    color: $holo_neutral_primary_color;
+    color: $notation_neutral_primary_color;
 
     &:hover {
-      color: $holo_headings_color;
+      color: $notation_headings_color;
     }
   }
 }
 
 
 li.current-menu-item, li.current_page_item {
-  border-left: 3px solid $holo_branding_color;
+  border-left: 3px solid $notation_branding_color;
 
   a {
-    color: $holo_headings_color;
+    color: $notation_headings_color;
   }
 }
 
@@ -87,7 +87,7 @@ body.admin-bar .c-nav {
 .rtl {
 
   li.current-menu-item, li.current_page_item {
-    border-right: 3px solid $holo_branding_color;
+    border-right: 3px solid $notation_branding_color;
     border-left: none;
   }
 

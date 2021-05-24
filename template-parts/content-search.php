@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Holo
+ * @package Notation
  */
 
 ?>
@@ -24,7 +24,7 @@
     <footer class="c-post__footer">
         <div class="c-post__footer__meta">
 			<?php
-			holo_posted_on();
+			notation_posted_on();
 			?>
         </div><!-- .entry-meta -->
     </footer>

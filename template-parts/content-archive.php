@@ -23,7 +23,7 @@ if ($post->ID === get_the_ID()){
 	<footer class="c-post__footer">
 		<div class="c-post__footer__meta">
 			<?php
-			holo_posted_on();
+			notation_posted_on();
 			?>
 		</div><!-- .entry-meta -->
 	</footer>

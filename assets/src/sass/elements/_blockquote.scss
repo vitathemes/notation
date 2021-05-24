@@ -1,10 +1,10 @@
 blockquote {
   margin: rem(24px) 0;
   padding-left: rem(24px);
-  border-left: rem(2px) solid $holo_neutral_primary_color;
+  border-left: rem(2px) solid $notation_neutral_primary_color;
 
   cite {
-    color: $holo_neutral_primary_color;
+    color: $notation_neutral_primary_color;
     margin-top: rem(16px);
     display: block;
   }
@@ -15,7 +15,7 @@ blockquote {
     margin: rem(24px) 0;
     padding-right: rem(24px);
     padding-left: 0;
-    border-right: rem(2px) solid $holo_neutral_primary_color;
+    border-right: rem(2px) solid $notation_neutral_primary_color;
     border-left: 0;
   }
 }

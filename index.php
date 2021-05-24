@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Holo
+ * @package Notation
  */
 
 get_header();
@@ -53,7 +53,7 @@ get_header();
 			?>
             <div class="c-pagination s-pagination">
 				<?php
-				holo_posts_pagination();
+				notation_posts_pagination();
 				?>
             </div>
 		<?php

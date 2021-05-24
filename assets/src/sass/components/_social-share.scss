@@ -30,13 +30,13 @@
 
   &:hover {
     .c-social-share__link__icon {
-      fill: $holo_branding_color;
+      fill: $notation_branding_color;
     }
   }
 }
 
 .c-social-share__link__icon {
-  fill: $holo_neutral_primary_color;
+  fill: $notation_neutral_primary_color;
 }
 
 .c-social-share__title {
@@ -70,7 +70,7 @@
 
 .c-social-networks__link {
   white-space: nowrap;
-  color: $holo_branding_color;
+  color: $notation_branding_color;
   text-decoration: none;
   margin: 0 rem(7px);
 
@@ -79,6 +79,6 @@
   }
 
   &:hover {
-    color: $holo_branding_color_accent;
+    color: $notation_branding_color_accent;
   }
 }

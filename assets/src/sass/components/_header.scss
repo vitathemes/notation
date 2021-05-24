@@ -6,21 +6,21 @@
   justify-content: space-between;
   align-items: center;
   z-index: 9;
-  transition: $holo_global_transition;
+  transition: $notation_global_transition;
 
   @include mq(desktop) {
     position: sticky;
     top: 0;
     height: 100vh;
     z-index: unset;
-    background-color: $holo_neutral_tertiary_color;
+    background-color: $notation_neutral_tertiary_color;
     display: block;
     padding: 3rem 1.5rem;
     width: calc(18% - 3rem);
   }
 
   &.is-search-open {
-    background-color: $holo_neutral_tertiary_color;
+    background-color: $notation_neutral_tertiary_color;
 
     .c-header__Search__wrapper {
       display: block;
@@ -29,10 +29,10 @@
       left: 0;
       top: rem(56px);
       padding: rem(20px 16px);
-      background-color: $holo_neutral_tertiary_color;
+      background-color: $notation_neutral_tertiary_color;
       transform: translateY(0);
       visibility: visible;
-      transition-delay: $holo_global_transition;
+      transition-delay: $notation_global_transition;
     }
   }
 }
@@ -75,7 +75,7 @@
 }
 
 .c-header__branding__title {
-  color: $holo_branding_color;
+  color: $notation_branding_color;
   text-decoration: none;
   margin: 0;
   @include h2;
@@ -91,18 +91,7 @@
   font-size: inherit;
 
   &:hover {
-    color: $holo_branding_color;
-  }
-}
-
-.c-header__nav__wrapper {
-  left: -100%;
-  position: fixed;
-  visibility: hidden;
-
-  @include mq(desktop) {
-    position: unset;
-    visibility: unset;
+    color: $notation_branding_color;
   }
 }
 
@@ -113,10 +102,10 @@
   left: 0;
   top: rem(56px);
   padding: rem(20px 16px);
-  background-color: $holo_neutral_tertiary_color;
+  background-color: $notation_neutral_tertiary_color;
   visibility: hidden;
   transform: translateY(-200%);
-  transition: $holo_global_transition;
+  transition: $notation_global_transition;
   transition-delay: 0s;
 
   @include mq(desktop) {
@@ -140,8 +129,8 @@
   padding: rem(3px);
   border: 0;
   cursor: pointer;
-  height: rem(24px);
-  width: rem(24px);
+  height: rem(28px);
+  width: rem(28px);
   display: block;
 
   @include mq(desktop) {
@@ -150,7 +139,7 @@
 
   &:hover {
     .c-header__link__icon {
-      fill: $holo_branding_color;
+      fill: $notation_branding_color;
     }
   }
 
@@ -161,6 +150,20 @@
       display: block;
     }
   }
+}
+
+.c-header__link--menu {
+  display: flex;
+  align-items: center;
+
+  @include mq(desktop) {
+  display: none;
+  }
+}
+
+.c-header__link--menu-close {
+  width: 3em;
+  height: 3em;
 }
 
 .c-header__link--search {
@@ -185,8 +188,8 @@
 }
 
 .c-header__link__icon {
-  fill: $holo_headings_color;
-  transition: $holo_global_transition;
+  fill: $notation_headings_color;
+  transition: $notation_global_transition;
 }
 
 .c-header__icons {
@@ -199,7 +202,7 @@
   content: '';
   width: rem(1px);
   height: rem(17px);
-  background-color: $holo_neutral_primary_color;
+  background-color: $notation_neutral_primary_color;
   display: none;
   margin-left: rem(32px);
 
@@ -228,7 +231,7 @@
   }
 
   .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-    background: $holo_neutral_black;
+    background: $notation_neutral_black;
   }
 
 
@@ -240,12 +243,20 @@
 .c-header__nav__wrapper {
   height: 100vh;
   padding: rem(20px 16px);
-  transition: $holo_global_transition;
+  transition: $notation_global_transition;
+  position: fixed;
+  left: -70%;
+  visibility: hidden;
+  top: 0;
+  background-color: $notation_neutral_tertiary_color;
 
   @include mq(desktop) {
     display: block;
+    background-color: transparent;
     padding: 0;
     height: unset;
+    position: unset;
+    visibility: unset;
   }
 }
 
@@ -256,10 +267,9 @@
     visibility: visible;
     display: block;
     position: fixed;
-    left: 0;
-    top: 0;
-    background-color: $holo_neutral_tertiary_color;
+    left: -70%;
     z-index: 9;
     min-width: 60%;
+    transition: $notation_global_transition;
   }
 }

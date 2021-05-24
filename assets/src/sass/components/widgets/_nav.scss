@@ -43,10 +43,10 @@
     a {
       line-height: 1.2;
       text-decoration: none;
-      color: $holo_headings_color;
+      color: $notation_headings_color;
 
       &:hover {
-        color: $holo_branding_color;
+        color: $notation_branding_color;
       }
     }
 
@@ -69,10 +69,10 @@
     }
 
     a {
-      color: $holo_neutral_primary_color;
+      color: $notation_neutral_primary_color;
 
       &:hover {
-        color: $holo_headings_color;
+        color: $notation_headings_color;
       }
     }
   }

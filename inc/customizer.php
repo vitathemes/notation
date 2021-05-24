@@ -1,8 +1,8 @@
 <?php
 /**
- * holo Theme Customizer
+ * notation Theme Customizer
  *
- * @package holo
+ * @package notation
  */
 
 function wp_meliora_enqueue_customizer_style( $hook_suffix ) {
@@ -22,7 +22,7 @@ add_action( 'admin_enqueue_scripts', 'wp_meliora_enqueue_customizer_style' );
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function holo_customize_register( $wp_customize ) {
+function notation_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -32,27 +32,27 @@ function holo_customize_register( $wp_customize ) {
 			'blogname',
 			array(
 				'selector'        => '.site-title a',
-				'render_callback' => 'holo_customize_partial_blogname',
+				'render_callback' => 'notation_customize_partial_blogname',
 			)
 		);
 		$wp_customize->selective_refresh->add_partial(
 			'blogdescription',
 			array(
 				'selector'        => '.site-description',
-				'render_callback' => 'holo_customize_partial_blogdescription',
+				'render_callback' => 'notation_customize_partial_blogdescription',
 			)
 		);
 	}
 }
 
-add_action( 'customize_register', 'holo_customize_register' );
+add_action( 'customize_register', 'notation_customize_register' );
 
 /**
  * Render the site title for the selective refresh partial.
  *
  * @return void
  */
-function holo_customize_partial_blogname() {
+function notation_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
 
@@ -61,22 +61,22 @@ function holo_customize_partial_blogname() {
  *
  * @return void
  */
-function holo_customize_partial_blogdescription() {
+function notation_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function holo_customize_preview_js() {
-	wp_enqueue_script( 'holo-customizer',
+function notation_customize_preview_js() {
+	wp_enqueue_script( 'notation-customizer',
 		get_template_directory_uri() . '/js/customizer.js',
 		array( 'customize-preview' ),
 		THEME_VERSION,
 		true );
 }
 
-add_action( 'customize_preview_init', 'holo_customize_preview_js' );
+add_action( 'customize_preview_init', 'notation_customize_preview_js' );
 
 
 /**
@@ -92,7 +92,7 @@ if ( function_exists( 'Kirki' ) ) {
 
 
 			// Add config
-			Kirki::add_config( 'holo',
+			Kirki::add_config( 'notation',
 				array(
 					'option_type' => 'theme_mod',
 				) );
@@ -101,8 +101,8 @@ if ( function_exists( 'Kirki' ) ) {
 			Kirki::add_panel( 'elements',
 				array(
 					'priority'    => 10,
-					'title'       => esc_html__( 'Elements', 'holo' ),
-					'description' => esc_html__( 'Elements', 'holo' ),
+					'title'       => esc_html__( 'Elements', 'notation' ),
+					'description' => esc_html__( 'Elements', 'notation' ),
 				) );
 
 // Add sections \\
@@ -111,7 +111,7 @@ if ( function_exists( 'Kirki' ) ) {
 // Branding
 			Kirki::add_section( 'colors',
 				array(
-					'title'    => esc_html__( 'Colors', 'holo' ),
+					'title'    => esc_html__( 'Colors', 'notation' ),
 					'panel'    => '',
 					'priority' => 3,
 				) );
@@ -119,7 +119,7 @@ if ( function_exists( 'Kirki' ) ) {
 // Typography
 			Kirki::add_section( 'typography',
 				array(
-					'title'      => esc_html__( 'Typography', 'holo' ),
+					'title'      => esc_html__( 'Typography', 'notation' ),
 					'panel'      => '',
 					'priority'   => 4,
 					'capability' => 'edit_theme_options',
@@ -128,28 +128,28 @@ if ( function_exists( 'Kirki' ) ) {
 			// Posts
 			Kirki::add_section( 'single_opts',
 				array(
-					'title'    => esc_html__( 'Single Options', 'holo' ),
+					'title'    => esc_html__( 'Single Options', 'notation' ),
 					'panel'    => 'elements',
 					'priority' => 6,
 				) );
 
 			Kirki::add_section( 'archive_opts',
 				array(
-					'title'    => esc_html__( 'Archive Options', 'holo' ),
+					'title'    => esc_html__( 'Archive Options', 'notation' ),
 					'panel'    => 'elements',
 					'priority' => 6,
 				) );
 
 			Kirki::add_section( 'sidebar_opts',
 				array(
-					'title'    => esc_html__( 'Sidebar Options', 'holo' ),
+					'title'    => esc_html__( 'Sidebar Options', 'notation' ),
 					'panel'    => 'elements',
 					'priority' => 6,
 				) );
 
 			Kirki::add_section( 'footer',
 				array(
-					'title'    => esc_html__( 'Footer', 'holo' ),
+					'title'    => esc_html__( 'Footer', 'notation' ),
 					'panel'    => '',
 					'priority' => 6,
 				) );
@@ -158,17 +158,17 @@ if ( function_exists( 'Kirki' ) ) {
 
 			// -- Typography Fields --
 			// <editor-fold desc="Typography">
-			Kirki::add_field( 'holo',
+			Kirki::add_field( 'notation',
 				[
 					'type'     => 'toggle',
 					'settings' => 'use_google_fonts',
-					'label'    => esc_html__( 'Use google Fonts', 'holo' ),
+					'label'    => esc_html__( 'Use google Fonts', 'notation' ),
 					'section'  => 'typography',
 					'default'  => 1,
 					'priority' => 10,
 				] );
 
-			Kirki::add_field( 'holo',
+			Kirki::add_field( 'notation',
 				[
 					'active_callback' => [
 						[
@@ -179,7 +179,7 @@ if ( function_exists( 'Kirki' ) ) {
 					],
 					'type'            => 'typography',
 					'settings'        => 'typography_h1',
-					'label'           => esc_html__( 'H1', 'holo' ),
+					'label'           => esc_html__( 'H1', 'notation' ),
 					'section'         => 'typography',
 					'default'         => [
 						'font-family'    => 'DM Sans',
@@ -218,7 +218,7 @@ if ( function_exists( 'Kirki' ) ) {
 					),
 				] );
 
-			Kirki::add_field( 'holo',
+			Kirki::add_field( 'notation',
 				[
 					'active_callback' => [
 						[
@@ -229,7 +229,7 @@ if ( function_exists( 'Kirki' ) ) {
 					],
 					'type'            => 'typography',
 					'settings'        => 'typography_h2',
-					'label'           => esc_html__( 'H2', 'holo' ),
+					'label'           => esc_html__( 'H2', 'notation' ),
 					'section'         => 'typography',
 					'default'         => [
 						'font-family'    => 'DM Sans',
@@ -268,7 +268,7 @@ if ( function_exists( 'Kirki' ) ) {
 					),
 				] );
 
-			Kirki::add_field( 'holo',
+			Kirki::add_field( 'notation',
 				[
 					'active_callback' => [
 						[
@@ -279,7 +279,7 @@ if ( function_exists( 'Kirki' ) ) {
 					],
 					'type'            => 'typography',
 					'settings'        => 'typography_h3',
-					'label'           => esc_html__( 'H3', 'holo' ),
+					'label'           => esc_html__( 'H3', 'notation' ),
 					'section'         => 'typography',
 					'default'         => [
 						'font-family'    => 'DM Sans',
@@ -318,7 +318,7 @@ if ( function_exists( 'Kirki' ) ) {
 					),
 				] );
 
-			Kirki::add_field( 'holo',
+			Kirki::add_field( 'notation',
 				[
 					'active_callback' => [
 						[
@@ -329,7 +329,7 @@ if ( function_exists( 'Kirki' ) ) {
 					],
 					'type'            => 'typography',
 					'settings'        => 'typography_h4',
-					'label'           => esc_html__( 'H4', 'holo' ),
+					'label'           => esc_html__( 'H4', 'notation' ),
 					'section'         => 'typography',
 					'default'         => [
 						'font-family'    => 'DM Sans',
@@ -368,7 +368,7 @@ if ( function_exists( 'Kirki' ) ) {
 					),
 				] );
 
-			Kirki::add_field( 'holo',
+			Kirki::add_field( 'notation',
 				[
 					'active_callback' => [
 						[
@@ -379,7 +379,7 @@ if ( function_exists( 'Kirki' ) ) {
 					],
 					'type'            => 'typography',
 					'settings'        => 'typography_h5',
-					'label'           => esc_html__( 'H5', 'holo' ),
+					'label'           => esc_html__( 'H5', 'notation' ),
 					'section'         => 'typography',
 					'default'         => [
 						'font-family'    => 'DM Sans',
@@ -418,7 +418,7 @@ if ( function_exists( 'Kirki' ) ) {
 					),
 				] );
 
-			Kirki::add_field( 'holo',
+			Kirki::add_field( 'notation',
 				[
 					'active_callback' => [
 						[
@@ -429,7 +429,7 @@ if ( function_exists( 'Kirki' ) ) {
 					],
 					'type'            => 'typography',
 					'settings'        => 'typography_h6',
-					'label'           => esc_html__( 'H6', 'holo' ),
+					'label'           => esc_html__( 'H6', 'notation' ),
 					'section'         => 'typography',
 					'default'         => [
 						'font-family'    => 'DM Sans',
@@ -469,7 +469,7 @@ if ( function_exists( 'Kirki' ) ) {
 				] );
 
 
-			Kirki::add_field( 'holo',
+			Kirki::add_field( 'notation',
 				[
 					'active_callback' => [
 						[
@@ -480,7 +480,7 @@ if ( function_exists( 'Kirki' ) ) {
 					],
 					'type'            => 'typography',
 					'settings'        => 'text_typography',
-					'label'           => esc_html__( 'Base font', 'holo' ),
+					'label'           => esc_html__( 'Base font', 'notation' ),
 					'section'         => 'typography',
 					'default'         => [
 						'font-family'    => 'DM Sans',
@@ -525,65 +525,65 @@ if ( function_exists( 'Kirki' ) ) {
 
 // <editor-fold desc="colors">
 
-			Kirki::add_field( 'holo',
+			Kirki::add_field( 'notation',
 				[
 					'type'     => 'color',
 					'settings' => 'color_primary_color',
-					'label'    => __( 'Primary Color', 'holo' ),
+					'label'    => __( 'Primary Color', 'notation' ),
 					'section'  => 'colors',
 					'default'  => '#EC7160',
 				] );
 
-			Kirki::add_field( 'holo',
+			Kirki::add_field( 'notation',
 				[
 					'type'     => 'color',
 					'settings' => 'color_primary_color',
-					'label'    => __( 'Primary Accent Color', 'holo' ),
+					'label'    => __( 'Primary Accent Color', 'notation' ),
 					'section'  => 'colors',
 					'default'  => '#DA5745',
 				] );
 
-			Kirki::add_field( 'holo',
+			Kirki::add_field( 'notation',
 				[
 					'type'     => 'color',
 					'settings' => 'color_1',
-					'label'    => __( 'Color #1', 'holo' ),
+					'label'    => __( 'Color #1', 'notation' ),
 					'section'  => 'colors',
 					'default'  => '#303030',
 				] );
 
-			Kirki::add_field( 'holo',
+			Kirki::add_field( 'notation',
 				[
 					'type'     => 'color',
 					'settings' => 'color_2',
-					'label'    => __( 'Color #2', 'holo' ),
+					'label'    => __( 'Color #2', 'notation' ),
 					'section'  => 'colors',
 					'default'  => '#898989',
 				] );
 
-			Kirki::add_field( 'holo',
+			Kirki::add_field( 'notation',
 				[
 					'type'     => 'color',
 					'settings' => 'color_3',
-					'label'    => __( 'Color #3', 'holo' ),
+					'label'    => __( 'Color #3', 'notation' ),
 					'section'  => 'colors',
 					'default'  => '#E7E7E9',
 				] );
 
-			Kirki::add_field( 'holo',
+			Kirki::add_field( 'notation',
 				[
 					'type'     => 'color',
 					'settings' => 'color_4',
-					'label'    => __( 'Color #4', 'holo' ),
+					'label'    => __( 'Color #4', 'notation' ),
 					'section'  => 'colors',
 					'default'  => '#F6F6F6',
 				] );
 
-			Kirki::add_field( 'holo',
+			Kirki::add_field( 'notation',
 				[
 					'type'     => 'color',
 					'settings' => 'color_5',
-					'label'    => __( 'Color #5', 'holo' ),
+					'label'    => __( 'Color #5', 'notation' ),
 					'section'  => 'colors',
 					'default'  => '#F9F9F9',
 				] );
@@ -591,99 +591,99 @@ if ( function_exists( 'Kirki' ) ) {
 // </editor-fold>
 
 			// Posts
-			Kirki::add_field( 'holo',
+			Kirki::add_field( 'notation',
 				[
 					'type'     => 'toggle',
 					'settings' => 'show_post_thumbnail',
-					'label'    => esc_html__( 'Show posts thumbnail', 'holo' ),
+					'label'    => esc_html__( 'Show posts thumbnail', 'notation' ),
 					'section'  => 'single_opts',
 					'default'  => 1,
 					'priority' => 10,
 				] );
 
-			Kirki::add_field( 'holo',
+			Kirki::add_field( 'notation',
 				[
 					'type'     => 'toggle',
 					'settings' => 'show_post_date',
-					'label'    => esc_html__( 'Show published date', 'holo' ),
+					'label'    => esc_html__( 'Show published date', 'notation' ),
 					'section'  => 'single_opts',
 					'default'  => 1,
 					'priority' => 10,
 				] );
 
-			Kirki::add_field( 'holo',
+			Kirki::add_field( 'notation',
 				[
 					'type'     => 'toggle',
 					'settings' => 'show_post_author',
-					'label'    => esc_html__( 'Show author name', 'holo' ),
+					'label'    => esc_html__( 'Show author name', 'notation' ),
 					'section'  => 'single_opts',
 					'default'  => 1,
 					'priority' => 10,
 				] );
 
-			Kirki::add_field( 'holo',
+			Kirki::add_field( 'notation',
 				[
 					'type'     => 'toggle',
 					'settings' => 'show_post_comments',
-					'label'    => esc_html__( 'Show author name', 'holo' ),
+					'label'    => esc_html__( 'Show author name', 'notation' ),
 					'section'  => 'single_opts',
 					'default'  => 1,
 					'priority' => 10,
 				] );
 
-			Kirki::add_field( 'holo',
+			Kirki::add_field( 'notation',
 				[
 					'type'     => 'toggle',
 					'settings' => 'show_post_cats',
-					'label'    => esc_html__( 'Show post categories', 'holo' ),
+					'label'    => esc_html__( 'Show post categories', 'notation' ),
 					'section'  => 'single_opts',
 					'default'  => 1,
 					'priority' => 10,
 				] );
 
-			Kirki::add_field( 'holo',
+			Kirki::add_field( 'notation',
 				[
 					'type'     => 'toggle',
 					'settings' => 'show_post_tags',
-					'label'    => esc_html__( 'Show post tags', 'holo' ),
+					'label'    => esc_html__( 'Show post tags', 'notation' ),
 					'section'  => 'single_opts',
 					'default'  => 1,
 					'priority' => 10,
 				] );
 
 
-			Kirki::add_field( 'holo',
+			Kirki::add_field( 'notation',
 				[
 					'type'     => 'toggle',
 					'settings' => 'show_date_archive',
-					'label'    => esc_html__( 'Show publish date', 'holo' ),
+					'label'    => esc_html__( 'Show publish date', 'notation' ),
 					'section'  => 'archive_opts',
 					'default'  => 1,
 					'priority' => 10,
 				] );
 
-			Kirki::add_field( 'holo',
+			Kirki::add_field( 'notation',
 				[
 					'type'     => 'toggle',
 					'settings' => 'show_post_excerpt',
-					'label'    => esc_html__( 'Show posts excerpt', 'holo' ),
+					'label'    => esc_html__( 'Show posts excerpt', 'notation' ),
 					'section'  => 'archive_opts',
 					'default'  => 1,
 					'priority' => 10,
 				] );
 
 
-			Kirki::add_field( 'holo',
+			Kirki::add_field( 'notation',
 				[
 					'type'     => 'toggle',
 					'settings' => 'show_sidebar',
-					'label'    => esc_html__( 'Show Sidebar', 'holo' ),
+					'label'    => esc_html__( 'Show Sidebar', 'notation' ),
 					'section'  => 'sidebar_opts',
 					'default'  => 1,
 					'priority' => 10,
 				] );
 
-			Kirki::add_field( 'holo',
+			Kirki::add_field( 'notation',
 				[
 					'active_callback' => [
 						[
@@ -694,13 +694,13 @@ if ( function_exists( 'Kirki' ) ) {
 					],
 					'type'     => 'toggle',
 					'settings' => 'show_date_sidebar',
-					'label'    => esc_html__( 'Show publish date', 'holo' ),
+					'label'    => esc_html__( 'Show publish date', 'notation' ),
 					'section'  => 'sidebar_opts',
 					'default'  => 1,
 					'priority' => 10,
 				] );
 
-			Kirki::add_field( 'holo',
+			Kirki::add_field( 'notation',
 				[
 					'active_callback' => [
 						[
@@ -711,7 +711,7 @@ if ( function_exists( 'Kirki' ) ) {
 					],
 					'type'     => 'toggle',
 					'settings' => 'show_post_excerpt_sidebar',
-					'label'    => esc_html__( 'Show posts excerpt', 'holo' ),
+					'label'    => esc_html__( 'Show posts excerpt', 'notation' ),
 					'section'  => 'sidebar_opts',
 					'default'  => 1,
 					'priority' => 10,
@@ -720,35 +720,35 @@ if ( function_exists( 'Kirki' ) ) {
 	// PostsWooCommerce
 
 	// Footer
-	Kirki::add_field( 'holo', [
+	Kirki::add_field( 'notation', [
 		'type'     => 'textarea',
 		'settings' => 'copyright_text',
-		'label'    => esc_html__( 'Copyright Text', 'holo' ),
+		'label'    => esc_html__( 'Copyright Text', 'notation' ),
 		'section'  => 'footer',
-		'default'  => sprintf( '<span>%s</span><a href="%s" class="customize-unpreviewable">%s</a>', esc_html__( 'Notation theme by ', 'holo' ), esc_url( 'https://vitathemes.com' ), esc_html__( 'VitaThemes', 'holo' ) ),
+		'default'  => sprintf( '<span>%s</span><a href="%s" class="customize-unpreviewable">%s</a>', esc_html__( 'Notation theme by ', 'notation' ), esc_url( 'https://vitathemes.com' ), esc_html__( 'VitaThemes', 'notation' ) ),
 		'priority' => 10,
 	] );
 
-	Kirki::add_field( 'holo', [
+	Kirki::add_field( 'notation', [
 		'type'     => 'link',
 		'settings' => 'instagram',
-		'label'    => esc_html__( 'Instagram', 'holo' ),
+		'label'    => esc_html__( 'Instagram', 'notation' ),
 		'section'  => 'footer',
 		'priority' => 10,
 	] );
 
-	Kirki::add_field( 'holo', [
+	Kirki::add_field( 'notation', [
 		'type'     => 'link',
 		'settings' => 'twitter',
-		'label'    => esc_html__( 'Twitter', 'holo' ),
+		'label'    => esc_html__( 'Twitter', 'notation' ),
 		'section'  => 'footer',
 		'priority' => 10,
 	] );
 
-	Kirki::add_field( 'holo', [
+	Kirki::add_field( 'notation', [
 		'type'     => 'link',
 		'settings' => 'facebook',
-		'label'    => esc_html__( 'Facebook', 'holo' ),
+		'label'    => esc_html__( 'Facebook', 'notation' ),
 		'section'  => 'footer',
 		'priority' => 10,
 	] );

@@ -4,6 +4,7 @@
   padding: rem(16px 14px);
   display: flex;
   flex-direction: column;
+  transition: $notation_global_transition;
 
   @include mq(desktop) {
     width: calc(60% - 12%);

@@ -36,6 +36,7 @@
 		elem.addEventListener( 'click', function() {
 			siteNavigation.classList.toggle( 'toggled' );
             document.querySelector('.c-site').classList.toggle('is-menu-open');
+            document.getElementsByTagName('body')[0].classList.toggle('is-menu-open');
 
 			if ( elem.getAttribute( 'aria-expanded' ) === 'true' ) {
 				button.forEach((btns, index) => {
@@ -58,6 +59,7 @@
 			button.forEach((btns, index) => {
 				btns.setAttribute( 'aria-expanded', 'false' );
 			});
+			document.getElementsByTagName('body')[0].classList.remove('is-menu-open');
 		}
 	} );
 

@@ -5,8 +5,8 @@
   letter-spacing: 0.025em;
   text-transform: capitalize;
   box-sizing: border-box;
-  border-radius: $holo_global_radius;
-  transition: $holo_global_transition;
+  border-radius: $notation_global_radius;
+  transition: $notation_global_transition;
   padding: rem(10px 16px);
   text-decoration: none;
   display: inline-block;
@@ -17,47 +17,47 @@
 }
 
 .c-btn--primary {
-  background: $holo_neutral_black;
-  border: rem(1px) solid $holo_neutral_black;
-  color: $holo_neutral_white !important;
+  background: $notation_neutral_black;
+  border: rem(1px) solid $notation_neutral_black;
+  color: $notation_neutral_white !important;
 
   &:hover {
-    background-color: $holo_neutral_white;
-    color: $holo_neutral_black !important;
+    background-color: $notation_neutral_white;
+    color: $notation_neutral_black !important;
   }
 }
 
 .c-btn--secondary {
   background: transparent;
-  border: rem(1px) solid $holo_neutral_secondary_color;
-  color: $holo_neutral_black;
+  border: rem(1px) solid $notation_neutral_secondary_color;
+  color: $notation_neutral_black;
 
   &:hover {
-    background-color: $holo_neutral_secondary_color;
-    border-color: $holo_neutral_secondary_color;
-    color: $holo_neutral_black;
+    background-color: $notation_neutral_secondary_color;
+    border-color: $notation_neutral_secondary_color;
+    color: $notation_neutral_black;
   }
 }
 
 .c-btn--ghost.c-btn--primary {
   background-color: transparent;
-  color: $holo_neutral_black !important;
+  color: $notation_neutral_black !important;
 
   &:hover {
-    background-color: $holo_neutral_black;
-    border-color: $holo_neutral_black;
-    color: $holo_neutral_white !important;
+    background-color: $notation_neutral_black;
+    border-color: $notation_neutral_black;
+    color: $notation_neutral_white !important;
   }
 }
 
 .c-btn--ghost.c-btn--secondary {
   background-color: transparent;
-  color: $holo_branding_color !important;
+  color: $notation_branding_color !important;
 
   &:hover {
-    background-color: $holo_branding_color;
-    border-color: $holo_branding_color;
-    color: $holo_neutral_white !important;
+    background-color: $notation_branding_color;
+    border-color: $notation_branding_color;
+    color: $notation_neutral_white !important;
   }
 }
 

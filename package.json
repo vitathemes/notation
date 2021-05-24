@@ -1,5 +1,5 @@
 {
-  "name": "holo",
+  "name": "notation",
   "version": "1.0.0",
   "description": "[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)",
   "main": "gulpfile.js",

@@ -37,11 +37,11 @@
     padding-left: 1.75rem !important;
 
     .name a {
-      color: $holo_headings_color;
+      color: $notation_headings_color;
     }
 
     .quantity .amount {
-      color: $holo_branding_color;
+      color: $notation_branding_color;
     }
   }
 
@@ -53,38 +53,38 @@
       letter-spacing: 0.025em;
       text-transform: uppercase;
       box-sizing: border-box;
-      border-radius: $holo_global_radius;
-      transition: $holo_global_transition;
+      border-radius: $notation_global_radius;
+      transition: $notation_global_transition;
       padding: rem(8px 10px);
       text-decoration: none;
       display: inline-block;
 
-      background: $holo_neutral_black;
-      border: rem(1px) solid $holo_neutral_black;
+      background: $notation_neutral_black;
+      border: rem(1px) solid $notation_neutral_black;
 
       &:hover {
-        background-color: $holo_branding_color;
-        border-color: $holo_branding_color;
-        color: $holo_neutral_white !important;
+        background-color: $notation_branding_color;
+        border-color: $notation_branding_color;
+        color: $notation_neutral_white !important;
       }
 
       background-color: transparent;
-      color: $holo_neutral_black !important;
+      color: $notation_neutral_black !important;
 
       &:hover {
-        background-color: $holo_neutral_black;
-        border-color: $holo_neutral_black;
-        color: $holo_neutral_white !important;
+        background-color: $notation_neutral_black;
+        border-color: $notation_neutral_black;
+        color: $notation_neutral_white !important;
       }
     }
   }
 
   li .remove_from_cart_button {
   font-weight: 400;
-    color: $holo_headings_color !important;
+    color: $notation_headings_color !important;
 
     &:hover {
-    color: $holo_error_color !important;
+    color: $notation_error_color !important;
       background-color: transparent !important;
     }
   }

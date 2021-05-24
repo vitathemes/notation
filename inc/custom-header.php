@@ -8,39 +8,39 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package Holo
+ * @package Notation
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses holo_header_style()
+ * @uses notation_header_style()
  */
-function holo_custom_header_setup() {
+function notation_custom_header_setup() {
 	add_theme_support(
 		'custom-header',
 		apply_filters(
-			'holo_custom_header_args',
+			'notation_custom_header_args',
 			array(
 				'default-image'      => '',
 				'default-text-color' => '000000',
 				'width'              => 1000,
 				'height'             => 250,
 				'flex-height'        => true,
-				'wp-head-callback'   => 'holo_header_style',
+				'wp-head-callback'   => 'notation_header_style',
 			)
 		)
 	);
 }
-add_action( 'after_setup_theme', 'holo_custom_header_setup' );
+add_action( 'after_setup_theme', 'notation_custom_header_setup' );
 
-if ( ! function_exists( 'holo_header_style' ) ) :
+if ( ! function_exists( 'notation_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see holo_custom_header_setup().
+	 * @see notation_custom_header_setup().
 	 */
-	function holo_header_style() {
+	function notation_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*

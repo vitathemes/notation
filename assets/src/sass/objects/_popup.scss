@@ -6,7 +6,7 @@
   top: 0;
   background-color: rgba(255,255,255, 0.85);
   z-index: 10;
-  transition: $holo_global_transition;
+  transition: $notation_global_transition;
   visibility: hidden;
   opacity: 0;
 
@@ -35,7 +35,7 @@
   &:hover {
 
     .o-popup__close__icon {
-      fill: $holo_headings_color;
+      fill: $notation_headings_color;
     }
   }
 }
@@ -62,8 +62,8 @@
 .o-popup__close__icon {
   width: 3rem;
   height: 3rem;
-  fill: $holo_neutral_primary_color;
-  transition: $holo_global_transition;
+  fill: $notation_neutral_primary_color;
+  transition: $notation_global_transition;
 
   @include mq(desktop) {
     width: 4.5rem;
@@ -81,7 +81,7 @@
 
 .o-popup-btn {
   background-color: transparent;
-  color: $holo_branding_color;
+  color: $notation_branding_color;
   border: none;
   display: flex;
   align-items: center;
@@ -99,5 +99,5 @@
 
 .o-popup-btn__icon {
   margin-right: rem(8px);
-  fill: $holo_branding_color;
+  fill: $notation_branding_color;
 }

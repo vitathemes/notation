@@ -39,7 +39,7 @@
     .hamburger-inner,
     .hamburger-inner::before,
     .hamburger-inner::after {
-      background-color: $holo_neutral_black;
+      background-color: $notation_neutral_black;
     }
   }
 }
@@ -61,7 +61,7 @@
   &::after {
     width: $hamburger-layer-width;
     height: $hamburger-layer-height;
-    background-color: $holo_neutral_black;
+    background-color: $notation_neutral_black;
     border-radius: $hamburger-layer-border-radius;
     position: absolute;
     transition-property: transform;

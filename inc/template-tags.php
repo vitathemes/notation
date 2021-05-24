@@ -4,14 +4,14 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Holo
+ * @package Notation
  */
 
-if ( ! function_exists( 'holo_posted_on' ) ) :
+if ( ! function_exists( 'notation_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
-	function holo_posted_on() {
+	function notation_posted_on() {
 		$time_string = '<time class="c-post__date entry-date" datetime="%1$s">%2$s</time>';
 
 		$time_string = sprintf(
@@ -27,14 +27,14 @@ if ( ! function_exists( 'holo_posted_on' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'holo_posted_by' ) ) :
+if ( ! function_exists( 'notation_posted_by' ) ) :
 	/**
 	 * Prints HTML with meta information for the current author.
 	 */
-	function holo_posted_by() {
+	function notation_posted_by() {
 		$byline = sprintf(
 		/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', 'holo' ),
+			esc_html_x( 'by %s', 'post author', 'notation' ),
 			'<span class="author vcard"><a class="c-post__author__link url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
@@ -43,14 +43,14 @@ if ( ! function_exists( 'holo_posted_by' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'holo_comments_num' ) ) :
+if ( ! function_exists( 'notation_comments_num' ) ) :
 	/**
 	 * Prints HTML with meta information for the current author.
 	 */
-	function holo_comments_num() {
+	function notation_comments_num() {
 		$byline = sprintf(
 		/* translators: %s: post author. */
-			esc_html_x( '%s Comments', 'post author', 'holo' ),
+			esc_html_x( '%s Comments', 'post author', 'notation' ),
 			esc_html( get_comments_number() )
 		);
 
@@ -59,29 +59,29 @@ if ( ! function_exists( 'holo_comments_num' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'holo_entry_footer' ) ) :
+if ( ! function_exists( 'notation_entry_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
-	function holo_entry_footer() {
+	function notation_entry_footer() {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			if ( get_theme_mod( 'show_post_cats', true ) ) {
 				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( esc_html__( ', ', 'holo' ) );
+				$categories_list = get_the_category_list( esc_html__( ', ', 'notation' ) );
 				if ( $categories_list ) {
 					/* translators: 1: list of categories. */
-					printf( '<span class="c-post__cats">' . esc_html__( 'Categories: %1$s', 'holo' ) . '</span>',
+					printf( '<span class="c-post__cats">' . esc_html__( 'Categories: %1$s', 'notation' ) . '</span>',
 						$categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				}
 			}
 
 			if ( get_theme_mod( 'show_post_tags', true ) ) {
 				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'holo' ) );
+				$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'notation' ) );
 				if ( $tags_list ) {
 					/* translators: 1: list of tags. */
-					printf( '<span class="c-post__tags">' . esc_html__( 'Tags: %1$s', 'holo' ) . '</span>',
+					printf( '<span class="c-post__tags">' . esc_html__( 'Tags: %1$s', 'notation' ) . '</span>',
 						$tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				}
 			}
@@ -93,7 +93,7 @@ if ( ! function_exists( 'holo_entry_footer' ) ) :
 				sprintf(
 					wp_kses(
 					/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'holo' ),
+						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'notation' ),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -110,7 +110,7 @@ if ( ! function_exists( 'holo_entry_footer' ) ) :
 			sprintf(
 				wp_kses(
 				/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'holo' ),
+					__( 'Edit <span class="screen-reader-text">%s</span>', 'notation' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -125,34 +125,34 @@ if ( ! function_exists( 'holo_entry_footer' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'holo_post_meta' ) ) :
-	function holo_post_meta() {
+if ( ! function_exists( 'notation_post_meta' ) ) :
+	function notation_post_meta() {
 		if ( get_theme_mod( 'show_post_date', true ) ) {
-			holo_posted_on();
+			notation_posted_on();
 		}
 		if ( get_theme_mod( 'show_post_date', true ) && get_theme_mod( 'show_post_author', true ) || get_theme_mod( 'show_post_comments', true ) && get_theme_mod( 'show_post_date', true ) ) {
 			echo '<span class="c-post__meta__separator"> / </span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 		if ( get_theme_mod( 'show_post_author', true ) ) {
-			holo_posted_by();
+			notation_posted_by();
 		}
 		if ( get_theme_mod( 'show_post_comments', true ) && get_theme_mod( 'show_post_author', true ) ) {
 			echo '<span class="c-post__meta__separator"> / </span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 		if ( get_theme_mod( 'show_post_comments', true ) ) {
-			holo_comments_num();
+			notation_comments_num();
 		}
 	}
 endif;
 
-if ( ! function_exists( 'holo_post_thumbnail' ) ) :
+if ( ! function_exists( 'notation_post_thumbnail' ) ) :
 	/**
 	 * Displays an optional post thumbnail.
 	 *
 	 * Wraps the post thumbnail in an anchor element on index views, or a div
 	 * element when on single views.
 	 */
-	function holo_post_thumbnail() {
+	function notation_post_thumbnail() {
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 			return;
 		}
@@ -166,11 +166,11 @@ if ( ! function_exists( 'holo_post_thumbnail' ) ) :
 
 		<?php else : ?>
 
-			<?php if ( holo_has_sidebar() ): ?>
+			<?php if ( notation_has_sidebar() ): ?>
                 <a class="c-post__thumbnail s-post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 					<?php
 					the_post_thumbnail(
-						'holo_thumbnail_blog',
+						'notation_thumbnail_blog',
 						array(
 							'alt' => the_title_attribute(
 								array(
@@ -185,7 +185,7 @@ if ( ! function_exists( 'holo_post_thumbnail' ) ) :
                 <a class="c-post__thumbnail s-post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 					<?php
 					the_post_thumbnail(
-						'holo_thumbnail_square',
+						'notation_thumbnail_square',
 						array(
 							'alt' => the_title_attribute(
 								array(
@@ -216,11 +216,11 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 endif;
 
 
-if ( ! function_exists( 'holo_post_categories' ) ) {
+if ( ! function_exists( 'notation_post_categories' ) ) {
 	/**
 	 * Show post categories
 	 */
-	function holo_post_categories() {
+	function notation_post_categories() {
 		$categories = get_the_category();
 
 		echo "<ul class='c-cats'>";
@@ -235,11 +235,11 @@ if ( ! function_exists( 'holo_post_categories' ) ) {
 	}
 }
 
-if ( ! function_exists( 'holo_separator' ) ) {
+if ( ! function_exists( 'notation_separator' ) ) {
 	/**
 	 * Dash separator
 	 */
-	function holo_separator( $condition = true ) {
+	function notation_separator( $condition = true ) {
 		if ( $condition ) {
 			echo '<span class="o-separator">-</span>';
 		}
@@ -248,31 +248,31 @@ if ( ! function_exists( 'holo_separator' ) ) {
 	}
 }
 
-if ( ! function_exists( 'holo__share_links' ) ) {
-	function holo__share_links() {
+if ( ! function_exists( 'notation__share_links' ) ) {
+	function notation__share_links() {
 		if ( get_theme_mod( 'show_share_icons', true ) ) {
-			$holo_linkedin_url = "https://www.linkedin.com/shareArticle?mini=true&url=" . get_permalink() . "&title=" . get_the_title();
-			$holo_twitter_url  = "https://twitter.com/intent/tweet?url=" . get_permalink() . "&title=" . get_the_title();
-			$holo_facebook_url = "https://www.facebook.com/sharer.php?u=" . get_permalink();
+			$notation_linkedin_url = "https://www.linkedin.com/shareArticle?mini=true&url=" . get_permalink() . "&title=" . get_the_title();
+			$notation_twitter_url  = "https://twitter.com/intent/tweet?url=" . get_permalink() . "&title=" . get_the_title();
+			$notation_facebook_url = "https://www.facebook.com/sharer.php?u=" . get_permalink();
 
 			echo '<div class="c-social-share">';  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			echo sprintf( '<a class="c-social-share__link" target="_blank" href="%s"><svg class="c-social-share__link__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><rect x="0" fill="none" width="20" height="20"/><g><path d="M8.46 18h2.93v-7.3h2.45l.37-2.84h-2.82V6.04c0-.82.23-1.38 1.41-1.38h1.51V2.11c-.26-.03-1.15-.11-2.19-.11-2.18 0-3.66 1.33-3.66 3.76v2.1H6v2.84h2.46V18z"/></g></svg></span></a>',
-				esc_url( $holo_facebook_url ) );
+				esc_url( $notation_facebook_url ) );
 			echo sprintf( '<a class="c-social-share__link" target="_blank" href="%s"><svg class="c-social-share__link__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><rect x="0" fill="none" width="20" height="20"/><g><path d="M18.94 4.46c-.49.73-1.11 1.38-1.83 1.9.01.15.01.31.01.47 0 4.85-3.69 10.44-10.43 10.44-2.07 0-4-.61-5.63-1.65.29.03.58.05.88.05 1.72 0 3.3-.59 4.55-1.57-1.6-.03-2.95-1.09-3.42-2.55.22.04.45.07.69.07.33 0 .66-.05.96-.13-1.67-.34-2.94-1.82-2.94-3.6v-.04c.5.27 1.06.44 1.66.46-.98-.66-1.63-1.78-1.63-3.06 0-.67.18-1.3.5-1.84 1.81 2.22 4.51 3.68 7.56 3.83-.06-.27-.1-.55-.1-.84 0-2.02 1.65-3.66 3.67-3.66 1.06 0 2.01.44 2.68 1.16.83-.17 1.62-.47 2.33-.89-.28.85-.86 1.57-1.62 2.02.75-.08 1.45-.28 2.11-.57z"/></g></svg></a>',
-				esc_url( $holo_twitter_url ) );
+				esc_url( $notation_twitter_url ) );
 			echo sprintf( '<a class="c-social-share__link" target="_blank" href="%s"><svg class="c-social-share__link__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><rect x="0" fill="none" width="20" height="20"/><g><path d="M2.5 18h3V6.9h-3V18zM4 2c-1 0-1.8.8-1.8 1.8S3 5.6 4 5.6s1.8-.8 1.8-1.8S5 2 4 2zm6.6 6.6V6.9h-3V18h3v-5.7c0-3.2 4.1-3.4 4.1 0V18h3v-6.8c0-5.4-5.7-5.2-7.1-2.6z"/></g></svg></a>',
-				esc_url( $holo_linkedin_url ) );
+				esc_url( $notation_linkedin_url ) );
 			echo '</div>';  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	}
 }
 
 
-if ( ! function_exists( 'holo_posts_pagination' ) ) :
+if ( ! function_exists( 'notation_posts_pagination' ) ) :
 	/**
 	 * Generate Posts Pagination
 	 */
-	function holo_posts_pagination() {
+	function notation_posts_pagination() {
 		the_posts_pagination( array(
 			'screen_reader_text' => ' ',
 			'mid_size'           => 2,

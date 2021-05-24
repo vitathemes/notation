@@ -1,10 +1,10 @@
 <?php
 /**
- * holo functions and definitions
+ * notation functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package holo
+ * @package notation
  */
 
 if ( ! defined( 'THEME_VERSION' ) ) {
@@ -12,7 +12,7 @@ if ( ! defined( 'THEME_VERSION' ) ) {
 	define( 'THEME_VERSION', '1.0.0' );
 }
 
-if ( ! function_exists( 'holo_setup' ) ) :
+if ( ! function_exists( 'notation_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -20,14 +20,14 @@ if ( ! function_exists( 'holo_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function holo_setup() {
+	function notation_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on holo, use a find and replace
-		 * to change 'holo' to the name of your theme in all the template files.
+		 * If you're building a theme based on notation, use a find and replace
+		 * to change 'notation' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'holo', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'notation', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -49,17 +49,17 @@ if ( ! function_exists( 'holo_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => __( 'Header Menu', 'holo' ),
+			'menu-1' => __( 'Header Menu', 'notation' ),
 		) );
 
 
 		/*
 		 * Add image sizes
 		 */
-		add_image_size( "holo_thumbnail_square_mobile", 140, 140, true );
-		add_image_size( "holo_thumbnail_square", 380, 380, true );
-		add_image_size( "holo_thumbnail_blog", 450, 300, true );
-		add_image_size( "holo_thumbnail_single", 700, 600, false );
+		add_image_size( "notation_thumbnail_square_mobile", 140, 140, true );
+		add_image_size( "notation_thumbnail_square", 380, 380, true );
+		add_image_size( "notation_thumbnail_blog", 450, 300, true );
+		add_image_size( "notation_thumbnail_single", 700, 600, false );
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -82,7 +82,7 @@ if ( ! function_exists( 'holo_setup' ) ) :
 		add_theme_support(
 			'custom-background',
 			apply_filters(
-				'holo_custom_background_args',
+				'notation_custom_background_args',
 				array(
 					'default-color' => 'ffffff',
 					'default-image' => '',
@@ -109,7 +109,7 @@ if ( ! function_exists( 'holo_setup' ) ) :
 		);
 	}
 endif;
-add_action( 'after_setup_theme', 'holo_setup' );
+add_action( 'after_setup_theme', 'notation_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -118,20 +118,20 @@ add_action( 'after_setup_theme', 'holo_setup' );
  *
  * @global int $content_width
  */
-function holo_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'holo_content_width', 1248 );
+function notation_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'notation_content_width', 1248 );
 }
-add_action( 'after_setup_theme', 'holo_content_width', 0 );
+add_action( 'after_setup_theme', 'notation_content_width', 0 );
 
 /**
  * Enqueue scripts and styles.
  */
-function holo_scripts() {
-	wp_enqueue_style( 'holo-style', get_template_directory_uri() . '/assets/css/main.css', array(), THEME_VERSION );
+function notation_scripts() {
+	wp_enqueue_style( 'notation-style', get_template_directory_uri() . '/assets/css/main.css', array(), THEME_VERSION );
 
-	//wp_enqueue_script( 'holo-vendor-scripts', get_template_directory_uri() . '/assets/js/vendor.min.js', array(), THEME_VERSION, true );
-	wp_enqueue_script( 'holo-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), THEME_VERSION, true );
-	wp_enqueue_script( 'holo-main-scripts', get_template_directory_uri() . '/assets/js/main.js', array(), THEME_VERSION, true );
+	//wp_enqueue_script( 'notation-vendor-scripts', get_template_directory_uri() . '/assets/js/vendor.min.js', array(), THEME_VERSION, true );
+	wp_enqueue_script( 'notation-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), THEME_VERSION, true );
+	wp_enqueue_script( 'notation-main-scripts', get_template_directory_uri() . '/assets/js/main.js', array(), THEME_VERSION, true );
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -140,7 +140,7 @@ function holo_scripts() {
 
 
 }
-add_action( 'wp_enqueue_scripts', 'holo_scripts' );
+add_action( 'wp_enqueue_scripts', 'notation_scripts' );
 
 /**
  * Implement the Custom Header feature.
@@ -161,7 +161,7 @@ require get_template_directory() . '/inc/template-functions.php';
 /**
  * Comments walker
  */
-require get_template_directory() . '/classes/class_holo_walker_comment.php';
+require get_template_directory() . '/classes/class_notation_walker_comment.php';
 
 /**
  * Customizer additions.
