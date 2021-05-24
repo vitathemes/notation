@@ -4,7 +4,7 @@ Contributors: vitathemes, kashani, mrmolaei, mostafas1990
 Tags: custom-background, custom-logo, custom-menu, threaded-comments, translation-ready
 
 Requires at least: 5.6
-Tested up to: 5.7.2
+Tested up to: 5.7
 Requires PHP: 5.6
 Stable tag: 1.0.0
 License: GPL-2.0-or-later
@@ -14,13 +14,13 @@ Notation, is a notebook for everyone to write their notes.
 
 == Description ==
 
-Notation, is a notebook for everyone to write their notes.
+Notation is simple, super fast, and content-first blog theme
 
 == Features ==
+* Notebook design
 * No additional JS
 * Sass for stylesheets
-* Compatible with [Contact Form 7](https://wordpress.org/plugins/contact-form-7/)
-* Fast & lightweight (Google Speed: 99/100)
+* Fast & lightweight (Google Speed (PageSpeed Insights): 100/100)
 * Theme options built directly into WordPress native live theme customizer
 * Responsive design
 * Cross-browser compatibility
@@ -31,20 +31,15 @@ Notation, is a notebook for everyone to write their notes.
 * Right-to-left (RTL) languages support
 * SEO optimized
 * GNU GPL version 2.0 licensed
-* Support 3 levels sub-menus
 * …and much more
 
 == Installation ==
 
 1. Simply install as a normal WordPress theme and activate.
-2. In your admin panel, navigate to `Appearance > Customize`.
-3. Put the finishing touches on your website by adding a logo, typography settings, custom colors and etc.
+2. Install recommended plugins
+3. In your admin panel, navigate to `Appearance > Customize`.
+4. Put the finishing touches on your website by adding a logo, typography settings, custom colors and etc.
 
-== Frequently Asked Questions ==
-
-= Does this theme support any plugins? =
-
-Notation includes support for WooCommerce and for Infinite Scroll in Jetpack.
 
 == Changelog ==
 

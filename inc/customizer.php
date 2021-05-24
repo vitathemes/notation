@@ -5,7 +5,7 @@
  * @package notation
  */
 
-function wp_meliora_enqueue_customizer_style( $hook_suffix ) {
+function wp_notation_enqueue_customizer_style( $hook_suffix ) {
 	// Load your css.
 	wp_register_style( 'kirki-styles-css',
 		get_template_directory_uri() . '/assets//css/kirki-controls-style.css',
@@ -14,7 +14,7 @@ function wp_meliora_enqueue_customizer_style( $hook_suffix ) {
 	wp_enqueue_style( 'kirki-styles-css' );
 }
 
-add_action( 'admin_enqueue_scripts', 'wp_meliora_enqueue_customizer_style' );
+add_action( 'admin_enqueue_scripts', 'wp_notation_enqueue_customizer_style' );
 
 
 /**

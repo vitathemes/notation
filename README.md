@@ -1,12 +1,13 @@
 # Notation - [Demo](https://demo.vitathemes.com/notation/) | [Download](https://wordpress.org/themes/notation/)
-Notation is a Shopping theme and ready to use WooCommerce as your e-commerce WordPress plugin
+Notation is simple, super fast, and content-first blog theme
 
 ![Home Page](screenshot.png)
 
 ## Features
+* Notebook design
 * No additional JS
 * Sass for stylesheets
-* Fast & lightweight (Google Speed: 99/100)
+* Fast & lightweight (Google Speed (PageSpeed Insights): 100/100)
 * Theme options built directly into WordPress native live theme customizer
 * Responsive design
 * Cross-browser compatibility
@@ -19,20 +20,24 @@ Notation is a Shopping theme and ready to use WooCommerce as your e-commerce Wor
 * GNU GPL version 2.0 licensed
 * …and much more
 
-See a working example at [https://demo.vitathemes.com/notation/](https://demo.vitathemes.com/meliora/).
+See a working example at [https://demo.vitathemes.com/notation/](https://demo.vitathemes.com/notation/).
 
 ## Theme installation
+
 1. Simply install as a normal WordPress theme and activate.
-2. In your admin panel, navigate to `Appearance > Customize`.
-3. Put the finishing touches on your website by adding a logo, typography settings, custom colors and etc.
+2. Install recommended plugins
+3. In your admin panel, navigate to `Appearance > Customize`.
+4. Put the finishing touches on your website by adding a logo, typography settings, custom colors and etc.
 
 ## Theme structure
 
 ```shell
-themes/Shoppe/        # → Root of your theme
-│── css/                  # → Compiled CSS file
-│── js/                   # → Theme js files
-│── sass/                 # → Theme scss files
+themes/notation/          # → Root of your theme
+│── assets/               # → All assets goes here
+│   │── css               # → Compiled css
+│   │── fonts             # → Fonts
+│   │── js                # → Js files
+│   └── src               # → source files
 ├── languages/            # → Theme Language files
 ├── template-parts/       # → Theme Part files (Include)
 ├── node_modules/         # → Node.js packages
@@ -56,10 +61,6 @@ Edit `functions.php` to enable or disable theme features, setup navigation menus
 
 * Run `npm install` from the theme directory to install dependencies
 * Run `gulp` from the root of theme directory and it's starting to watch any changes in scss files from the `assets/src/sass` folder
-
-## Contributing
-
-Contributions are welcome from everyone. We have [contributing guidelines](CONTRIBUTING.md) to help you get started.
 
 ## License
 
