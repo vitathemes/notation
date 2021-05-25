@@ -76,6 +76,10 @@
   a {
     color: $notation_neutral_primary_color;
     text-decoration: none;
+
+    &:hover {
+      color: $notation_branding_color;
+    }
   }
 }
 

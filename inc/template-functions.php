@@ -92,7 +92,7 @@ if ( ! function_exists( 'notation_theme_settings' ) ) {
 	function notation_theme_settings() {
 		$vars = ':root {	
 	            --notation-branding-color: ' . get_theme_mod( "color_primary_color", "#EC7160" ) . ';
-	            --notation-branding-color: ' . get_theme_mod( "color_primary_accent_color", "#DA5745" ) . ';
+	            --notation-branding-accent-color: ' . get_theme_mod( "color_primary_accent_color", "#DA5745" ) . ';
 	            --notation-primary-color: ' . get_theme_mod( "color_1", "#303030" ) . ';
 	            --notation-secondary-color: ' . get_theme_mod( "color_2", "#898989" ) . ';
 	            --notation-tertiary-color: ' . get_theme_mod( "color_3", "#E7E7E9" ) . ';

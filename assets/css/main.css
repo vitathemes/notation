@@ -1437,6 +1437,8 @@ body.admin-bar .c-nav {
   .c-footer__copyright__text a {
     color: var(--notation-secondary-color);
     text-decoration: none; }
+    .c-footer__copyright__text a:hover {
+      color: var(--notation-branding-color); }
 
 .c-footer__socials {
   display: flex;

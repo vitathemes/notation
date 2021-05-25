@@ -537,7 +537,7 @@ if ( function_exists( 'Kirki' ) ) {
 			Kirki::add_field( 'notation',
 				[
 					'type'     => 'color',
-					'settings' => 'color_primary_color',
+					'settings' => 'color_primary_accent_color',
 					'label'    => __( 'Primary Accent Color', 'notation' ),
 					'section'  => 'colors',
 					'default'  => '#DA5745',
