@@ -43,17 +43,17 @@
                 </div>
                 <div class="c-social-networks">
                     <?php if (get_theme_mod('instagram', false)): ?>
-                    <a class="c-social-networks__link" target="_blank" href="<?php echo get_theme_mod('instagram') ?>">
+                    <a class="c-social-networks__link" target="_blank" href="<?php echo esc_url(get_theme_mod('instagram')); ?>">
                         Instagram
                         </span></a>
 	                <?php endif; ?>
 	                <?php if (get_theme_mod('twitter', false)): ?>
-                    <a class="c-social-networks__link" target="_blank" href="<?php echo get_theme_mod('twitter') ?>">
+                    <a class="c-social-networks__link" target="_blank" href="<?php echo esc_url(get_theme_mod('twitter')); ?>">
                         Twitter
                     </a>
 	                <?php endif; ?>
 	                <?php if (get_theme_mod('facebook', false)): ?>
-                    <a class="c-social-networks__link" target="_blank" href="<?php echo get_theme_mod('facebook') ?>">
+                    <a class="c-social-networks__link" target="_blank" href="<?php echo esc_url(get_theme_mod('facebook')); ?>">
                         Facebook
                     </a>
 	                <?php endif; ?>
