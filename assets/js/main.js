@@ -26,49 +26,54 @@ const searchFormBtn = search.querySelector('.js-search-form-btn');
 
 //document.activeElement
 const KEYCODE_TAB = 9;
+let notation_focus, notation_isToggleItem, notation_isBackward;
 
-header.addEventListener('keydown', function (e) {
-    if (e.key === 'Tab' || e.keyCode === KEYCODE_TAB) {
-        if (e.shiftKey) /* shift + tab */ {
-            if (document.activeElement === firstFocusableEl) {
-                navCloseBtn.focus();
-                e.preventDefault();
-            }
-        } else /* tab */ {
-            if (document.activeElement === lastFocusableEl) {
-                navCloseBtn.focus();
-                e.preventDefault();
-            }
-        }
+document.addEventListener('keydown', function (e) {
+    if (e.shiftKey && e.keyCode == KEYCODE_TAB) {
+        notation_isBackward = true;
+    } else {
+        notation_isBackward = false;
     }
 });
 
 search.addEventListener('keydown', function (e) {
-    if (e.key === 'Tab' || e.keyCode === KEYCODE_TAB) {
-        if (e.shiftKey) /* shift + tab */ {
-            if (document.activeElement === searchBtn) {
-                searchFormBtn.focus();
-                e.preventDefault();
-            }
-        } else /* tab */ {
-            if (document.activeElement === searchFormBtn) {
-                searchBtn.focus();
-                e.preventDefault();
+    if (window.matchMedia("(max-width: 1024px)").matches && header.classList.contains('is-search-open')) {
+        if (e.key === 'Tab' || e.keyCode === KEYCODE_TAB) {
+            if (e.shiftKey) /* shift + tab */ {
+                if (document.activeElement === searchBtn) {
+                    searchFormBtn.focus();
+                    e.preventDefault();
+                }
+            } else /* tab */ {
+                if (document.activeElement === searchFormBtn) {
+                    searchBtn.focus();
+                    e.preventDefault();
+                }
             }
         }
     }
 });
 
-navCloseBtn.addEventListener('keydown', function (e) {
-    if (e.code === "Enter") {
-        navToggleBtn.focus();
-    } else {
-        if (e.shiftKey) /* shift + tab */ {
+navCloseBtn.addEventListener('blur', function (e) {
+    if (notation_isBackward) {
+        lastFocusableEl.focus();
+    }
+});
+
+lastFocusableEl.addEventListener('blur', function (e) {
+    if (!notation_isBackward) {
+        navCloseBtn.focus();
+    }
+});
+
+navCloseBtn.addEventListener('click', function (e) {
+    navToggleBtn.focus();
+});
+
+navToggleBtn.addEventListener('blur', function (e) {
+    if (document.querySelector('.c-header__nav.toggled')) {
+        if (notation_isBackward) {
             lastFocusableEl.focus();
-            e.preventDefault();
-        } else /* tab */ {
-            firstFocusableEl.focus();
-            e.preventDefault();
         }
     }
 });

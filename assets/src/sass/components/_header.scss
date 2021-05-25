@@ -138,6 +138,8 @@
   }
 
   &:hover {
+    background-color: transparent;
+
     .c-header__link__icon {
       fill: $notation_branding_color;
     }
@@ -157,7 +159,7 @@
   align-items: center;
 
   @include mq(desktop) {
-  display: none;
+    display: none;
   }
 }
 
@@ -190,6 +192,10 @@
 .c-header__link__icon {
   fill: $notation_headings_color;
   transition: $notation_global_transition;
+
+  &:hover {
+    background-color: transparent;
+  }
 }
 
 .c-header__icons {

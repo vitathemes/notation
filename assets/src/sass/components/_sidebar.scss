@@ -102,9 +102,11 @@
   }
   99% {
     max-height: unset;
-    overflow-x: visible
+    overflow-x: visible;
+    display: block;
   }
   100% {
+    display: none;
     max-height: 0;
     overflow-x: hidden
   }

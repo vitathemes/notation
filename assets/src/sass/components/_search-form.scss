@@ -35,6 +35,7 @@
   cursor: pointer;
 
   &:hover {
+    background-color: transparent;
 
     .c-search-form__submit__icon {
       fill: $notation_branding_color;

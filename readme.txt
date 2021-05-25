@@ -1,6 +1,6 @@
 === Notation ===
 
-Contributors: vitathemes, kashani, mrmolaei, mostafas1990
+Contributors: vitathemes
 Tags: custom-background, custom-logo, custom-menu, threaded-comments, translation-ready
 
 Requires at least: 5.6

@@ -754,8 +754,10 @@ ul li::marker {
   @media (min-width: 64em) {
     .c-header__link {
       display: none; } }
-  .c-header__link:hover .c-header__link__icon {
-    fill: var(--notation-branding-color); }
+  .c-header__link:hover {
+    background-color: transparent; }
+    .c-header__link:hover .c-header__link__icon {
+      fill: var(--notation-branding-color); }
   .c-header__link.o-search-btn {
     display: none; }
     @media (min-width: 64em) {
@@ -789,6 +791,8 @@ ul li::marker {
 .c-header__link__icon {
   fill: var(--notation-primary-color);
   transition: 0.25s; }
+  .c-header__link__icon:hover {
+    background-color: transparent; }
 
 .c-header__icons {
   display: flex;
@@ -956,8 +960,10 @@ ul li::marker {
     max-height: unset; }
   99% {
     max-height: unset;
-    overflow-x: visible; }
+    overflow-x: visible;
+    display: block; }
   100% {
+    display: none;
     max-height: 0;
     overflow-x: hidden; } }
 
@@ -966,8 +972,10 @@ ul li::marker {
     max-height: unset; }
   99% {
     max-height: unset;
-    overflow-x: visible; }
+    overflow-x: visible;
+    display: block; }
   100% {
+    display: none;
     max-height: 0;
     overflow-x: hidden; } }
 
@@ -1307,8 +1315,10 @@ body.admin-bar .c-nav {
   transform: translateY(-50%);
   left: 0.5rem;
   cursor: pointer; }
-  .c-search-form__submit:hover .c-search-form__submit__icon {
-    fill: var(--notation-branding-color); }
+  .c-search-form__submit:hover {
+    background-color: transparent; }
+    .c-search-form__submit:hover .c-search-form__submit__icon {
+      fill: var(--notation-branding-color); }
 
 .c-search-form__submit__icon {
   width: 1.45rem;
