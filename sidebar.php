@@ -41,7 +41,7 @@ $current_post_id = $post->ID;
 			?>
 				<?php
 				$active_class = '';
-				if ($current_post_id === get_the_ID()){
+				if ($current_post_id === get_the_ID() && is_single()){
 					$active_class = ' is-selected-post';
 				}
 				?>
@@ -96,7 +96,7 @@ $current_post_id = $post->ID;
 				$recent_posts->the_post();
 
 				$active_class = '';
-				if ($current_post_id === get_the_ID()){
+				if ($current_post_id === get_the_ID() && is_single()){
 					$active_class = ' is-selected-post';
 				}
 				?>

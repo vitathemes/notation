@@ -7,7 +7,7 @@
  * @package Notation
  */
 
-if ( is_singular() ) :
+if ( is_singular() || is_home() && ! get_theme_mod( 'homepage_content', true ) ) :
 	?>
     <article id="post-<?php the_ID(); ?>" <?php post_class( 'c-post c-post--single' ); ?>>
         <header class="c-post__header">
@@ -25,7 +25,7 @@ if ( is_singular() ) :
         </header><!-- .entry-header -->
 
 		<?php if ( get_theme_mod( 'show_post_thumbnail', true ) ) {
-		    notation_post_thumbnail();
+			notation_post_thumbnail();
 		} ?>
 
         <div class="c-post__content s-post-content entry-content">
@@ -58,7 +58,11 @@ if ( is_singular() ) :
 			<?php notation_entry_footer(); ?>
         </footer><!-- .entry-footer -->
     </article><!-- #post-<?php the_ID(); ?> -->
-<?php
+	<?php
+	// If comments are open or we have at least one comment, load up the comment template.
+	if ( comments_open() || get_comments_number() ) :
+		comments_template();
+	endif;
 else:
 	?>
     <article id="post-<?php the_ID(); ?>" <?php post_class( 'c-post c-post--archive c-post--archive-main' ); ?>>
@@ -68,13 +72,13 @@ else:
 			the_title( '<h2 class="c-post__title h3">', '</h2>' );
 			?>
         </header><!-- .entry-header -->
-	<?php if ( get_theme_mod( 'show_post_excerpt', true ) ): ?>
-        <div class="c-post__content">
-			<?php
-			the_excerpt();
-			?>
-        </div><!-- .entry-content -->
-	<?php endif; ?>
+		<?php if ( get_theme_mod( 'show_post_excerpt', true ) ): ?>
+            <div class="c-post__content">
+				<?php
+				the_excerpt();
+				?>
+            </div><!-- .entry-content -->
+		<?php endif; ?>
 		<?php if ( get_theme_mod( 'show_date_archive', true ) ): ?>
             <footer class="c-post__footer">
                 <div class="c-post__footer__meta">

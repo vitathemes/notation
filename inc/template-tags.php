@@ -54,7 +54,7 @@ if ( ! function_exists( 'notation_comments_num' ) ) :
 			esc_html( get_comments_number() )
 		);
 
-		echo '<span class="c-post__comments"><a class="c-post__comments__link url fn n" href="#comments"> ' . $byline . '</a></span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<span class="c-post__comments"><a class="c-post__comments__link url fn n" href="'. get_the_permalink() .'#comments"> ' . $byline . '</a></span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
 endif;
@@ -130,7 +130,8 @@ if ( ! function_exists( 'notation_post_meta' ) ) :
 		if ( get_theme_mod( 'show_post_date', true ) ) {
 			notation_posted_on();
 		}
-		if ( get_theme_mod( 'show_post_date', true ) && get_theme_mod( 'show_post_author', true ) || get_theme_mod( 'show_post_comments', true ) && get_theme_mod( 'show_post_date', true ) ) {
+		if ( get_theme_mod( 'show_post_date', true ) && get_theme_mod( 'show_post_author',
+				true ) || get_theme_mod( 'show_post_comments', true ) && get_theme_mod( 'show_post_date', true ) ) {
 			echo '<span class="c-post__meta__separator"> / </span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 		if ( get_theme_mod( 'show_post_author', true ) ) {
@@ -166,38 +167,20 @@ if ( ! function_exists( 'notation_post_thumbnail' ) ) :
 
 		<?php else : ?>
 
-			<?php if ( notation_has_sidebar() ): ?>
-                <a class="c-post__thumbnail s-post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-					<?php
-					the_post_thumbnail(
-						'notation_thumbnail_blog',
-						array(
-							'alt' => the_title_attribute(
-								array(
-									'echo' => false,
-								)
-							),
-						)
-					);
-					?>
-                </a>
-			<?php else: ?>
-                <a class="c-post__thumbnail s-post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-					<?php
-					the_post_thumbnail(
-						'notation_thumbnail_square',
-						array(
-							'alt' => the_title_attribute(
-								array(
-									'echo' => false,
-								)
-							),
-						)
-					);
-					?>
-                </a>
-			<?php endif; ?>
-
+            <a class="c-post__thumbnail s-post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+				<?php
+				the_post_thumbnail(
+					'notation_thumbnail_blog',
+					array(
+						'alt' => the_title_attribute(
+							array(
+								'echo' => false,
+							)
+						),
+					)
+				);
+				?>
+            </a>
 
 		<?php
 		endif; // End is_singular().

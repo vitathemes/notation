@@ -125,6 +125,13 @@ if ( function_exists( 'Kirki' ) ) {
 					'capability' => 'edit_theme_options',
 				) );
 
+			Kirki::add_section( 'homepage_opts',
+				array(
+					'title'    => esc_html__( 'Blog Options', 'notation' ),
+					'panel'    => '',
+					'priority' => 6,
+				) );
+
 			// Posts
 			Kirki::add_section( 'single_opts',
 				array(
@@ -754,6 +761,38 @@ if ( function_exists( 'Kirki' ) ) {
 	] );
 
 	// Footer
+
+
+	// Homepage
+	Kirki::add_field( 'homepage_content', [
+		'type'        => 'switch',
+		'settings'    => 'homepage_content',
+		'label'       => esc_html__( 'Default content of blog page', 'kirki' ),
+		'section'     => 'homepage_opts',
+		'default'     => 'on',
+		'priority'    => 10,
+		'choices'     => [
+			'on'  => esc_html__( 'Show latest posts', 'kirki' ),
+			'off' => esc_html__( 'Show latest sticky post', 'kirki' ),
+		],
+	] );
+
+	Kirki::add_field( 'theme_config_id', [
+		'active_callback' => [
+			[
+				'setting'  => 'homepage_content',
+				'operator' => '==',
+				'value'    => false,
+			],
+		],
+		'type'        => 'custom',
+		'settings'    => 'custom_setting',
+		// 'label'       => esc_html__( 'This is the label', 'kirki' ), // optional
+		'section'     => 'homepage_opts',
+		'default'         => '<p>' . __( "*If there is any sticky post, it will show the latest published post." , 'kirki' ) . '</p>',
+		'priority'    => 10,
+	] );
+	// Homepage
 
 	function wp_indigo_add_edit_icons( $wp_customize ) {
 		$wp_customize->selective_refresh->add_partial( 'show_slider_menu_index',

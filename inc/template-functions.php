@@ -126,13 +126,48 @@ add_filter( 'comment_form_defaults', 'notation_reply_title' );
  *
  * @return string The blog posts page URL.
  */
-function notation_get_blog_posts_page_url() {
+if ( ! function_exists( 'notation_get_blog_posts_page_url' ) ) {
+	function notation_get_blog_posts_page_url() {
 
-	// If front page is set to display a static page, get the URL of the posts page.
-	if ( 'page' === get_option( 'show_on_front' ) ) {
-		return get_permalink( get_option( 'page_for_posts' ) );
+		// If front page is set to display a static page, get the URL of the posts page.
+		if ( 'page' === get_option( 'show_on_front' ) ) {
+			return get_permalink( get_option( 'page_for_posts' ) );
+		}
+
+		// The front page IS the posts page. Get its URL.
+		return get_home_url();
 	}
+}
 
-	// The front page IS the posts page. Get its URL.
-	return get_home_url();
+
+/**
+ * Homepage - Show latest sticky post
+ */
+
+if ( ! function_exists( 'notation_show_latest_post' ) ) {
+	function notation_show_latest_post() {
+		$stickies = get_option( 'sticky_posts' );
+		wp_reset_query();
+		wp_reset_postdata();
+		// Make sure we have stickies to avoid unexpected output
+		if ( $stickies ) {
+			$args      = [
+				'post_type'           => 'post',
+				'post__in'            => $stickies,
+				'posts_per_page'      => 1,
+				'ignore_sticky_posts' => 1,
+			];
+			$the_query = new WP_Query( $args );
+
+			if ( $the_query->have_posts() ) {
+				while ( $the_query->have_posts() ) {
+					$the_query->the_post();
+
+					get_template_part( 'template-parts/content', get_post_type() );
+
+				}
+				wp_reset_postdata();
+			}
+		}
+	}
 }
