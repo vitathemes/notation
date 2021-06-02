@@ -151,23 +151,29 @@ if ( ! function_exists( 'notation_show_latest_post' ) ) {
 		wp_reset_postdata();
 		// Make sure we have stickies to avoid unexpected output
 		if ( $stickies ) {
-			$args      = [
+			$args = [
 				'post_type'           => 'post',
 				'post__in'            => $stickies,
 				'posts_per_page'      => 1,
 				'ignore_sticky_posts' => 1,
 			];
-			$the_query = new WP_Query( $args );
+		} else {
+			$args = [
+				'post_type'           => 'post',
+				'posts_per_page'      => 1,
+				'ignore_sticky_posts' => 1,
+			];
+		}
+		$the_query = new WP_Query( $args );
 
-			if ( $the_query->have_posts() ) {
-				while ( $the_query->have_posts() ) {
-					$the_query->the_post();
+		if ( $the_query->have_posts() ) {
+			while ( $the_query->have_posts() ) {
+				$the_query->the_post();
 
-					get_template_part( 'template-parts/content', get_post_type() );
+				get_template_part( 'template-parts/content', get_post_type() );
 
-				}
-				wp_reset_postdata();
 			}
+			wp_reset_postdata();
 		}
 	}
 }

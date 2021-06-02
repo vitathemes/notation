@@ -1241,7 +1241,8 @@ body.admin-bar .c-nav {
   display: flex;
   margin-top: 2.5rem;
   min-width: 100%;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem; }
   @media (min-width: 48em) {
     .c-post__tags, .c-post__cats {
       margin-top: 0; } }
