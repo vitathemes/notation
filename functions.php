@@ -127,7 +127,7 @@ add_action( 'after_setup_theme', 'notation_content_width', 0 );
  * Enqueue scripts and styles.
  */
 function notation_scripts() {
-	wp_enqueue_style( 'notation-style', get_template_directory_uri() . '/assets/css/main.css', array(), THEME_VERSION );
+	wp_enqueue_style( 'notation-style', get_template_directory_uri() . '/assets/css/main.css', array(), '1.0.1' );
 
 	//wp_enqueue_script( 'notation-vendor-scripts', get_template_directory_uri() . '/assets/js/vendor.min.js', array(), THEME_VERSION, true );
 	wp_enqueue_script( 'notation-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), THEME_VERSION, true );
@@ -141,11 +141,6 @@ function notation_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', 'notation_scripts' );
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -167,13 +162,6 @@ require get_template_directory() . '/classes/class_notation_walker_comment.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
 
 /**
  * Load TGMPA file

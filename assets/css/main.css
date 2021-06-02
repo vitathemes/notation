@@ -437,7 +437,7 @@ body {
 body.is-menu-open {
   overflow: hidden; }
 
-body.is-menu-open .c-header, body.is-menu-open .c-main {
+body.is-menu-open .c-header, body.is-menu-open .c-main, body.is-menu-open .c-sidebar {
   transform: translateX(70%); }
 
 a {
@@ -646,7 +646,7 @@ ul li::marker {
   justify-content: space-between;
   align-items: center;
   z-index: 9;
-  transition: 0.25s; }
+  transition: 0.8s; }
   @media (min-width: 64em) {
     .c-header {
       position: sticky;
@@ -833,10 +833,11 @@ ul li::marker {
 .c-header__nav__wrapper {
   height: 100vh;
   padding: 1.25rem 1rem;
-  transition: 0.25s;
+  transition: 0.7s;
   position: fixed;
   left: -70%;
   visibility: hidden;
+  min-width: 60%;
   top: 0;
   background-color: var(--notation-quaternary-color); }
   @media (min-width: 64em) {
@@ -846,7 +847,8 @@ ul li::marker {
       padding: 0;
       height: unset;
       position: unset;
-      visibility: unset; } }
+      visibility: unset;
+      min-width: unset; } }
 
 .c-header__nav.toggled .c-header__nav__wrapper {
   visibility: visible;
@@ -855,7 +857,7 @@ ul li::marker {
   left: -70%;
   z-index: 9;
   min-width: 60%;
-  transition: 0.25s; }
+  transition: 0.7s; }
 
 .c-main {
   width: calc(100% - 28px);
@@ -877,28 +879,35 @@ ul li::marker {
   margin: 0 0 0.875rem;
   padding-left: 0.875rem; }
 
+.c-main__desc {
+  margin: 0 0 1.25rem;
+  padding-left: 0.875rem; }
+
 .c-sidebar {
   position: relative;
   width: 100%;
-  transition: width 0.3s 0s, transform 0.5s 0.2s;
+  transition: width 0.8s 0s, transform 0.8s 0s;
   display: none; }
   @media (min-width: 64em) {
     .c-sidebar {
       display: block;
       padding: 3rem 0;
       width: calc(22% - 2rem);
+      transition: width 0.8s 0s, transform 0.8s 0.3s;
       border-right: 1px solid var(--notation-tertiary-color); } }
   .c-sidebar.is-minimized {
-    transition: width 0.4s 0.2s, transform 0.5s;
+    transition: width 0.7s 0.3s, transform 0.8s;
     width: 0;
     transform: translateX(-100%); }
     .c-sidebar.is-minimized .c-sidebar__title, .c-sidebar.is-minimized .c-sidebar__main, .c-sidebar.is-minimized .c-sidebar__footer {
       visibility: hidden;
       opacity: 0;
       transform: translateX(-100%);
-      transition: transform 0.25s 0.2s, opacity 0.25s;
+      transition: transform 0.25s 0.7s, opacity 0.25s;
       -webkit-animation: sidebarAnimation 0s linear 0.5s forwards;
       animation: sidebarAnimation 0s linear 0.5s forwards; }
+  .c-sidebar.c-sidebar--archives {
+    display: block; }
 
 .c-sidebar__title {
   font-weight: normal;
@@ -908,7 +917,7 @@ ul li::marker {
   display: block;
   padding: 0.625rem 1.75rem;
   margin: 1rem 0;
-  transition: transform 0.25s 0s, opacity 0.25s 0.3s; }
+  transition: transform 0.25s 0s, opacity 0.25s 0.9s; }
   .c-sidebar__title:first-of-type {
     margin: 0 0 0.5rem;
     padding-bottom: 0.25rem; }
@@ -919,7 +928,7 @@ ul li::marker {
 
 .c-sidebar__main {
   padding: 0 0.75rem;
-  transition: transform 0.25s 0s, opacity 0.25s 0.3s; }
+  transition: transform 0.25s 0.7s, opacity 0.25s 0.9s; }
 
 .c-sidebar__toggle {
   border: 1px solid var(--notation-tertiary-color);
@@ -927,7 +936,6 @@ ul li::marker {
   width: 1.75rem;
   height: 1.75rem;
   border-radius: 50%;
-  display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
@@ -936,7 +944,11 @@ ul li::marker {
   top: 8.375rem;
   cursor: pointer;
   transition: 0.1s;
-  z-index: 5; }
+  z-index: 5;
+  display: none; }
+  @media (min-width: 64em) {
+    .c-sidebar__toggle {
+      display: flex; } }
   .c-sidebar__toggle:hover {
     border-color: var(--notation-branding-color);
     background-color: #fff; }
@@ -953,7 +965,7 @@ ul li::marker {
 .c-sidebar__footer {
   padding: 0 1.75rem;
   margin-top: 3rem;
-  transition: transform 0.25s 0s, opacity 0.25s 0.3s; }
+  transition: transform 0.25s 0s, opacity 0.25s 0.5s; }
 
 @-webkit-keyframes sidebarAnimation {
   0% {
@@ -1177,6 +1189,12 @@ body.admin-bar .c-nav {
   font-size: 1.625rem;
   line-height: 1.4;
   font-weight: 500; }
+
+.c-post--single.c-post--default-post {
+  display: none; }
+  @media (min-width: 64em) {
+    .c-post--single.c-post--default-post {
+      display: block; } }
 
 .c-post__content {
   font-size: 0.8125rem;

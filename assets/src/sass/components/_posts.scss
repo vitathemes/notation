@@ -153,6 +153,14 @@
   .c-post__title {
     @include h1;
   }
+
+  &.c-post--default-post {
+    display: none;
+
+    @include mq(desktop) {
+      display: block;
+    }
+  }
 }
 
 .c-post__content {

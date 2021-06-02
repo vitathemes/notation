@@ -15,7 +15,7 @@ get_header();
         <div class="c-main__header">
 			<?php
 			the_archive_title( '<h1 class="c-main__title">', '</h1>' );
-			the_archive_description( '<div class="archive-description">', '</div>' );
+			the_archive_description( '<div class="c-main__desc">', '</div>' );
 			?>
         </div>
 

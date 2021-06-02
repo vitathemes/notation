@@ -5,32 +5,6 @@
  * @package Notation
  */
 
-define( 'SITE_LAYOUT', get_theme_mod( 'blog_layout', 'left' ) );
-define( 'SHOP_LAYOUT', get_theme_mod( 'shop_layout', 'left' ) );
-
-/**
- * Adds custom classes to the array of body classes.
- *
- * @param array $classes Classes for the body element.
- *
- * @return array
- */
-function notation_body_classes( $classes ) {
-	// Adds a class of hfeed to non-singular pages.
-	if ( ! is_singular() ) {
-		$classes[] = 'hfeed';
-	}
-
-	// Adds a class of no-sidebar when there is no sidebar present.
-	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-		$classes[] = 'no-sidebar';
-	}
-
-	return $classes;
-}
-
-add_filter( 'body_class', 'notation_body_classes' );
-
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
@@ -56,13 +30,13 @@ if ( ! function_exists( 'notation_branding' ) ) {
 			if ( is_front_page() && is_home() ) :
 				?>
                 <h1 class="c-header__branding__title site-title">
-                    <a class="c-header__branding__title__link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+                    <a class="c-header__branding__title__link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo esc_html(get_bloginfo( 'name' )); ?></a>
                 </h1>
 			<?php
 			else :
 				?>
                 <p class="c-header__branding__title site-title h1">
-                    <a class="c-header__branding__title__link h1" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+                    <a class="c-header__branding__title__link h1" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo esc_html(get_bloginfo( 'name' )); ?></a>
                 </p>
 			<?php
 			endif;
@@ -126,16 +100,18 @@ add_filter( 'comment_form_defaults', 'notation_reply_title' );
  *
  * @return string The blog posts page URL.
  */
-if ( ! function_exists( 'notation_get_blog_posts_page_url' ) ) {
-	function notation_get_blog_posts_page_url() {
+if ( ! function_exists( 'notation_get_sidebar_button' ) ) {
+	function notation_get_sidebar_button() {
 
 		// If front page is set to display a static page, get the URL of the posts page.
 		if ( 'page' === get_option( 'show_on_front' ) ) {
-			return get_permalink( get_option( 'page_for_posts' ) );
+			$notation_blog_page_url = get_permalink( get_option( 'page_for_posts' ) );
+			printf('<div class="c-sidebar__footer"><a class="c-btn c-btn--secondary c-btn--fw" href="%s">%s</a></div>', esc_url($notation_blog_page_url), esc_html__('All Posts', 'notation'));
 		}
 
-		// The front page IS the posts page. Get its URL.
-		return get_home_url();
+		if (get_theme_mod('blog_content', true)) {
+			printf('<div class="c-sidebar__footer"><a class="c-btn c-btn--secondary c-btn--fw" href="%s">%s</a></div>', esc_url(get_home_url()), esc_html__('All Posts', 'notation'));
+		}
 	}
 }
 

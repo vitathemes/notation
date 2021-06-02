@@ -14,10 +14,10 @@
  * require_once dirname( __FILE__ ) . '/path/to/class-tgm-plugin-activation.php';
  */
 
-add_action( 'tgmpa_register', 'notation_register_required_plugins' );
+add_action( 'tgmpa_register', 'notation_register_recommended_plugins' );
 
 /**
- * Register the required plugins for this theme.
+ * Register the recommended plugins for this theme.
  *
  * In this example, we register five plugins:
  * - one included with the TGMPA library
@@ -33,10 +33,10 @@ add_action( 'tgmpa_register', 'notation_register_required_plugins' );
  *
  * This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10.
  */
-function notation_register_required_plugins() {
+function notation_register_recommended_plugins() {
 	/*
-	 * Array of plugin arrays. Required keys are name and slug.
-	 * If the source is NOT from the .org repo, then source is also required.
+	 * Array of plugin arrays. recommended keys are name and slug.
+	 * If the source is NOT from the .org repo, then source is also recommended.
 	 */
 	$plugins = array(
 		array(
@@ -56,7 +56,7 @@ function notation_register_required_plugins() {
 	 * Only uncomment the strings in the config array if you want to customize the strings.
 	 */
 	$config = array(
-		'id'           => 'shelly',
+		'id'           => 'notation',
 		'default_path' => '',
 		'menu'         => 'tgmpa-install-plugins',
 		'has_notices'  => true,

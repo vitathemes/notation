@@ -10,7 +10,7 @@ Stable tag: 1.0.0
 License: GPL-2.0-or-later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Notation, is a notebook for everyone to write their notes.
+Notation is a simple, super fast, and content-first blog theme
 
 == Description ==
 

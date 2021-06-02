@@ -1,5 +1,5 @@
 # Notation - [Demo](https://demo.vitathemes.com/notation/) | [Download](https://wordpress.org/themes/notation/)
-Notation is simple, super fast, and content-first blog theme
+Notation is a simple, super fast, and content-first blog theme
 
 ![Home Page](screenshot.png)
 

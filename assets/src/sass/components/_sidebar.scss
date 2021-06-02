@@ -1,18 +1,19 @@
 .c-sidebar {
   position: relative;
   width: 100%;
-  transition: width 0.3s 0s, transform 0.5s 0.2s;
+  transition: width 0.8s 0s, transform 0.8s 0s;
   display: none;
 
   @include mq(desktop) {
     display: block;
     padding: rem(48px) 0;
     width: calc(22% - 2rem);
+    transition: width 0.8s 0s, transform 0.8s 0.3s;
     border-right: 1px solid $notation_neutral_secondary_color;
   }
 
   &.is-minimized {
-    transition: width 0.4s 0.2s, transform 0.5s;
+    transition: width 0.7s 0.3s, transform 0.8s;
     width: 0;
     transform: translateX(-100%);
 
@@ -20,9 +21,13 @@
       visibility: hidden;
       opacity: 0;
       transform: translateX(-100%);
-      transition: transform $notation_global_transition 0.2s, opacity $notation_global_transition;
+      transition: transform $notation_global_transition 0.7s, opacity $notation_global_transition;
       animation: sidebarAnimation 0s linear 0.5s forwards;
     }
+  }
+
+  &.c-sidebar--archives {
+    display: block;
   }
 }
 
@@ -34,8 +39,7 @@
   display: block;
   padding: rem(10px 28px);
   margin: rem(16px 0);
-  transition: transform $notation_global_transition 0s, opacity $notation_global_transition 0.3s;
-
+  transition: transform $notation_global_transition 0s, opacity $notation_global_transition 0.9s;
   &:first-of-type {
     margin: rem(0 0 8px);
     padding-bottom: rem(4px);
@@ -49,7 +53,7 @@
 
 .c-sidebar__main {
   padding: 0 rem(12px);
-  transition: transform $notation_global_transition 0s, opacity $notation_global_transition 0.3s;
+  transition: transform $notation_global_transition 0.7s, opacity $notation_global_transition 0.9s;
 }
 
 .c-sidebar__toggle {
@@ -58,7 +62,6 @@
   width: rem(28px);
   height: rem(28px);
   border-radius: 50%;
-  display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
@@ -68,6 +71,11 @@
   cursor: pointer;
   transition: ($notation_global_transition - 0.15s);
   z-index: 5;
+  display: none;
+
+  @include mq(desktop) {
+    display: flex;
+  }
 
   &:hover {
     border-color: $notation_branding_color;
@@ -93,7 +101,7 @@
 .c-sidebar__footer {
   padding: 0 rem(28px);
   margin-top: rem(48px);
-  transition: transform $notation_global_transition 0s, opacity $notation_global_transition 0.3s;
+  transition: transform $notation_global_transition 0s, opacity $notation_global_transition 0.5s;
 }
 
 @keyframes sidebarAnimation {

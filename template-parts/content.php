@@ -7,9 +7,13 @@
  * @package Notation
  */
 
-if ( is_singular() || is_home() && ! get_theme_mod( 'homepage_content', true ) ) :
+if ( is_singular() || is_home() && ! get_theme_mod( 'blog_content', true ) ) :
+	$classes = "c-post c-post--single";
+	if ( is_home() && get_theme_mods( 'blog_content', true ) || is_archive() ) {
+		$classes .= " c-post--default-post";
+	}
 	?>
-    <article id="post-<?php the_ID(); ?>" <?php post_class( 'c-post c-post--single' ); ?>>
+    <article id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?>>
         <header class="c-post__header">
 			<?php
 			the_title( '<h1 class="c-post__title">', '</h1>' );

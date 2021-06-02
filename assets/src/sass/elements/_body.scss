@@ -21,7 +21,7 @@ body.is-menu-open {
 
 body.is-menu-open {
 
-  .c-header, .c-main {
+  .c-header, .c-main , .c-sidebar {
     transform: translateX(70%);
   }
 

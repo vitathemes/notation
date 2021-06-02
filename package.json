@@ -1,13 +1,17 @@
 {
   "name": "notation",
   "version": "1.0.0",
-  "description": "[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)",
+  "description": "Notation is a simple, super fast, and content-first blog theme",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "VitaThemes\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D",
-  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitathemes/notation"
+  },
+  "author": "VitaThemes",
+  "license": "GPL-V2",
   "devDependencies": {
     "browser-sync": "^2.26.14",
     "gulp": "^4.0.2",

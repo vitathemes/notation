@@ -125,7 +125,7 @@ if ( function_exists( 'Kirki' ) ) {
 					'capability' => 'edit_theme_options',
 				) );
 
-			Kirki::add_section( 'homepage_opts',
+			Kirki::add_section( 'blog_opts',
 				array(
 					'title'    => esc_html__( 'Blog Options', 'notation' ),
 					'panel'    => '',
@@ -764,11 +764,11 @@ if ( function_exists( 'Kirki' ) ) {
 
 
 	// Homepage
-	Kirki::add_field( 'homepage_content', [
+	Kirki::add_field( 'blog_content', [
 		'type'        => 'switch',
-		'settings'    => 'homepage_content',
+		'settings'    => 'blog_content',
 		'label'       => esc_html__( 'Default content of blog page', 'kirki' ),
-		'section'     => 'homepage_opts',
+		'section'     => 'blog_opts',
 		'default'     => 'on',
 		'priority'    => 10,
 		'choices'     => [
@@ -780,7 +780,7 @@ if ( function_exists( 'Kirki' ) ) {
 	Kirki::add_field( 'theme_config_id', [
 		'active_callback' => [
 			[
-				'setting'  => 'homepage_content',
+				'setting'  => 'blog_content',
 				'operator' => '==',
 				'value'    => false,
 			],
@@ -788,7 +788,7 @@ if ( function_exists( 'Kirki' ) ) {
 		'type'        => 'custom',
 		'settings'    => 'custom_setting',
 		// 'label'       => esc_html__( 'This is the label', 'kirki' ), // optional
-		'section'     => 'homepage_opts',
+		'section'     => 'blog_opts',
 		'default'         => '<p>' . __( "*If there is any sticky post, it will show the latest published post." , 'kirki' ) . '</p>',
 		'priority'    => 10,
 	] );

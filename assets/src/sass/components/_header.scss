@@ -6,7 +6,7 @@
   justify-content: space-between;
   align-items: center;
   z-index: 9;
-  transition: $notation_global_transition;
+  transition: 0.8s;
 
   @include mq(desktop) {
     position: sticky;
@@ -249,10 +249,11 @@
 .c-header__nav__wrapper {
   height: 100vh;
   padding: rem(20px 16px);
-  transition: $notation_global_transition;
+  transition: 0.7s;
   position: fixed;
   left: -70%;
   visibility: hidden;
+  min-width: 60%;
   top: 0;
   background-color: $notation_neutral_tertiary_color;
 
@@ -263,6 +264,7 @@
     height: unset;
     position: unset;
     visibility: unset;
+    min-width: unset;
   }
 }
 
@@ -276,6 +278,6 @@
     left: -70%;
     z-index: 9;
     min-width: 60%;
-    transition: $notation_global_transition;
+    transition: 0.7s;
   }
 }

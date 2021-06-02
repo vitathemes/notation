@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-<?php if ( ! get_theme_mod( 'homepage_content', true ) ) :
+<?php if ( ! get_theme_mod( 'blog_content', true ) ) :
 	get_sidebar(); ?>
     <main id="primary" class="c-main">
 <?php
@@ -32,7 +32,7 @@ else: ?>
 <?php endif; ?>
     <div class="c-main__wrapper">
 		<?php
-		if ( ! get_theme_mod( 'homepage_content', true ) ) {
+		if ( ! get_theme_mod( 'blog_content', true ) ) {
 			notation_show_latest_post();
 		} else {
 			if ( have_posts() ) :
