@@ -5,6 +5,16 @@
   display: flex;
   flex-direction: column;
   transition: $notation_global_transition;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mq(desktop) {
+    max-width: 500px;
+  }
+
+  @include mq(wide) {
+    max-width: 700px;
+  }
 
   @include mq(desktop) {
     width: calc(60% - 12%);
@@ -15,6 +25,9 @@
     width: calc(60% - 16%);
     padding: rem(48px) 8%;
   }
+}
+
+.c-main__wrapper {
 }
 
 .c-main__title {

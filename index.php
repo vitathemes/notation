@@ -31,8 +31,8 @@ else: ?>
     </div>
 <?php endif; ?>
     <div class="c-main__wrapper">
-		<?php
-		if ( ! get_theme_mod( 'blog_content', true ) ) {
+		 <?php
+		if ($_SERVER["REQUEST_URI"] == '/' && is_home() && (! get_theme_mod( 'blog_content', true )) ) {
 			notation_show_latest_post();
 		} else {
 			if ( have_posts() ) :

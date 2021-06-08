@@ -61,7 +61,7 @@ $current_post_id = $post->ID;
 				<?php if ( get_theme_mod( 'show_post_excerpt_sidebar', true ) ): ?>
                     <div class="c-post__content">
 						<?php
-						the_excerpt();
+						echo notation_get_excerpt();
 						?>
                     </div><!-- .entry-content -->
 				<?php endif; ?>
@@ -118,7 +118,7 @@ $current_post_id = $post->ID;
 				<?php if ( get_theme_mod( 'show_post_excerpt_sidebar', true ) ): ?>
                     <div class="c-post__content">
 						<?php
-						the_excerpt();
+						echo notation_get_excerpt();
 						?>
                     </div><!-- .entry-content -->
 				<?php endif; ?>

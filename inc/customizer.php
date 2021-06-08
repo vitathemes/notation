@@ -84,7 +84,7 @@ add_action( 'customize_preview_init', 'notation_customize_preview_js' );
  *
  * If the Kirki customizer framework is not enabled, these controls won't show up.
  */
-if ( function_exists( 'Kirki' ) ) {
+if ( function_exists( 'kirki' ) ) {
 	add_action( 'init',
 		function () {
 			// Disable Kiriki help notice
@@ -723,6 +723,40 @@ if ( function_exists( 'Kirki' ) ) {
 					'default'  => 1,
 					'priority' => 10,
 				] );
+
+			Kirki::add_field( 'notation',
+				[
+					'active_callback' => [
+						[
+							'setting'  => 'show_post_excerpt_sidebar',
+							'operator' => '==',
+							'value'    => true,
+						],
+					],
+					'type'     => 'toggle',
+					'settings' => 'limit_sidebar_posts_excerpt_toggle',
+					'label'    => esc_html__( 'Limit posts excerpt', 'notation' ),
+					'section'  => 'sidebar_opts',
+					'default'  => 0,
+					'priority' => 10,
+				] );
+
+			Kirki::add_field( 'notation',
+				[
+					'active_callback' => [
+						[
+							'setting'  => 'limit_sidebar_posts_excerpt_toggle',
+							'operator' => '==',
+							'value'    => true,
+						],
+					],
+					'type'     => 'number',
+					'settings' => 'limit_sidebar_posts_excerpt',
+					'label'    => esc_html__( 'Limit characters', 'notation' ),
+					'section'  => 'sidebar_opts',
+					'default'  => 100,
+					'priority' => 10,
+				] );
 		} );
 	// PostsWooCommerce
 
@@ -767,13 +801,13 @@ if ( function_exists( 'Kirki' ) ) {
 	Kirki::add_field( 'blog_content', [
 		'type'        => 'switch',
 		'settings'    => 'blog_content',
-		'label'       => esc_html__( 'Default content of blog page', 'kirki' ),
+		'label'       => esc_html__( 'Default content of blog page', 'notation' ),
 		'section'     => 'blog_opts',
 		'default'     => 'on',
 		'priority'    => 10,
 		'choices'     => [
-			'on'  => esc_html__( 'Show latest posts', 'kirki' ),
-			'off' => esc_html__( 'Show latest sticky post', 'kirki' ),
+			'on'  => esc_html__( 'Show latest posts', 'notation' ),
+			'off' => esc_html__( 'Show latest sticky post', 'notation' ),
 		],
 	] );
 
@@ -787,9 +821,8 @@ if ( function_exists( 'Kirki' ) ) {
 		],
 		'type'        => 'custom',
 		'settings'    => 'custom_setting',
-		// 'label'       => esc_html__( 'This is the label', 'kirki' ), // optional
 		'section'     => 'blog_opts',
-		'default'         => '<p>' . __( "*If there is any sticky post, it will show the latest published post." , 'kirki' ) . '</p>',
+		'default'         => '<p>' . __( "*If there is any sticky post, it will show the latest published post." , 'notation' ) . '</p>',
 		'priority'    => 10,
 	] );
 	// Homepage

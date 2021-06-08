@@ -101,8 +101,8 @@ if ( ! function_exists( 'notation_setup' ) ) :
 		add_theme_support(
 			'custom-logo',
 			array(
-				'height'      => 250,
-				'width'       => 62,
+				'height'      => 62,
+				'width'       => 250,
 				'flex-width'  => true,
 				'flex-height' => true,
 			)

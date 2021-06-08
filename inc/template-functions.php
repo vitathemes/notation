@@ -30,13 +30,13 @@ if ( ! function_exists( 'notation_branding' ) ) {
 			if ( is_front_page() && is_home() ) :
 				?>
                 <h1 class="c-header__branding__title site-title">
-                    <a class="c-header__branding__title__link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo esc_html(get_bloginfo( 'name' )); ?></a>
+                    <a class="c-header__branding__title__link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a>
                 </h1>
 			<?php
 			else :
 				?>
                 <p class="c-header__branding__title site-title h1">
-                    <a class="c-header__branding__title__link h1" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo esc_html(get_bloginfo( 'name' )); ?></a>
+                    <a class="c-header__branding__title__link h1" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a>
                 </p>
 			<?php
 			endif;
@@ -106,11 +106,15 @@ if ( ! function_exists( 'notation_get_sidebar_button' ) ) {
 		// If front page is set to display a static page, get the URL of the posts page.
 		if ( 'page' === get_option( 'show_on_front' ) ) {
 			$notation_blog_page_url = get_permalink( get_option( 'page_for_posts' ) );
-			printf('<div class="c-sidebar__footer"><a class="c-btn c-btn--secondary c-btn--fw" href="%s">%s</a></div>', esc_url($notation_blog_page_url), esc_html__('All Posts', 'notation'));
+			printf( '<div class="c-sidebar__footer"><a class="c-btn c-btn--secondary c-btn--fw" href="%s">%s</a></div>',
+				esc_url( $notation_blog_page_url ),
+				esc_html__( 'All Posts', 'notation' ) );
 		}
 
-		if (get_theme_mod('blog_content', true)) {
-			printf('<div class="c-sidebar__footer"><a class="c-btn c-btn--secondary c-btn--fw" href="%s">%s</a></div>', esc_url(get_home_url()), esc_html__('All Posts', 'notation'));
+		if ( get_theme_mod( 'blog_content', true ) ) {
+			printf( '<div class="c-sidebar__footer"><a class="c-btn c-btn--secondary c-btn--fw" href="%s">%s</a></div>',
+				esc_url( get_home_url() ),
+				esc_html__( 'All Posts', 'notation' ) );
 		}
 	}
 }
@@ -150,6 +154,23 @@ if ( ! function_exists( 'notation_show_latest_post' ) ) {
 
 			}
 			wp_reset_postdata();
+		}
+	}
+}
+
+if ( ! function_exists( 'notation_get_excerpt' ) ) {
+	function notation_get_excerpt() {
+		if ( get_theme_mod( 'limit_sidebar_posts_excerpt_toggle', false ) ) {
+			$count   = get_theme_mod( 'limit_sidebar_posts_excerpt', 100 );
+			$excerpt = get_the_content();
+			$excerpt = strip_tags( $excerpt );
+			$excerpt = substr( $excerpt, 0, $count + 1 );
+			//$excerpt = substr( $excerpt, 0, strripos( $excerpt, " " ) );
+			$excerpt = '<p>' . $excerpt . '...</p>';
+
+			return $excerpt;
+		} else {
+			return get_the_excerpt();
 		}
 	}
 }
