@@ -165,12 +165,25 @@ if ( ! function_exists( 'notation_get_excerpt' ) ) {
 			$excerpt = get_the_content();
 			$excerpt = strip_tags( $excerpt );
 			$excerpt = substr( $excerpt, 0, $count + 1 );
-			//$excerpt = substr( $excerpt, 0, strripos( $excerpt, " " ) );
-			$excerpt = '<p>' . $excerpt . '...</p>';
+			$excerpt = $excerpt . '...';
 
 			return $excerpt;
 		} else {
 			return get_the_excerpt();
 		}
+	}
+}
+
+if ( ! function_exists( 'notation_is_page_for_posts' ) ) {
+	function notation_is_page_for_posts() {
+		$result = false;
+
+		if ( is_home() && ! is_front_page() ) {
+			$page = get_queried_object();
+
+			$result = ! is_null( $page ) && $page->ID == get_option( 'page_for_posts' );
+		}
+
+		return $result;
 	}
 }

@@ -554,7 +554,7 @@ if ( function_exists( 'kirki' ) ) {
 				[
 					'type'     => 'color',
 					'settings' => 'color_1',
-					'label'    => __( 'Color #1', 'notation' ),
+					'label'    => __( 'Primary Texts Color', 'notation' ),
 					'section'  => 'colors',
 					'default'  => '#303030',
 				] );
@@ -563,7 +563,7 @@ if ( function_exists( 'kirki' ) ) {
 				[
 					'type'     => 'color',
 					'settings' => 'color_2',
-					'label'    => __( 'Color #2', 'notation' ),
+					'label'    => __( 'Secondary Texts Color', 'notation' ),
 					'section'  => 'colors',
 					'default'  => '#898989',
 				] );
@@ -572,7 +572,7 @@ if ( function_exists( 'kirki' ) ) {
 				[
 					'type'     => 'color',
 					'settings' => 'color_3',
-					'label'    => __( 'Color #3', 'notation' ),
+					'label'    => __( 'Borders Color', 'notation' ),
 					'section'  => 'colors',
 					'default'  => '#E7E7E9',
 				] );
@@ -581,18 +581,9 @@ if ( function_exists( 'kirki' ) ) {
 				[
 					'type'     => 'color',
 					'settings' => 'color_4',
-					'label'    => __( 'Color #4', 'notation' ),
+					'label'    => __( 'Sidebar', 'notation' ),
 					'section'  => 'colors',
 					'default'  => '#F6F6F6',
-				] );
-
-			Kirki::add_field( 'notation',
-				[
-					'type'     => 'color',
-					'settings' => 'color_5',
-					'label'    => __( 'Color #5', 'notation' ),
-					'section'  => 'colors',
-					'default'  => '#F9F9F9',
 				] );
 
 // </editor-fold>
@@ -632,7 +623,7 @@ if ( function_exists( 'kirki' ) ) {
 				[
 					'type'     => 'toggle',
 					'settings' => 'show_post_comments',
-					'label'    => esc_html__( 'Show author name', 'notation' ),
+					'label'    => esc_html__( 'Show comments count', 'notation' ),
 					'section'  => 'single_opts',
 					'default'  => 1,
 					'priority' => 10,
@@ -699,12 +690,12 @@ if ( function_exists( 'kirki' ) ) {
 							'value'    => true,
 						],
 					],
-					'type'     => 'toggle',
-					'settings' => 'show_date_sidebar',
-					'label'    => esc_html__( 'Show publish date', 'notation' ),
-					'section'  => 'sidebar_opts',
-					'default'  => 1,
-					'priority' => 10,
+					'type'            => 'toggle',
+					'settings'        => 'show_date_sidebar',
+					'label'           => esc_html__( 'Show publish date', 'notation' ),
+					'section'         => 'sidebar_opts',
+					'default'         => 1,
+					'priority'        => 10,
 				] );
 
 			Kirki::add_field( 'notation',
@@ -716,115 +707,138 @@ if ( function_exists( 'kirki' ) ) {
 							'value'    => true,
 						],
 					],
-					'type'     => 'toggle',
-					'settings' => 'show_post_excerpt_sidebar',
-					'label'    => esc_html__( 'Show posts excerpt', 'notation' ),
-					'section'  => 'sidebar_opts',
-					'default'  => 1,
-					'priority' => 10,
+					'type'            => 'toggle',
+					'settings'        => 'show_post_excerpt_sidebar',
+					'label'           => esc_html__( 'Show posts excerpt', 'notation' ),
+					'section'         => 'sidebar_opts',
+					'default'         => 1,
+					'priority'        => 10,
 				] );
 
 			Kirki::add_field( 'notation',
 				[
 					'active_callback' => [
+						[
+							'setting'  => 'show_sidebar',
+							'operator' => '==',
+							'value'    => true,
+						],
 						[
 							'setting'  => 'show_post_excerpt_sidebar',
 							'operator' => '==',
 							'value'    => true,
 						],
 					],
-					'type'     => 'toggle',
-					'settings' => 'limit_sidebar_posts_excerpt_toggle',
-					'label'    => esc_html__( 'Limit posts excerpt', 'notation' ),
-					'section'  => 'sidebar_opts',
-					'default'  => 0,
-					'priority' => 10,
+					'type'            => 'toggle',
+					'settings'        => 'limit_sidebar_posts_excerpt_toggle',
+					'label'           => esc_html__( 'Limit posts excerpt', 'notation' ),
+					'section'         => 'sidebar_opts',
+					'default'         => 0,
+					'priority'        => 10,
 				] );
 
 			Kirki::add_field( 'notation',
 				[
 					'active_callback' => [
 						[
+							'setting'  => 'show_sidebar',
+							'operator' => '==',
+							'value'    => true,
+						],
+						[
+							'setting'  => 'show_post_excerpt_sidebar',
+							'operator' => '==',
+							'value'    => true,
+						],
+						[
 							'setting'  => 'limit_sidebar_posts_excerpt_toggle',
 							'operator' => '==',
 							'value'    => true,
 						],
 					],
-					'type'     => 'number',
-					'settings' => 'limit_sidebar_posts_excerpt',
-					'label'    => esc_html__( 'Limit characters', 'notation' ),
-					'section'  => 'sidebar_opts',
-					'default'  => 100,
-					'priority' => 10,
+					'type'            => 'number',
+					'settings'        => 'limit_sidebar_posts_excerpt',
+					'label'           => esc_html__( 'Limit characters', 'notation' ),
+					'section'         => 'sidebar_opts',
+					'default'         => 100,
+					'priority'        => 10,
 				] );
 		} );
 	// PostsWooCommerce
 
 	// Footer
-	Kirki::add_field( 'notation', [
-		'type'     => 'textarea',
-		'settings' => 'copyright_text',
-		'label'    => esc_html__( 'Copyright Text', 'notation' ),
-		'section'  => 'footer',
-		'default'  => sprintf( '<span>%s</span><a href="%s" class="customize-unpreviewable">%s</a>', esc_html__( 'Notation theme by ', 'notation' ), esc_url( 'https://vitathemes.com' ), esc_html__( 'VitaThemes', 'notation' ) ),
-		'priority' => 10,
-	] );
+	Kirki::add_field( 'notation',
+		[
+			'type'     => 'link',
+			'settings' => 'instagram',
+			'label'    => esc_html__( 'Instagram', 'notation' ),
+			'section'  => 'footer',
+			'priority' => 10,
+		] );
 
-	Kirki::add_field( 'notation', [
-		'type'     => 'link',
-		'settings' => 'instagram',
-		'label'    => esc_html__( 'Instagram', 'notation' ),
-		'section'  => 'footer',
-		'priority' => 10,
-	] );
+	Kirki::add_field( 'notation',
+		[
+			'type'     => 'link',
+			'settings' => 'twitter',
+			'label'    => esc_html__( 'Twitter', 'notation' ),
+			'section'  => 'footer',
+			'priority' => 10,
+		] );
 
-	Kirki::add_field( 'notation', [
-		'type'     => 'link',
-		'settings' => 'twitter',
-		'label'    => esc_html__( 'Twitter', 'notation' ),
-		'section'  => 'footer',
-		'priority' => 10,
-	] );
-
-	Kirki::add_field( 'notation', [
-		'type'     => 'link',
-		'settings' => 'facebook',
-		'label'    => esc_html__( 'Facebook', 'notation' ),
-		'section'  => 'footer',
-		'priority' => 10,
-	] );
+	Kirki::add_field( 'notation',
+		[
+			'type'     => 'link',
+			'settings' => 'facebook',
+			'label'    => esc_html__( 'Facebook', 'notation' ),
+			'section'  => 'footer',
+			'priority' => 10,
+		] );
 
 	// Footer
 
 
 	// Homepage
-	Kirki::add_field( 'blog_content', [
-		'type'        => 'switch',
-		'settings'    => 'blog_content',
-		'label'       => esc_html__( 'Default content of blog page', 'notation' ),
-		'section'     => 'blog_opts',
-		'default'     => 'on',
-		'priority'    => 10,
-		'choices'     => [
-			'on'  => esc_html__( 'Show latest posts', 'notation' ),
-			'off' => esc_html__( 'Show latest sticky post', 'notation' ),
-		],
-	] );
+	Kirki::add_field( 'notation',
+		[
+			'type'        => 'text',
+			'settings'    => 'blog_title',
+			'label'       => esc_html__( 'Blog Title', 'notation' ),
+			'description' => esc_html__( 'Leave blank to show default blog archive title.', 'notation' ),
+			'section'     => 'blog_opts',
+			'priority'    => 10,
+			'default'     => esc_html__( 'Blog', 'notation' ),
+		] );
 
-	Kirki::add_field( 'theme_config_id', [
-		'active_callback' => [
-			[
-				'setting'  => 'blog_content',
-				'operator' => '==',
-				'value'    => false,
+	Kirki::add_field( 'blog_content',
+		[
+			'type'     => 'switch',
+			'settings' => 'blog_content',
+			'label'    => esc_html__( 'Default content of blog page', 'notation' ),
+			'section'  => 'blog_opts',
+			'default'  => 'on',
+			'priority' => 10,
+			'choices'  => [
+				'on'  => esc_html__( 'Show latest posts', 'notation' ),
+				'off' => esc_html__( 'Show latest sticky post', 'notation' ),
 			],
-		],
-		'type'        => 'custom',
-		'settings'    => 'custom_setting',
-		'section'     => 'blog_opts',
-		'default'         => '<p>' . __( "*If there is any sticky post, it will show the latest published post." , 'notation' ) . '</p>',
-		'priority'    => 10,
-	] );
+		] );
+
+	Kirki::add_field( 'theme_config_id',
+		[
+			'active_callback' => [
+				[
+					'setting'  => 'blog_content',
+					'operator' => '==',
+					'value'    => false,
+				],
+			],
+			'type'            => 'custom',
+			'settings'        => 'custom_setting',
+			'section'         => 'blog_opts',
+			'default'         => '<p>' . __( "*If there is any sticky post, it will show the latest published post.",
+					'notation' ) . '</p>',
+			'priority'        => 10,
+		] );
 	// Homepage
 
 	function wp_indigo_add_edit_icons( $wp_customize ) {

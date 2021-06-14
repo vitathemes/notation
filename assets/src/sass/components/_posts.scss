@@ -167,7 +167,7 @@
   font-size: rem(13px);
   line-height: rem(20px);
   font-weight: 400;
-  margin: rem(3px) 0 rem(16px);
+  margin: rem(3px) 0;
   color: $notation_neutral_primary_color;
 
   * {
@@ -242,6 +242,7 @@
   flex-wrap: wrap;
   font-size: rem(13px);
   line-height: rem(20px);
+  margin-top: rem(16px);
 }
 
 .c-post__cats {
@@ -275,6 +276,7 @@
   position: relative;
   border-radius: $notation_global_radius2x;
   transition: $notation_global_transition;
+  margin-bottom: 0.5rem;
 
   &:hover {
     background-color: $notation_neutral_tertiary_color;

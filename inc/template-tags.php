@@ -264,3 +264,43 @@ if ( ! function_exists( 'notation_posts_pagination' ) ) :
 		) );
 	}
 endif;
+
+
+	if ( ! function_exists( 'notation_footer_credit_text' ) ) :
+	/**
+	 * Footer Credit Text
+	 */
+	function notation_footer_credit_text() {
+		$allowed_html = [
+			'a'      => [
+				'href'  => [],
+				'title' => [],
+			],
+			'br'     => [],
+			'em'     => [],
+			'strong' => [],
+			'p'      => [],
+		];
+
+		if ( get_privacy_policy_url() ) {
+			$notation_credit = '<span>%s</span><a href="%s" class="customize-unpreviewable">%s</a> | <a href="%s">%s</a>';
+			echo wp_kses(
+				sprintf( $notation_credit,
+					esc_html__( 'Notation theme by ', 'notation' ),
+					esc_url( 'https://vitathemes.com' ),
+					esc_html__( 'VitaThemes', 'notation' ),
+					esc_url( get_privacy_policy_url() ),
+					esc_html__( 'Privacy', 'notation' ) ),
+				$allowed_html );
+		} else {
+			$notation_credit = '<span>%s</span><a href="%s" class="customize-unpreviewable">%s</a>';
+			echo wp_kses(
+				sprintf( $notation_credit,
+					esc_html__( 'Notation theme by ', 'notation' ),
+					esc_url( 'https://vitathemes.com' ),
+					esc_html__( 'VitaThemes', 'notation' ) ),
+				$allowed_html );
+		}
+
+	}
+endif;

@@ -7,8 +7,7 @@
  * @package Notation
  */
 
-
-if ( is_singular() || $_SERVER["REQUEST_URI"] == '/' && is_home() && ! get_theme_mod( 'blog_content', true ) && ! is_page() ) :
+if ( is_singular() || ! notation_is_page_for_posts() && ! get_theme_mod( 'blog_content', true ) && ! is_page() && ! is_archive() ) :
 	$classes = "c-post c-post--single";
 	if ( is_home() && get_theme_mods( 'blog_content', true ) || is_archive() ) {
 		$classes .= " c-post--default-post";

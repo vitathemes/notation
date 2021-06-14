@@ -78,11 +78,11 @@
   }
 
   &:hover {
-    border-color: $notation_branding_color;
-    background-color: $notation_neutral_white;
+    border-color: $notation_neutral_secondary_color;
+    background-color: $notation_neutral_secondary_color;
 
     .c-sidebar__toggle__icon {
-      fill: $notation_branding_color;
+      //fill: $notation_branding_color;
     }
   }
 

@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-<?php if ( ! get_theme_mod( 'blog_content', true ) ) :
+<?php if ( ! notation_is_page_for_posts() && ! get_theme_mod( 'blog_content', true ) ) :
 	get_sidebar(); ?>
     <main id="primary" class="c-main">
 <?php
@@ -25,14 +25,18 @@ else: ?>
 
     <div class="c-main__header">
 		<?php
-		the_archive_title( '<h1 class="c-main__title">', '</h1>' );
-		the_archive_description( '<div class="archive-description">', '</div>' );
+		if ( get_theme_mod( 'blog_title', false ) ) {
+			echo '<h1 class="c-main__title">' . esc_html(get_theme_mod( 'blog_title')) . '</h1>';
+		} else {
+			the_archive_title( '<h1 class="c-main__title">', '</h1>' );
+			the_archive_description( '<div class="archive-description">', '</div>' );
+		}
 		?>
     </div>
 <?php endif; ?>
     <div class="c-main__wrapper">
-		 <?php
-		if ($_SERVER["REQUEST_URI"] == '/' && is_home() && (! get_theme_mod( 'blog_content', true )) ) {
+		<?php
+		if ( ! notation_is_page_for_posts() && ( ! get_theme_mod( 'blog_content', true ) ) ) {
 			notation_show_latest_post();
 		} else {
 			if ( have_posts() ) :

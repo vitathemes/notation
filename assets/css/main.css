@@ -865,7 +865,7 @@ ul li::marker {
   padding: 1rem 0.875rem;
   display: flex;
   flex-direction: column;
-  transition: 0.25s;
+  transition: 0.8s;
   margin-left: auto;
   margin-right: auto; }
   @media (min-width: 64em) {
@@ -884,12 +884,12 @@ ul li::marker {
       padding: 3rem 8%; } }
 
 .c-main__title {
-  margin: 0 0 0.875rem;
-  padding-left: 0.875rem; }
+  margin: 0 0 0.875rem; }
 
 .c-main__desc {
   margin: 0 0 1.25rem;
-  padding-left: 0.875rem; }
+  font-size: 1rem;
+  color: var(--notation-secondary-color); }
 
 .c-sidebar {
   position: relative;
@@ -958,10 +958,8 @@ ul li::marker {
     .c-sidebar__toggle {
       display: flex; } }
   .c-sidebar__toggle:hover {
-    border-color: var(--notation-branding-color);
-    background-color: #fff; }
-    .c-sidebar__toggle:hover .c-sidebar__toggle__icon {
-      fill: var(--notation-branding-color); }
+    border-color: var(--notation-tertiary-color);
+    background-color: var(--notation-tertiary-color); }
   .c-sidebar__toggle.is-active {
     transform-origin: center center;
     transform: rotate(180deg); }
@@ -1208,7 +1206,7 @@ body.admin-bar .c-nav {
   font-size: 0.8125rem;
   line-height: 1.25rem;
   font-weight: 400;
-  margin: 0.1875rem 0 1rem;
+  margin: 0.1875rem 0;
   color: var(--notation-secondary-color); }
   .c-post__content * {
     max-width: 100%; }
@@ -1258,7 +1256,8 @@ body.admin-bar .c-nav {
   justify-content: space-between;
   flex-wrap: wrap;
   font-size: 0.8125rem;
-  line-height: 1.25rem; }
+  line-height: 1.25rem;
+  margin-top: 1rem; }
 
 .c-post__cats {
   margin-bottom: 1rem; }
@@ -1283,7 +1282,8 @@ body.admin-bar .c-nav {
   padding: 0.75rem 0.875rem;
   position: relative;
   border-radius: 0.45rem;
-  transition: 0.25s; }
+  transition: 0.25s;
+  margin-bottom: 0.5rem; }
   .c-post--archive:hover {
     background-color: var(--notation-quaternary-color); }
   .c-post--archive.is-selected-post {
@@ -1674,7 +1674,7 @@ body.admin-bar .c-nav {
   .c-social-networks__link:first-child {
     margin-left: 0; }
   .c-social-networks__link:hover {
-    color: var(--notation-branding-accent-color); }
+    color: var(--notation-secondary-color); }
 
 .comments-area .comment-form-comment textarea {
   width: 100%;

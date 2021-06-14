@@ -22,41 +22,27 @@
                         </div>
 					<?php endif; ?>
                     <div class="c-footer__copyright__text">
-						<?php $allowed_html = [
-							'a'      => [
-								'href' => [],
-								'title' => [],
-							],
-							'br'     => [],
-							'em'     => [],
-							'strong' => [],
-							'p'      => [],
-						];
-						echo wp_kses( get_theme_mod( 'copyright_text',
-							sprintf( '<span>%s</span><a href="%s" class="customize-unpreviewable">%s</a>',
-								esc_html__( 'Notation theme by ', 'notation' ),
-								esc_url( 'https://vitathemes.com' ),
-								esc_html__( 'VitaThemes', 'notation' ) ) ),
-							$allowed_html );
+						<?php
+						notation_footer_credit_text();
 						?>
                     </div>
                 </div>
                 <div class="c-social-networks">
-                    <?php if (get_theme_mod('instagram', false)): ?>
-                    <a class="c-social-networks__link" target="_blank" href="<?php echo esc_url(get_theme_mod('instagram')); ?>">
-                        Instagram
-                        </span></a>
-	                <?php endif; ?>
-	                <?php if (get_theme_mod('twitter', false)): ?>
-                    <a class="c-social-networks__link" target="_blank" href="<?php echo esc_url(get_theme_mod('twitter')); ?>">
-                        Twitter
-                    </a>
-	                <?php endif; ?>
-	                <?php if (get_theme_mod('facebook', false)): ?>
-                    <a class="c-social-networks__link" target="_blank" href="<?php echo esc_url(get_theme_mod('facebook')); ?>">
-                        Facebook
-                    </a>
-	                <?php endif; ?>
+					<?php if ( get_theme_mod( 'instagram', false ) ): ?>
+                        <a class="c-social-networks__link" target="_blank" href="<?php echo esc_url( get_theme_mod( 'instagram' ) ); ?>">
+                            Instagram
+                            </span></a>
+					<?php endif; ?>
+					<?php if ( get_theme_mod( 'twitter', false ) ): ?>
+                        <a class="c-social-networks__link" target="_blank" href="<?php echo esc_url( get_theme_mod( 'twitter' ) ); ?>">
+                            Twitter
+                        </a>
+					<?php endif; ?>
+					<?php if ( get_theme_mod( 'facebook', false ) ): ?>
+                        <a class="c-social-networks__link" target="_blank" href="<?php echo esc_url( get_theme_mod( 'facebook' ) ); ?>">
+                            Facebook
+                        </a>
+					<?php endif; ?>
                 </div>
             </div>
         </div><!-- .site-info -->
