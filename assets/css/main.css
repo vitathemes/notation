@@ -1382,7 +1382,7 @@ body.admin-bar .c-nav {
   color: var(--notation-branding-color);
   text-decoration: none; }
   .s-post-content a:hover {
-    color: var(--notation-branding-accent-color); }
+    color: var(--notation-secondary-color); }
 
 .c-search-form {
   position: relative; }
