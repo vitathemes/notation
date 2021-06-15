@@ -419,15 +419,13 @@ template {
 
 /* Elements */
 html {
-  scroll-behavior: smooth; }
-
-body {
+  scroll-behavior: smooth;
   font: 16px/1.563 "Inter", Arial; }
   @media (min-width: 48em) {
-    body {
+    html {
       font: 16px/1.563 "Inter", Arial; } }
   @media (min-width: 64em) {
-    body {
+    html {
       font: 16px/1.563 "Inter", Arial; } }
 
 * {

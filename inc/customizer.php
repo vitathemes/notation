@@ -185,6 +185,57 @@ if ( function_exists( 'kirki' ) ) {
 						],
 					],
 					'type'            => 'typography',
+					'settings'        => 'text_typography',
+					'label'           => esc_html__( 'Base font', 'notation' ),
+					'section'         => 'typography',
+					'default'         => [
+						'font-family'    => 'DM Sans',
+						'variant'        => '400',
+						'font-size'      => '16px',
+						'line-height'    => '1.5',
+						'letter-spacing' => '0'
+						//'color'       => '#000',
+					],
+					'choices'         => [
+						'fonts' => [
+							'standard' => [
+								'Arial',
+								'sans-serif',
+								'sans',
+								'Helvetica',
+								'Verdana',
+								'Trebuchet',
+								'Georgia',
+								'Times New Roman',
+								'Palatino',
+								'Myriad Pro',
+								'Lucida',
+								'Gill Sans',
+								'Impact',
+								'monospace',
+								'Tahoma',
+							],
+						],
+					],
+					'transport'       => 'auto',
+					'priority'        => 10,
+					'output'          => array(
+						array(
+							'element' => 'html',
+						),
+					),
+				] );
+
+			Kirki::add_field( 'notation',
+				[
+					'active_callback' => [
+						[
+							'setting'  => 'use_google_fonts',
+							'operator' => '==',
+							'value'    => true,
+						],
+					],
+					'type'            => 'typography',
 					'settings'        => 'typography_h1',
 					'label'           => esc_html__( 'H1', 'notation' ),
 					'section'         => 'typography',
@@ -471,58 +522,6 @@ if ( function_exists( 'kirki' ) ) {
 					'output'          => array(
 						array(
 							'element' => array( 'h6', '.h6' ),
-						),
-					),
-				] );
-
-
-			Kirki::add_field( 'notation',
-				[
-					'active_callback' => [
-						[
-							'setting'  => 'use_google_fonts',
-							'operator' => '==',
-							'value'    => true,
-						],
-					],
-					'type'            => 'typography',
-					'settings'        => 'text_typography',
-					'label'           => esc_html__( 'Base font', 'notation' ),
-					'section'         => 'typography',
-					'default'         => [
-						'font-family'    => 'DM Sans',
-						'variant'        => '400',
-						'font-size'      => '16px',
-						'line-height'    => '1.5',
-						'letter-spacing' => '0'
-						//'color'       => '#000',
-					],
-					'choices'         => [
-						'fonts' => [
-							'standard' => [
-								'Arial',
-								'sans-serif',
-								'sans',
-								'Helvetica',
-								'Verdana',
-								'Trebuchet',
-								'Georgia',
-								'Times New Roman',
-								'Palatino',
-								'Myriad Pro',
-								'Lucida',
-								'Gill Sans',
-								'Impact',
-								'monospace',
-								'Tahoma',
-							],
-						],
-					],
-					'transport'       => 'auto',
-					'priority'        => 10,
-					'output'          => array(
-						array(
-							'element' => 'body',
 						),
 					),
 				] );
