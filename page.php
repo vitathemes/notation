@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-    <main id="primary" class="c-main js-main">
+    <main id="primary" class="c-main is-centered js-main">
         <div class="c-main__wrapper">
 
 		<?php

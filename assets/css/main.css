@@ -878,12 +878,50 @@ ul li::marker {
     .c-main {
       width: calc(60% - 12%);
       padding: 3rem 0;
-      position: absolute;
-      left: 70%;
-      transform: translateX(-50%); }
+      margin-right: auto;
+      margin-left: 9%; }
       .c-main.is-centered {
-        left: 50%;
-        transform: translateX(-50%); } }
+        margin-left: 9%; } }
+  @media screen and (min-width: 1600px) {
+    .c-main {
+      margin-left: 11%; }
+      .c-main.is-centered {
+        margin-left: 11%; } }
+  @media screen and (min-width: 1920px) {
+    .c-main {
+      margin-left: 13%; }
+      .c-main.is-centered {
+        margin-left: 13%; } }
+  @media screen and (min-width: 1600px) {
+    .c-main {
+      margin-left: 13%; }
+      .c-main.is-centered {
+        margin-left: 13%; } }
+  @media screen and (min-width: 2300px) {
+    .c-main {
+      margin-left: 15%; }
+      .c-main.is-centered {
+        margin-left: 15%; } }
+  @media screen and (min-width: 2560px) {
+    .c-main {
+      margin-left: 17%; }
+      .c-main.is-centered {
+        margin-left: 17%; } }
+  @media screen and (min-width: 2880px) {
+    .c-main {
+      margin-left: 18%; }
+      .c-main.is-centered {
+        margin-left: 18%; } }
+  @media screen and (min-width: 3840px) {
+    .c-main {
+      margin-left: 20%; }
+      .c-main.is-centered {
+        margin-left: 20%; } }
+  @media screen and (min-width: 5120px) {
+    .c-main {
+      margin-left: 22%; }
+      .c-main.is-centered {
+        margin-left: 22%; } }
   @media (min-width: 80em) {
     .c-main {
       width: calc(60% - 10%);
