@@ -24,26 +24,21 @@
                     <div class="c-footer__copyright__text">
 						<?php
 						notation_footer_credit_text();
+						notation_footer_copyright_text();
 						?>
                     </div>
                 </div>
-                <div class="c-social-networks">
-					<?php if ( get_theme_mod( 'instagram', false ) ): ?>
-                        <a class="c-social-networks__link" target="_blank" href="<?php echo esc_url( get_theme_mod( 'instagram' ) ); ?>">
-                            Instagram
-                            </span></a>
-					<?php endif; ?>
-					<?php if ( get_theme_mod( 'twitter', false ) ): ?>
-                        <a class="c-social-networks__link" target="_blank" href="<?php echo esc_url( get_theme_mod( 'twitter' ) ); ?>">
-                            Twitter
-                        </a>
-					<?php endif; ?>
-					<?php if ( get_theme_mod( 'facebook', false ) ): ?>
-                        <a class="c-social-networks__link" target="_blank" href="<?php echo esc_url( get_theme_mod( 'facebook' ) ); ?>">
-                            Facebook
-                        </a>
-					<?php endif; ?>
-                </div>
+                <?php
+                if ( has_nav_menu( 'menu-2' ) ) {
+	                wp_nav_menu(
+		                array(
+			                'theme_location' => 'menu-2',
+			                'menu_class'     => 'c-nav c-nav--footer s-nav js-nav',
+			                'container'      => '',
+		                )
+	                );
+                }
+                ?>
             </div>
         </div><!-- .site-info -->
     </div>

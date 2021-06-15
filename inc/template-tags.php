@@ -54,7 +54,7 @@ if ( ! function_exists( 'notation_comments_num' ) ) :
 			esc_html( get_comments_number() )
 		);
 
-		echo '<span class="c-post__comments"><a class="c-post__comments__link url fn n" href="'. get_the_permalink() .'#comments"> ' . $byline . '</a></span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<span class="c-post__comments"><a class="c-post__comments__link url fn n" href="' . get_the_permalink() . '#comments"> ' . $byline . '</a></span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
 endif;
@@ -266,7 +266,7 @@ if ( ! function_exists( 'notation_posts_pagination' ) ) :
 endif;
 
 
-	if ( ! function_exists( 'notation_footer_credit_text' ) ) :
+if ( ! function_exists( 'notation_footer_credit_text' ) ) :
 	/**
 	 * Footer Credit Text
 	 */
@@ -282,25 +282,40 @@ endif;
 			'p'      => [],
 		];
 
-		if ( get_privacy_policy_url() ) {
-			$notation_credit = '<span>%s</span><a href="%s" class="customize-unpreviewable">%s</a> | <a href="%s">%s</a>';
+		$notation_credit = '<span>%s</span><a href="%s" class="customize-unpreviewable">%s</a>';
+		echo wp_kses(
+			sprintf( $notation_credit,
+				esc_html__( 'Notation theme by ', 'notation' ),
+				esc_url( 'https://vitathemes.com' ),
+				esc_html__( 'VitaThemes', 'notation' ) ),
+			$allowed_html );
+
+	}
+endif;
+
+
+if ( ! function_exists( 'notation_footer_copyright_text' ) ) :
+	/**
+	 * Footer Credit Text
+	 */
+	function notation_footer_copyright_text() {
+		if ( get_theme_mod( 'copyright_text', '' ) ) {
+			$allowed_html = [
+				'a'      => [
+					'href'  => [],
+					'title' => [],
+				],
+				'br'     => [],
+				'em'     => [],
+				'strong' => [],
+				'p'      => [],
+			];
+
+			$notation_credit = '<p>%s</p>';
 			echo wp_kses(
 				sprintf( $notation_credit,
-					esc_html__( 'Notation theme by ', 'notation' ),
-					esc_url( 'https://vitathemes.com' ),
-					esc_html__( 'VitaThemes', 'notation' ),
-					esc_url( get_privacy_policy_url() ),
-					esc_html__( 'Privacy', 'notation' ) ),
-				$allowed_html );
-		} else {
-			$notation_credit = '<span>%s</span><a href="%s" class="customize-unpreviewable">%s</a>';
-			echo wp_kses(
-				sprintf( $notation_credit,
-					esc_html__( 'Notation theme by ', 'notation' ),
-					esc_url( 'https://vitathemes.com' ),
-					esc_html__( 'VitaThemes', 'notation' ) ),
+					get_theme_mod( 'copyright_text', '' ) ),
 				$allowed_html );
 		}
-
 	}
 endif;

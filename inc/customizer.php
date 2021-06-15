@@ -769,27 +769,9 @@ if ( function_exists( 'kirki' ) ) {
 	// Footer
 	Kirki::add_field( 'notation',
 		[
-			'type'     => 'link',
-			'settings' => 'instagram',
-			'label'    => esc_html__( 'Instagram', 'notation' ),
-			'section'  => 'footer',
-			'priority' => 10,
-		] );
-
-	Kirki::add_field( 'notation',
-		[
-			'type'     => 'link',
-			'settings' => 'twitter',
-			'label'    => esc_html__( 'Twitter', 'notation' ),
-			'section'  => 'footer',
-			'priority' => 10,
-		] );
-
-	Kirki::add_field( 'notation',
-		[
-			'type'     => 'link',
-			'settings' => 'facebook',
-			'label'    => esc_html__( 'Facebook', 'notation' ),
+			'type'     => 'textarea',
+			'settings' => 'copyright_text',
+			'label'    => esc_html__( 'Copyright', 'notation' ),
 			'section'  => 'footer',
 			'priority' => 10,
 		] );
@@ -797,9 +779,26 @@ if ( function_exists( 'kirki' ) ) {
 	// Footer
 
 
-	// Homepage
+	// Homepage - Blog
 	Kirki::add_field( 'notation',
 		[
+			'type'        => 'toggle',
+			'settings'    => 'show_blog_title',
+			'label'       => esc_html__( 'Show Blog Title', 'notation' ),
+			'section'     => 'blog_opts',
+			'priority'    => 10,
+			'default'     => 1,
+		] );
+
+	Kirki::add_field( 'notation',
+		[
+			'active_callback' => [
+				[
+					'setting'  => 'show_blog_title',
+					'operator' => '==',
+					'value'    => true,
+				],
+			],
 			'type'        => 'text',
 			'settings'    => 'blog_title',
 			'label'       => esc_html__( 'Blog Title', 'notation' ),
@@ -819,7 +818,7 @@ if ( function_exists( 'kirki' ) ) {
 			'priority' => 10,
 			'choices'  => [
 				'on'  => esc_html__( 'Show latest posts', 'notation' ),
-				'off' => esc_html__( 'Show latest sticky post', 'notation' ),
+				'off' => esc_html__( 'Show latest post', 'notation' ),
 			],
 		] );
 

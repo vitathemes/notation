@@ -97,3 +97,45 @@ body.admin-bar .c-nav {
     }
   }
 }
+
+.c-nav--footer {
+  font-size: rem(13px);
+  line-height: rem(21px);
+  display: flex;
+  align-items: flex-end;
+  margin-top: rem(16px);
+
+  @include mq(desktop) {
+    margin-top: 0;
+  }
+
+  li {
+    padding: 0;
+    margin: rem(10px 16px) 0 0;
+  }
+
+  a {
+    white-space: nowrap;
+    color: $notation_branding_color;
+    text-decoration: none;
+    font-size: rem(13px);
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:hover {
+      color: $notation_neutral_primary_color;
+    }
+  }
+}
+
+.rtl {
+  .c-nav--footer a {
+    margin-right: 1.25rem;
+
+    &:first-child {
+      margin-right: 0;
+    }
+  }
+}

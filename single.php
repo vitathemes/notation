@@ -12,7 +12,7 @@ get_header();
 
 <?php get_sidebar(); ?>
 
-    <main id="primary" class="c-main">
+    <main id="primary" class="c-main js-main">
     <div class="c-main__wrapper">
 		<?php
 		while ( have_posts() ) :

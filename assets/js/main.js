@@ -7,6 +7,7 @@ if (document.querySelector('.js-sidebar-toggle')) {
     document.querySelector('.js-sidebar-toggle').addEventListener('click', () => {
         document.querySelector('.js-sidebar-toggle').classList.toggle('is-active');
         document.querySelector('.js-sidebar').classList.toggle('is-minimized');
+        document.querySelector('.js-main').classList.toggle('is-centered');
     });
 }
 

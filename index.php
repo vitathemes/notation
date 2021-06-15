@@ -17,19 +17,27 @@ get_header();
 
 <?php if ( ! notation_is_page_for_posts() && ! get_theme_mod( 'blog_content', true ) ) :
 	get_sidebar(); ?>
-    <main id="primary" class="c-main">
+
+    <main id="primary" class="c-main js-main">
 <?php
 else: ?>
 
-    <main id="primary" class="c-main">
+    <main id="primary" class="c-main js-main">
 
     <div class="c-main__header">
 		<?php
-		if ( get_theme_mod( 'blog_title', false ) ) {
-			echo '<h1 class="c-main__title">' . esc_html(get_theme_mod( 'blog_title')) . '</h1>';
-		} else {
-			the_archive_title( '<h1 class="c-main__title">', '</h1>' );
-			the_archive_description( '<div class="archive-description">', '</div>' );
+		if ( get_option( 'page_for_posts' ) && get_theme_mod( 'show_blog_title', true ) ) { ?>
+            <h1 class="c-main__title">
+				<?= get_the_title( get_option( 'page_for_posts' ) ); ?>
+            </h1>
+			<?php
+		} elseif ( get_theme_mod( 'show_blog_title', true ) ) {
+			if ( get_theme_mod( 'blog_title', false ) ) {
+				echo '<h1 class="c-main__title">' . esc_html( get_theme_mod( 'blog_title' ) ) . '</h1>';
+			} else {
+				the_archive_title( '<h1 class="c-main__title">', '</h1>' );
+				the_archive_description( '<div class="archive-description">', '</div>' );
+			}
 		}
 		?>
     </div>

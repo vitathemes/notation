@@ -50,6 +50,7 @@ if ( ! function_exists( 'notation_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => __( 'Header Menu', 'notation' ),
+			'menu-2' => __( 'Footer Menu', 'notation' ),
 		) );
 
 
@@ -129,16 +130,12 @@ add_action( 'after_setup_theme', 'notation_content_width', 0 );
 function notation_scripts() {
 	wp_enqueue_style( 'notation-style', get_template_directory_uri() . '/assets/css/main.css', array(), '1.0.1' );
 
-	//wp_enqueue_script( 'notation-vendor-scripts', get_template_directory_uri() . '/assets/js/vendor.min.js', array(), THEME_VERSION, true );
 	wp_enqueue_script( 'notation-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), THEME_VERSION, true );
 	wp_enqueue_script( 'notation-main-scripts', get_template_directory_uri() . '/assets/js/main.js', array(), THEME_VERSION, true );
-
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-
-
 }
 add_action( 'wp_enqueue_scripts', 'notation_scripts' );
 

@@ -9,7 +9,8 @@
 
 get_header();
 ?>
-    <main id="primary" class="c-main">
+
+    <main id="primary" class="c-main js-main">
 
     <div class="c-main__header">
         <h1 class="c-main__title">
