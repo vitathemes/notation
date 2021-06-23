@@ -28,7 +28,7 @@ else: ?>
 		<?php
 		if ( get_option( 'page_for_posts' ) && get_theme_mod( 'show_blog_title', true ) ) { ?>
             <h1 class="c-main__title">
-				<?= get_the_title( get_option( 'page_for_posts' ) ); ?>
+				<?php echo esc_html(get_the_title( get_option( 'page_for_posts' ) )); ?>
             </h1>
 			<?php
 		} elseif ( get_theme_mod( 'show_blog_title', true ) ) {
