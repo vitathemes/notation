@@ -840,19 +840,10 @@ if ( function_exists( 'kirki' ) ) {
 	// Homepage
 
 	function wp_indigo_add_edit_icons( $wp_customize ) {
-		$wp_customize->selective_refresh->add_partial( 'show_slider_menu_index',
-			array(
-				'selector' => '.c-categories-list',
-			) );
-
-		$wp_customize->selective_refresh->add_partial( 'search_header',
-			array(
-				'selector' => '.c-header .c-search-form',
-			) );
 
 		$wp_customize->selective_refresh->add_partial( 'show_post_thumbnail',
 			array(
-				'selector' => '.c-post--single .c-post__thumbnail--single',
+				'selector' => '.c-post--single .c-post__thumbnail',
 			) );
 
 		$wp_customize->selective_refresh->add_partial( 'show_post_date',
@@ -860,20 +851,9 @@ if ( function_exists( 'kirki' ) ) {
 				'selector' => '.c-post--single .c-post__date__published',
 			) );
 
-		$wp_customize->selective_refresh->add_partial( 'show_share_icons',
-			array(
-				'selector' => '.c-social-share',
-			) );
-
 		$wp_customize->selective_refresh->add_partial( 'show_post_tags',
 			array(
 				'selector' => '.c-post__footer__tags',
-			) );
-
-
-		$wp_customize->selective_refresh->add_partial( 'show_posts_thumbnail',
-			array(
-				'selector' => '.c-post__thumbnail--single',
 			) );
 	}
 
