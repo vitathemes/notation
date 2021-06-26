@@ -1,4 +1,4 @@
-=== Notation ===
+=== Wp_notes ===
 
 Contributors: vitathemes
 Tags: custom-background, custom-logo, custom-menu, threaded-comments, translation-ready
@@ -10,11 +10,11 @@ Stable tag: 1.0.0
 License: GPL-2.0-or-later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Notation is a simple, super fast, and content-first blog theme
+Wp-Notes is a simple, super fast, and content-first blog theme
 
 == Description ==
 
-Notation is simple, super fast, and content-first blog theme
+Wp-Notes is simple, super fast, and content-first blog theme
 
 == Features ==
 * Notebook design
@@ -53,7 +53,7 @@ Notation is simple, super fast, and content-first blog theme
 
 == Copyright ==
 
-Notation is distributed under the terms of the GNU GPL.
+Wp-Notes is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -65,9 +65,9 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-Notation is distributed under the terms of the GNU GPL version 2.0
+Wp-Notes is distributed under the terms of the GNU GPL version 2.0
 
-Notation bundles the following third-party resources:
+Wp-Notes bundles the following third-party resources:
 
 Phosphor by Phosphor Icons
 License: MIT, https://github.com/phosphor-icons/phosphor-icons/blob/master/LICENSE

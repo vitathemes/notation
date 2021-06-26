@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Notation
+ * @package Wp_notes
  */
 
 ?>
@@ -18,13 +18,13 @@
                 <div class="c-footer__copyright">
 					<?php if ( get_theme_mod( 'show_branding_in_footer', true ) ) : ?>
                         <div class="c-footer__branding s-footer-branding">
-							<?php notation_branding(); ?>
+							<?php wp_notes_branding(); ?>
                         </div>
 					<?php endif; ?>
                     <div class="c-footer__copyright__text">
 						<?php
-						notation_footer_credit_text();
-						notation_footer_copyright_text();
+						wp_notes_footer_credit_text();
+						wp_notes_footer_copyright_text();
 						?>
                     </div>
                 </div>

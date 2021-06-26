@@ -6,7 +6,7 @@
   top: 0;
   background-color: rgba(255,255,255, 0.85);
   z-index: 10;
-  transition: $notation_global_transition;
+  transition: $wp_notes_global_transition;
   visibility: hidden;
   opacity: 0;
 
@@ -35,7 +35,7 @@
   &:hover {
 
     .o-popup__close__icon {
-      fill: $notation_headings_color;
+      fill: $wp_notes_headings_color;
     }
   }
 }
@@ -62,8 +62,8 @@
 .o-popup__close__icon {
   width: 3rem;
   height: 3rem;
-  fill: $notation_neutral_primary_color;
-  transition: $notation_global_transition;
+  fill: $wp_notes_neutral_primary_color;
+  transition: $wp_notes_global_transition;
 
   @include mq(desktop) {
     width: 4.5rem;
@@ -81,7 +81,7 @@
 
 .o-popup-btn {
   background-color: transparent;
-  color: $notation_branding_color;
+  color: $wp_notes_branding_color;
   border: none;
   display: flex;
   align-items: center;
@@ -99,5 +99,5 @@
 
 .o-popup-btn__icon {
   margin-right: rem(8px);
-  fill: $notation_branding_color;
+  fill: $wp_notes_branding_color;
 }

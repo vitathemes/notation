@@ -1,9 +1,9 @@
 a {
-  transition: $notation_global_transition;
-  color: $notation_neutral_black;
+  transition: $wp_notes_global_transition;
+  color: $wp_notes_neutral_black;
 
   &:hover {
-    color: $notation_branding_color;
+    color: $wp_notes_branding_color;
   }
 }
 

@@ -106,15 +106,15 @@ msgstr ""
 msgid "Next:"
 msgstr ""
 
-#: classes/class_notation_walker_comment.php:62
+#: classes/class_wp_notes_walker_comment.php:62
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: classes/class_notation_walker_comment.php:80
+#: classes/class_wp_notes_walker_comment.php:80
 msgid "Edit"
 msgstr ""
 
-#: classes/class_notation_walker_nav_menu.php:27
+#: classes/class_wp_notes_walker_nav_menu.php:27
 msgid "Toggle sub menu"
 msgstr ""
 
@@ -336,7 +336,7 @@ msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
 #: inc/template-tags.php:289 inc/template-tags.php:299
-msgid "Notation theme by "
+msgid "Wp-Notes theme by "
 msgstr ""
 
 #: inc/template-tags.php:291 inc/template-tags.php:301

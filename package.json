@@ -1,7 +1,7 @@
 {
-  "name": "notation",
+  "name": "wp-notes",
   "version": "1.0.0",
-  "description": "Notation is a simple, super fast, and content-first blog theme",
+  "description": "Wp-Notes is a simple, super fast, and content-first blog theme",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

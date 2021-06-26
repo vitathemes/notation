@@ -6,7 +6,7 @@
  * @package     WordPress
  * @subpackage  Comment_Walker
  */
-class Notation_walker_comment extends Walker_Comment {
+class Wp_notes_walker_comment extends Walker_Comment {
 	/**
 	 * Output a comment in the HTML5 format. Don't worry, we're
 	 * just extending default WordPress functionality.
@@ -60,7 +60,7 @@ class Notation_walker_comment extends Walker_Comment {
 
 					<?php if ( ! $comment->comment_approved ): ?>
                         <p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.',
-								'notation' ); ?></p>
+								'wp-notes' ); ?></p>
 					<?php endif; ?>
                     <div class="comment-content__comment">
 						<?php comment_text(); ?>
@@ -77,7 +77,7 @@ class Notation_walker_comment extends Walker_Comment {
                     </div>
 					<?php
 					// Output Edit link
-					edit_comment_link( __( 'Edit', 'notation' ), '<span class="edit-link">', '</span>' );
+					edit_comment_link( __( 'Edit', 'wp-notes' ), '<span class="edit-link">', '</span>' );
 					?>
                 </div>
             </div>

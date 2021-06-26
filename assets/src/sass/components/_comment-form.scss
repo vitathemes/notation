@@ -12,18 +12,18 @@
     font-size: rem(13px);
     letter-spacing: 0.025em;
     text-transform: capitalize;
-    background: $notation_branding_color;
-    color: $notation_neutral_white;
+    background: $wp_notes_branding_color;
+    color: $wp_notes_neutral_white;
     box-sizing: border-box;
-    border-radius: $notation_global_radius;
-    transition: $notation_global_transition;
+    border-radius: $wp_notes_global_radius;
+    transition: $wp_notes_global_transition;
     padding: rem(12px) rem(16px);
     cursor: pointer;
     font-weight: 500;
     border: none;
 
     &:hover {
-      background-color: $notation_branding_color_accent;
+      background-color: $wp_notes_branding_color_accent;
     }
   }
 
@@ -37,10 +37,10 @@
 }
 
 #cancel-comment-reply-link {
-  color: $notation_branding_color;
+  color: $wp_notes_branding_color;
   text-decoration: none;
 
   &:hover {
-    color: $notation_neutral_black;
+    color: $wp_notes_neutral_black;
   }
 }

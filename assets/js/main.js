@@ -27,13 +27,13 @@ const searchFormBtn = search.querySelector('.js-search-form-btn');
 
 //document.activeElement
 const KEYCODE_TAB = 9;
-let notation_focus, notation_isToggleItem, notation_isBackward;
+let wp_notes_focus, wp_notes_isToggleItem, wp_notes_isBackward;
 
 document.addEventListener('keydown', function (e) {
     if (e.shiftKey && e.keyCode == KEYCODE_TAB) {
-        notation_isBackward = true;
+        wp_notes_isBackward = true;
     } else {
-        notation_isBackward = false;
+        wp_notes_isBackward = false;
     }
 });
 
@@ -56,13 +56,13 @@ search.addEventListener('keydown', function (e) {
 });
 
 navCloseBtn.addEventListener('blur', function (e) {
-    if (notation_isBackward) {
+    if (wp_notes_isBackward) {
         lastFocusableEl.focus();
     }
 });
 
 lastFocusableEl.addEventListener('blur', function (e) {
-    if (!notation_isBackward) {
+    if (!wp_notes_isBackward) {
         navCloseBtn.focus();
     }
 });
@@ -73,7 +73,7 @@ navCloseBtn.addEventListener('click', function (e) {
 
 navToggleBtn.addEventListener('blur', function (e) {
     if (document.querySelector('.c-header__nav.toggled')) {
-        if (notation_isBackward) {
+        if (wp_notes_isBackward) {
             lastFocusableEl.focus();
         }
     }

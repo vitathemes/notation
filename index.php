@@ -9,13 +9,13 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Notation
+ * @package Wp_notes
  */
 
 get_header();
 ?>
 
-<?php if ( ! notation_is_page_for_posts() && ! get_theme_mod( 'blog_content', true ) ) :
+<?php if ( ! wp_notes_is_page_for_posts() && ! get_theme_mod( 'blog_content', true ) ) :
 	get_sidebar(); ?>
 
     <main id="primary" class="c-main js-main">
@@ -44,8 +44,8 @@ else: ?>
 <?php endif; ?>
     <div class="c-main__wrapper">
 		<?php
-		if ( ! notation_is_page_for_posts() && ( ! get_theme_mod( 'blog_content', true ) ) ) {
-			notation_show_latest_post();
+		if ( ! wp_notes_is_page_for_posts() && ( ! get_theme_mod( 'blog_content', true ) ) ) {
+			wp_notes_show_latest_post();
 		} else {
 			if ( have_posts() ) :
 
@@ -72,7 +72,7 @@ else: ?>
 				?>
                 <div class="c-pagination s-pagination">
 					<?php
-					notation_posts_pagination();
+					wp_notes_posts_pagination();
 					?>
                 </div>
 			<?php

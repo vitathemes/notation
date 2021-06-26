@@ -1,11 +1,11 @@
 <?php
 /**
- * notation Theme Customizer
+ * wp_notes Theme Customizer
  *
- * @package notation
+ * @package wp_notes
  */
 
-function wp_notation_enqueue_customizer_style( $hook_suffix ) {
+function wp_wp_notes_enqueue_customizer_style( $hook_suffix ) {
 	// Load your css.
 	wp_register_style( 'kirki-styles-css',
 		get_template_directory_uri() . '/assets//css/kirki-controls-style.css',
@@ -14,7 +14,7 @@ function wp_notation_enqueue_customizer_style( $hook_suffix ) {
 	wp_enqueue_style( 'kirki-styles-css' );
 }
 
-add_action( 'admin_enqueue_scripts', 'wp_notation_enqueue_customizer_style' );
+add_action( 'admin_enqueue_scripts', 'wp_wp_notes_enqueue_customizer_style' );
 
 
 /**
@@ -22,7 +22,7 @@ add_action( 'admin_enqueue_scripts', 'wp_notation_enqueue_customizer_style' );
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function notation_customize_register( $wp_customize ) {
+function wp_notes_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -32,27 +32,27 @@ function notation_customize_register( $wp_customize ) {
 			'blogname',
 			array(
 				'selector'        => '.site-title a',
-				'render_callback' => 'notation_customize_partial_blogname',
+				'render_callback' => 'wp_notes_customize_partial_blogname',
 			)
 		);
 		$wp_customize->selective_refresh->add_partial(
 			'blogdescription',
 			array(
 				'selector'        => '.site-description',
-				'render_callback' => 'notation_customize_partial_blogdescription',
+				'render_callback' => 'wp_notes_customize_partial_blogdescription',
 			)
 		);
 	}
 }
 
-add_action( 'customize_register', 'notation_customize_register' );
+add_action( 'customize_register', 'wp_notes_customize_register' );
 
 /**
  * Render the site title for the selective refresh partial.
  *
  * @return void
  */
-function notation_customize_partial_blogname() {
+function wp_notes_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
 
@@ -61,22 +61,22 @@ function notation_customize_partial_blogname() {
  *
  * @return void
  */
-function notation_customize_partial_blogdescription() {
+function wp_notes_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function notation_customize_preview_js() {
-	wp_enqueue_script( 'notation-customizer',
+function wp_notes_customize_preview_js() {
+	wp_enqueue_script( 'wp_notes-customizer',
 		get_template_directory_uri() . '/js/customizer.js',
 		array( 'customize-preview' ),
 		THEME_VERSION,
 		true );
 }
 
-add_action( 'customize_preview_init', 'notation_customize_preview_js' );
+add_action( 'customize_preview_init', 'wp_notes_customize_preview_js' );
 
 
 /**
@@ -92,7 +92,7 @@ if ( function_exists( 'kirki' ) ) {
 
 
 			// Add config
-			Kirki::add_config( 'notation',
+			Kirki::add_config( 'wp-notes',
 				array(
 					'option_type' => 'theme_mod',
 				) );
@@ -101,8 +101,8 @@ if ( function_exists( 'kirki' ) ) {
 			Kirki::add_panel( 'elements',
 				array(
 					'priority'    => 10,
-					'title'       => esc_html__( 'Elements', 'notation' ),
-					'description' => esc_html__( 'Elements', 'notation' ),
+					'title'       => esc_html__( 'Elements', 'wp-notes' ),
+					'description' => esc_html__( 'Elements', 'wp-notes' ),
 				) );
 
 // Add sections \\
@@ -111,7 +111,7 @@ if ( function_exists( 'kirki' ) ) {
 // Branding
 			Kirki::add_section( 'colors',
 				array(
-					'title'    => esc_html__( 'Colors', 'notation' ),
+					'title'    => esc_html__( 'Colors', 'wp-notes' ),
 					'panel'    => '',
 					'priority' => 3,
 				) );
@@ -119,7 +119,7 @@ if ( function_exists( 'kirki' ) ) {
 // Typography
 			Kirki::add_section( 'typography',
 				array(
-					'title'      => esc_html__( 'Typography', 'notation' ),
+					'title'      => esc_html__( 'Typography', 'wp-notes' ),
 					'panel'      => '',
 					'priority'   => 4,
 					'capability' => 'edit_theme_options',
@@ -127,7 +127,7 @@ if ( function_exists( 'kirki' ) ) {
 
 			Kirki::add_section( 'blog_opts',
 				array(
-					'title'    => esc_html__( 'Blog Options', 'notation' ),
+					'title'    => esc_html__( 'Blog Options', 'wp-notes' ),
 					'panel'    => '',
 					'priority' => 6,
 				) );
@@ -135,28 +135,28 @@ if ( function_exists( 'kirki' ) ) {
 			// Posts
 			Kirki::add_section( 'single_opts',
 				array(
-					'title'    => esc_html__( 'Single Options', 'notation' ),
+					'title'    => esc_html__( 'Single Options', 'wp-notes' ),
 					'panel'    => 'elements',
 					'priority' => 6,
 				) );
 
 			Kirki::add_section( 'archive_opts',
 				array(
-					'title'    => esc_html__( 'Archive Options', 'notation' ),
+					'title'    => esc_html__( 'Archive Options', 'wp-notes' ),
 					'panel'    => 'elements',
 					'priority' => 6,
 				) );
 
 			Kirki::add_section( 'sidebar_opts',
 				array(
-					'title'    => esc_html__( 'Sidebar Options', 'notation' ),
+					'title'    => esc_html__( 'Sidebar Options', 'wp-notes' ),
 					'panel'    => 'elements',
 					'priority' => 6,
 				) );
 
 			Kirki::add_section( 'footer',
 				array(
-					'title'    => esc_html__( 'Footer', 'notation' ),
+					'title'    => esc_html__( 'Footer', 'wp-notes' ),
 					'panel'    => '',
 					'priority' => 6,
 				) );
@@ -165,17 +165,17 @@ if ( function_exists( 'kirki' ) ) {
 
 			// -- Typography Fields --
 			// <editor-fold desc="Typography">
-			Kirki::add_field( 'notation',
+			Kirki::add_field( 'wp-notes',
 				[
 					'type'     => 'toggle',
 					'settings' => 'use_google_fonts',
-					'label'    => esc_html__( 'Use google Fonts', 'notation' ),
+					'label'    => esc_html__( 'Use google Fonts', 'wp-notes' ),
 					'section'  => 'typography',
 					'default'  => 1,
 					'priority' => 10,
 				] );
 
-			Kirki::add_field( 'notation',
+			Kirki::add_field( 'wp-notes',
 				[
 					'active_callback' => [
 						[
@@ -186,15 +186,14 @@ if ( function_exists( 'kirki' ) ) {
 					],
 					'type'            => 'typography',
 					'settings'        => 'text_typography',
-					'label'           => esc_html__( 'Base font', 'notation' ),
+					'label'           => esc_html__( 'Base font', 'wp-notes' ),
 					'section'         => 'typography',
 					'default'         => [
 						'font-family'    => 'DM Sans',
 						'variant'        => '400',
-						'font-size'      => '16px',
+						'font-size'      => false,
 						'line-height'    => '1.5',
 						'letter-spacing' => '0'
-						//'color'       => '#000',
 					],
 					'choices'         => [
 						'fonts' => [
@@ -226,7 +225,7 @@ if ( function_exists( 'kirki' ) ) {
 					),
 				] );
 
-			Kirki::add_field( 'notation',
+			Kirki::add_field( 'wp-notes',
 				[
 					'active_callback' => [
 						[
@@ -237,7 +236,7 @@ if ( function_exists( 'kirki' ) ) {
 					],
 					'type'            => 'typography',
 					'settings'        => 'typography_h1',
-					'label'           => esc_html__( 'H1', 'notation' ),
+					'label'           => esc_html__( 'H1', 'wp-notes' ),
 					'section'         => 'typography',
 					'default'         => [
 						'font-family'    => 'DM Sans',
@@ -276,7 +275,7 @@ if ( function_exists( 'kirki' ) ) {
 					),
 				] );
 
-			Kirki::add_field( 'notation',
+			Kirki::add_field( 'wp-notes',
 				[
 					'active_callback' => [
 						[
@@ -287,7 +286,7 @@ if ( function_exists( 'kirki' ) ) {
 					],
 					'type'            => 'typography',
 					'settings'        => 'typography_h2',
-					'label'           => esc_html__( 'H2', 'notation' ),
+					'label'           => esc_html__( 'H2', 'wp-notes' ),
 					'section'         => 'typography',
 					'default'         => [
 						'font-family'    => 'DM Sans',
@@ -326,7 +325,7 @@ if ( function_exists( 'kirki' ) ) {
 					),
 				] );
 
-			Kirki::add_field( 'notation',
+			Kirki::add_field( 'wp-notes',
 				[
 					'active_callback' => [
 						[
@@ -337,7 +336,7 @@ if ( function_exists( 'kirki' ) ) {
 					],
 					'type'            => 'typography',
 					'settings'        => 'typography_h3',
-					'label'           => esc_html__( 'H3', 'notation' ),
+					'label'           => esc_html__( 'H3', 'wp-notes' ),
 					'section'         => 'typography',
 					'default'         => [
 						'font-family'    => 'DM Sans',
@@ -376,7 +375,7 @@ if ( function_exists( 'kirki' ) ) {
 					),
 				] );
 
-			Kirki::add_field( 'notation',
+			Kirki::add_field( 'wp-notes',
 				[
 					'active_callback' => [
 						[
@@ -387,7 +386,7 @@ if ( function_exists( 'kirki' ) ) {
 					],
 					'type'            => 'typography',
 					'settings'        => 'typography_h4',
-					'label'           => esc_html__( 'H4', 'notation' ),
+					'label'           => esc_html__( 'H4', 'wp-notes' ),
 					'section'         => 'typography',
 					'default'         => [
 						'font-family'    => 'DM Sans',
@@ -426,7 +425,7 @@ if ( function_exists( 'kirki' ) ) {
 					),
 				] );
 
-			Kirki::add_field( 'notation',
+			Kirki::add_field( 'wp-notes',
 				[
 					'active_callback' => [
 						[
@@ -437,7 +436,7 @@ if ( function_exists( 'kirki' ) ) {
 					],
 					'type'            => 'typography',
 					'settings'        => 'typography_h5',
-					'label'           => esc_html__( 'H5', 'notation' ),
+					'label'           => esc_html__( 'H5', 'wp-notes' ),
 					'section'         => 'typography',
 					'default'         => [
 						'font-family'    => 'DM Sans',
@@ -476,7 +475,7 @@ if ( function_exists( 'kirki' ) ) {
 					),
 				] );
 
-			Kirki::add_field( 'notation',
+			Kirki::add_field( 'wp-notes',
 				[
 					'active_callback' => [
 						[
@@ -487,7 +486,7 @@ if ( function_exists( 'kirki' ) ) {
 					],
 					'type'            => 'typography',
 					'settings'        => 'typography_h6',
-					'label'           => esc_html__( 'H6', 'notation' ),
+					'label'           => esc_html__( 'H6', 'wp-notes' ),
 					'section'         => 'typography',
 					'default'         => [
 						'font-family'    => 'DM Sans',
@@ -531,56 +530,56 @@ if ( function_exists( 'kirki' ) ) {
 
 // <editor-fold desc="colors">
 
-			Kirki::add_field( 'notation',
+			Kirki::add_field( 'wp-notes',
 				[
 					'type'     => 'color',
 					'settings' => 'color_primary_color',
-					'label'    => __( 'Primary Color', 'notation' ),
+					'label'    => __( 'Primary Color', 'wp-notes' ),
 					'section'  => 'colors',
 					'default'  => '#EC7160',
 				] );
 
-			Kirki::add_field( 'notation',
+			Kirki::add_field( 'wp-notes',
 				[
 					'type'     => 'color',
 					'settings' => 'color_primary_accent_color',
-					'label'    => __( 'Primary Accent Color', 'notation' ),
+					'label'    => __( 'Primary Accent Color', 'wp-notes' ),
 					'section'  => 'colors',
 					'default'  => '#DA5745',
 				] );
 
-			Kirki::add_field( 'notation',
+			Kirki::add_field( 'wp-notes',
 				[
 					'type'     => 'color',
 					'settings' => 'color_1',
-					'label'    => __( 'Primary Texts Color', 'notation' ),
+					'label'    => __( 'Primary Texts Color', 'wp-notes' ),
 					'section'  => 'colors',
 					'default'  => '#303030',
 				] );
 
-			Kirki::add_field( 'notation',
+			Kirki::add_field( 'wp-notes',
 				[
 					'type'     => 'color',
 					'settings' => 'color_2',
-					'label'    => __( 'Secondary Texts Color', 'notation' ),
+					'label'    => __( 'Secondary Texts Color', 'wp-notes' ),
 					'section'  => 'colors',
 					'default'  => '#898989',
 				] );
 
-			Kirki::add_field( 'notation',
+			Kirki::add_field( 'wp-notes',
 				[
 					'type'     => 'color',
 					'settings' => 'color_3',
-					'label'    => __( 'Borders Color', 'notation' ),
+					'label'    => __( 'Borders Color', 'wp-notes' ),
 					'section'  => 'colors',
 					'default'  => '#E7E7E9',
 				] );
 
-			Kirki::add_field( 'notation',
+			Kirki::add_field( 'wp-notes',
 				[
 					'type'     => 'color',
 					'settings' => 'color_4',
-					'label'    => __( 'Sidebar', 'notation' ),
+					'label'    => __( 'Sidebar', 'wp-notes' ),
 					'section'  => 'colors',
 					'default'  => '#F6F6F6',
 				] );
@@ -588,99 +587,99 @@ if ( function_exists( 'kirki' ) ) {
 // </editor-fold>
 
 			// Posts
-			Kirki::add_field( 'notation',
+			Kirki::add_field( 'wp-notes',
 				[
 					'type'     => 'toggle',
 					'settings' => 'show_post_thumbnail',
-					'label'    => esc_html__( 'Show posts thumbnail', 'notation' ),
+					'label'    => esc_html__( 'Show posts thumbnail', 'wp-notes' ),
 					'section'  => 'single_opts',
 					'default'  => 1,
 					'priority' => 10,
 				] );
 
-			Kirki::add_field( 'notation',
+			Kirki::add_field( 'wp-notes',
 				[
 					'type'     => 'toggle',
 					'settings' => 'show_post_date',
-					'label'    => esc_html__( 'Show published date', 'notation' ),
+					'label'    => esc_html__( 'Show published date', 'wp-notes' ),
 					'section'  => 'single_opts',
 					'default'  => 1,
 					'priority' => 10,
 				] );
 
-			Kirki::add_field( 'notation',
+			Kirki::add_field( 'wp-notes',
 				[
 					'type'     => 'toggle',
 					'settings' => 'show_post_author',
-					'label'    => esc_html__( 'Show author name', 'notation' ),
+					'label'    => esc_html__( 'Show author name', 'wp-notes' ),
 					'section'  => 'single_opts',
 					'default'  => 1,
 					'priority' => 10,
 				] );
 
-			Kirki::add_field( 'notation',
+			Kirki::add_field( 'wp-notes',
 				[
 					'type'     => 'toggle',
 					'settings' => 'show_post_comments',
-					'label'    => esc_html__( 'Show comments count', 'notation' ),
+					'label'    => esc_html__( 'Show comments count', 'wp-notes' ),
 					'section'  => 'single_opts',
 					'default'  => 1,
 					'priority' => 10,
 				] );
 
-			Kirki::add_field( 'notation',
+			Kirki::add_field( 'wp-notes',
 				[
 					'type'     => 'toggle',
 					'settings' => 'show_post_cats',
-					'label'    => esc_html__( 'Show post categories', 'notation' ),
+					'label'    => esc_html__( 'Show post categories', 'wp-notes' ),
 					'section'  => 'single_opts',
 					'default'  => 1,
 					'priority' => 10,
 				] );
 
-			Kirki::add_field( 'notation',
+			Kirki::add_field( 'wp-notes',
 				[
 					'type'     => 'toggle',
 					'settings' => 'show_post_tags',
-					'label'    => esc_html__( 'Show post tags', 'notation' ),
+					'label'    => esc_html__( 'Show post tags', 'wp-notes' ),
 					'section'  => 'single_opts',
 					'default'  => 1,
 					'priority' => 10,
 				] );
 
 
-			Kirki::add_field( 'notation',
+			Kirki::add_field( 'wp-notes',
 				[
 					'type'     => 'toggle',
 					'settings' => 'show_date_archive',
-					'label'    => esc_html__( 'Show publish date', 'notation' ),
+					'label'    => esc_html__( 'Show publish date', 'wp-notes' ),
 					'section'  => 'archive_opts',
 					'default'  => 1,
 					'priority' => 10,
 				] );
 
-			Kirki::add_field( 'notation',
+			Kirki::add_field( 'wp-notes',
 				[
 					'type'     => 'toggle',
 					'settings' => 'show_post_excerpt',
-					'label'    => esc_html__( 'Show posts excerpt', 'notation' ),
+					'label'    => esc_html__( 'Show posts excerpt', 'wp-notes' ),
 					'section'  => 'archive_opts',
 					'default'  => 1,
 					'priority' => 10,
 				] );
 
 
-			Kirki::add_field( 'notation',
+			Kirki::add_field( 'wp-notes',
 				[
 					'type'     => 'toggle',
 					'settings' => 'show_sidebar',
-					'label'    => esc_html__( 'Show Sidebar', 'notation' ),
+					'label'    => esc_html__( 'Show Sidebar', 'wp-notes' ),
 					'section'  => 'sidebar_opts',
 					'default'  => 1,
 					'priority' => 10,
 				] );
 
-			Kirki::add_field( 'notation',
+			Kirki::add_field( 'wp-notes',
 				[
 					'active_callback' => [
 						[
@@ -691,13 +690,13 @@ if ( function_exists( 'kirki' ) ) {
 					],
 					'type'            => 'toggle',
 					'settings'        => 'show_date_sidebar',
-					'label'           => esc_html__( 'Show publish date', 'notation' ),
+					'label'           => esc_html__( 'Show publish date', 'wp-notes' ),
 					'section'         => 'sidebar_opts',
 					'default'         => 1,
 					'priority'        => 10,
 				] );
 
-			Kirki::add_field( 'notation',
+			Kirki::add_field( 'wp-notes',
 				[
 					'active_callback' => [
 						[
@@ -708,13 +707,13 @@ if ( function_exists( 'kirki' ) ) {
 					],
 					'type'            => 'toggle',
 					'settings'        => 'show_post_excerpt_sidebar',
-					'label'           => esc_html__( 'Show posts excerpt', 'notation' ),
+					'label'           => esc_html__( 'Show posts excerpt', 'wp-notes' ),
 					'section'         => 'sidebar_opts',
 					'default'         => 1,
 					'priority'        => 10,
 				] );
 
-			Kirki::add_field( 'notation',
+			Kirki::add_field( 'wp-notes',
 				[
 					'active_callback' => [
 						[
@@ -730,13 +729,13 @@ if ( function_exists( 'kirki' ) ) {
 					],
 					'type'            => 'toggle',
 					'settings'        => 'limit_sidebar_posts_excerpt_toggle',
-					'label'           => esc_html__( 'Limit posts excerpt', 'notation' ),
+					'label'           => esc_html__( 'Limit posts excerpt', 'wp-notes' ),
 					'section'         => 'sidebar_opts',
 					'default'         => 0,
 					'priority'        => 10,
 				] );
 
-			Kirki::add_field( 'notation',
+			Kirki::add_field( 'wp-notes',
 				[
 					'active_callback' => [
 						[
@@ -757,7 +756,7 @@ if ( function_exists( 'kirki' ) ) {
 					],
 					'type'            => 'number',
 					'settings'        => 'limit_sidebar_posts_excerpt',
-					'label'           => esc_html__( 'Limit characters', 'notation' ),
+					'label'           => esc_html__( 'Limit characters', 'wp-notes' ),
 					'section'         => 'sidebar_opts',
 					'default'         => 100,
 					'priority'        => 10,
@@ -766,11 +765,11 @@ if ( function_exists( 'kirki' ) ) {
 	// PostsWooCommerce
 
 	// Footer
-	Kirki::add_field( 'notation',
+	Kirki::add_field( 'wp-notes',
 		[
 			'type'     => 'textarea',
 			'settings' => 'copyright_text',
-			'label'    => esc_html__( 'Copyright', 'notation' ),
+			'label'    => esc_html__( 'Copyright', 'wp-notes' ),
 			'section'  => 'footer',
 			'priority' => 10,
 		] );
@@ -779,17 +778,17 @@ if ( function_exists( 'kirki' ) ) {
 
 
 	// Homepage - Blog
-	Kirki::add_field( 'notation',
+	Kirki::add_field( 'wp-notes',
 		[
 			'type'        => 'toggle',
 			'settings'    => 'show_blog_title',
-			'label'       => esc_html__( 'Show Blog Title', 'notation' ),
+			'label'       => esc_html__( 'Show Blog Title', 'wp-notes' ),
 			'section'     => 'blog_opts',
 			'priority'    => 10,
 			'default'     => 1,
 		] );
 
-	Kirki::add_field( 'notation',
+	Kirki::add_field( 'wp-notes',
 		[
 			'active_callback' => [
 				[
@@ -800,24 +799,24 @@ if ( function_exists( 'kirki' ) ) {
 			],
 			'type'        => 'text',
 			'settings'    => 'blog_title',
-			'label'       => esc_html__( 'Blog Title', 'notation' ),
-			'description' => esc_html__( 'Leave blank to show default blog archive title.', 'notation' ),
+			'label'       => esc_html__( 'Blog Title', 'wp-notes' ),
+			'description' => esc_html__( 'Leave blank to show default blog archive title.', 'wp-notes' ),
 			'section'     => 'blog_opts',
 			'priority'    => 10,
-			'default'     => esc_html__( 'Blog', 'notation' ),
+			'default'     => esc_html__( 'Blog', 'wp-notes' ),
 		] );
 
 	Kirki::add_field( 'blog_content',
 		[
 			'type'     => 'switch',
 			'settings' => 'blog_content',
-			'label'    => esc_html__( 'Default content of blog page', 'notation' ),
+			'label'    => esc_html__( 'Default content of blog page', 'wp-notes' ),
 			'section'  => 'blog_opts',
 			'default'  => 'on',
 			'priority' => 10,
 			'choices'  => [
-				'on'  => esc_html__( 'Show latest posts', 'notation' ),
-				'off' => esc_html__( 'Show latest post', 'notation' ),
+				'on'  => esc_html__( 'Show latest posts', 'wp-notes' ),
+				'off' => esc_html__( 'Show latest post', 'wp-notes' ),
 			],
 		] );
 
@@ -834,7 +833,7 @@ if ( function_exists( 'kirki' ) ) {
 			'settings'        => 'custom_setting',
 			'section'         => 'blog_opts',
 			'default'         => '<p>' . __( "*If there is any sticky post, it will show the latest published post.",
-					'notation' ) . '</p>',
+					'wp-notes' ) . '</p>',
 			'priority'        => 10,
 		] );
 	// Homepage

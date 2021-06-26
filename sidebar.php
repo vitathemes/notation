@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Notation
+ * @package Wp_notes
  */
 
 if ( ! get_theme_mod( 'show_sidebar', true ) ) {
@@ -16,7 +16,7 @@ $current_post_id = $post->ID;
 <aside class="c-sidebar <?php if ( is_home() && get_theme_mods( 'blog_content', true ) || is_archive() ) {
 	echo "c-sidebar--archives";
 } ?> js-sidebar">
-    <button class="c-sidebar__toggle js-sidebar-toggle" aria-label="<?php echo esc_attr_e( 'Toggle Sidebar', 'notation' ); ?>">
+    <button class="c-sidebar__toggle js-sidebar-toggle" aria-label="<?php echo esc_attr_e( 'Toggle Sidebar', 'wp-notes' ); ?>">
         <svg class="c-sidebar__toggle__icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256">
             <path d="M160 216a7.975 7.975 0 0 1-5.657-2.343l-80-80a8 8 0 0 1 0-11.314l80-80a8 8 0 0 1 11.314 11.314L91.314 128l74.343 74.343A8 8 0 0 1 160 216z"/>
             <rect x="0" y="0" width="256" height="256" fill="rgba(0, 0, 0, 0)"/>
@@ -37,7 +37,7 @@ $current_post_id = $post->ID;
 
 	if ( $sticky_posts->have_posts() ) :
 
-	echo "<span class='c-sidebar__title'>" . esc_html__( 'Pinned', 'notation' ) . "</span>";
+	echo "<span class='c-sidebar__title'>" . esc_html__( 'Pinned', 'wp-notes' ) . "</span>";
 	?>
     <div class="c-sidebar__main">
 		<?php
@@ -61,7 +61,7 @@ $current_post_id = $post->ID;
 				<?php if ( get_theme_mod( 'show_post_excerpt_sidebar', true ) ): ?>
                     <div class="c-post__content">
 						<?php
-						echo esc_html(notation_get_excerpt());
+						echo esc_html(wp_notes_get_excerpt());
 						?>
                     </div><!-- .entry-content -->
 				<?php endif; ?>
@@ -69,7 +69,7 @@ $current_post_id = $post->ID;
                     <footer class="c-post__footer">
                         <div class="c-post__footer__meta">
 							<?php
-							notation_posted_on();
+							wp_notes_posted_on();
 							?>
                         </div><!-- .entry-meta -->
                     </footer>
@@ -95,7 +95,7 @@ $current_post_id = $post->ID;
 	<?php
 	if ( $recent_posts->have_posts() ) :
 	if ($sticky_posts_id) {
-	echo "<span class='c-sidebar__title c-sidebar__title--other'>" . esc_html__( 'Other', 'notation' ) . "</span>"; ?>
+	echo "<span class='c-sidebar__title c-sidebar__title--other'>" . esc_html__( 'Other', 'wp-notes' ) . "</span>"; ?>
     <?php } ?>
     <div class="c-sidebar__main">
 		<?php
@@ -118,7 +118,7 @@ $current_post_id = $post->ID;
 				<?php if ( get_theme_mod( 'show_post_excerpt_sidebar', true ) ): ?>
                     <div class="c-post__content">
 						<?php
-						echo esc_html(notation_get_excerpt());
+						echo esc_html(wp_notes_get_excerpt());
 						?>
                     </div><!-- .entry-content -->
 				<?php endif; ?>
@@ -126,7 +126,7 @@ $current_post_id = $post->ID;
                     <footer class="c-post__footer">
                         <div class="c-post__footer__meta">
 							<?php
-							notation_posted_on();
+							wp_notes_posted_on();
 							?>
                         </div><!-- .entry-meta -->
                     </footer>
@@ -137,6 +137,6 @@ $current_post_id = $post->ID;
 		endwhile; ?>
     </div> <?php
 	endif;
-	notation_get_sidebar_button();
+	wp_notes_get_sidebar_button();
 	?>
 </aside>

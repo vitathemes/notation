@@ -11,12 +11,12 @@
     justify-content: flex-end;
 
     a {
-      color: $notation_neutral_primary_color;
+      color: $wp_notes_neutral_primary_color;
       text-decoration: none;
       @include h4;
 
       &:hover {
-        color: $notation_branding_color;
+        color: $wp_notes_branding_color;
       }
     }
   }
@@ -41,7 +41,7 @@
     width: 100%;
 
     svg g path {
-      fill: $notation_neutral_primary_color;
+      fill: $wp_notes_neutral_primary_color;
     }
 
     @include mq(tablet) {
@@ -72,7 +72,7 @@
     align-items: center;
 
     .page-numbers {
-      color: $notation_neutral_primary_color;
+      color: $wp_notes_neutral_primary_color;
       font-weight: normal;
       font-size: rem(16px);
       line-height: rem(32px);
@@ -84,18 +84,18 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: $notation_global_radius;
-      border: 1px solid $notation_neutral_secondary_color;
+      border-radius: $wp_notes_global_radius;
+      border: 1px solid $wp_notes_neutral_secondary_color;
 
       &:hover {
-        color: $notation_neutral_primary_color;
-        background-color: $notation_neutral_secondary_color;
+        color: $wp_notes_neutral_primary_color;
+        background-color: $wp_notes_neutral_secondary_color;
       }
 
       &.current {
-        color: $notation_neutral_primary_color;
-        background-color: $notation_neutral_secondary_color;
-        border-color: $notation_neutral_secondary_color;
+        color: $wp_notes_neutral_primary_color;
+        background-color: $wp_notes_neutral_secondary_color;
+        border-color: $wp_notes_neutral_secondary_color;
       }
 
       &.next, &.prev {
@@ -104,13 +104,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        color: $notation_neutral_black;
-        border-radius: $notation_global_radius;
+        color: $wp_notes_neutral_black;
+        border-radius: $wp_notes_global_radius;
         background-color: transparent;
         border: none;
 
         svg g path {
-          fill: $notation_neutral_primary_color;
+          fill: $wp_notes_neutral_primary_color;
         }
 
         span {
@@ -120,8 +120,8 @@
         }
 
         &:hover {
-          color: $notation_neutral_black;
-          background-color: $notation_neutral_secondary_color;
+          color: $wp_notes_neutral_black;
+          background-color: $wp_notes_neutral_secondary_color;
         }
       }
     }

@@ -1,6 +1,6 @@
 .c-menu {
   display: none;
-  background-color: $notation_neutral_white;
+  background-color: $wp_notes_neutral_white;
   margin: 0;
   position: fixed;
   left: 0;
@@ -41,8 +41,8 @@
       line-height: 1.65;
       padding: rem(6.1px 10px);
       border: none;
-      background-color: $notation_neutral_tertiary_color;
-      border-radius: $notation_global_radius;
+      background-color: $wp_notes_neutral_tertiary_color;
+      border-radius: $wp_notes_global_radius;
     }
   }
 }

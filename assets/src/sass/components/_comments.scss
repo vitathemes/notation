@@ -42,7 +42,7 @@
 
 .comment-content a {
   word-wrap: break-word;
-  color: $notation_neutral_primary_color;
+  color: $wp_notes_neutral_primary_color;
   font-weight: 400;
   font-size: rem(13px);
   line-height: rem(23px);
@@ -104,7 +104,7 @@
 
   .comment-header .time, .comment-header .time * {
     font-size: rem(13px);
-    color: $notation_neutral_primary_color;
+    color: $wp_notes_neutral_primary_color;
     font-weight: var(--heading-typography-variant) !important;
   }
 
@@ -116,7 +116,7 @@
 
   .avatar {
     vertical-align: middle;
-    border-radius: $notation_global_radius2x;
+    border-radius: $wp_notes_global_radius2x;
   }
 
   .comment {
@@ -154,7 +154,7 @@
     font-size: rem(14px);
     margin-top: 0;
     text-decoration: none;
-    color: $notation_headings_color;
+    color: $wp_notes_headings_color;
 
     @include mq(desktop) {
       font-size: 1rem;
@@ -215,10 +215,10 @@ ol.children:last-child {
   transition: 0.25s;
   text-decoration: none;
   margin-left: auto;
-  color: $notation_neutral_primary_color;
+  color: $wp_notes_neutral_primary_color;
 
   &:hover {
-    color: $notation_branding_color;
+    color: $wp_notes_branding_color;
   }
 }
 
@@ -247,7 +247,7 @@ ol.children:last-child {
     align-items: center;
     margin-bottom: 0.5em;
     font-weight: var(--heading-typography-variant);
-    color: $notation_neutral_black;
+    color: $wp_notes_neutral_black;
   }
 
   input {
@@ -263,7 +263,7 @@ ol.children:last-child {
 .comment-form-rating {
   margin-top: rem(24px);
   font-size: rem(14px);
-  color: $notation_neutral_primary_color;
+  color: $wp_notes_neutral_primary_color;
 
   label {
     display: block;
@@ -276,7 +276,7 @@ ol.children:last-child {
     font-size: rem(16px);
 
     a {
-      color: $notation_neutral_black;
+      color: $wp_notes_neutral_black;
     }
   }
 }
@@ -298,7 +298,7 @@ ol.children:last-child {
   font-size: 1rem;
   line-height: rem(24px);
   font-weight: var(--heading-typography-variant);
-  color: $notation_neutral_black;
+  color: $wp_notes_neutral_black;
 
   label {
     font-weight: normal;
@@ -308,7 +308,7 @@ ol.children:last-child {
     align-items: center;
     margin-bottom: 0.5em;
     font-weight: var(--heading-typography-variant);
-    color: $notation_neutral_black;
+    color: $wp_notes_neutral_black;
   }
 
   @include mq(desktop) {
@@ -324,22 +324,22 @@ ol.children:last-child {
 
 .comment-form .form-submit {
   button {
-    border: 1px solid $notation_headings_color;
-    color: $notation_neutral_white;
-    background-color: $notation_headings_color;
+    border: 1px solid $wp_notes_headings_color;
+    color: $wp_notes_neutral_white;
+    background-color: $wp_notes_headings_color;
     flex-grow: 1;
     text-align: center;
     padding: rem(14.5px 32px);
     border-radius: rem(4px);
-    transition: $notation_global_transition;
+    transition: $wp_notes_global_transition;
     font-family: inherit;
     @include h5;
 
     &:hover {
       cursor: pointer;
-      background-color: $notation_neutral_white;
-      border-color: $notation_neutral_black;
-      color: $notation_neutral_black;
+      background-color: $wp_notes_neutral_white;
+      border-color: $wp_notes_neutral_black;
+      color: $wp_notes_neutral_black;
     }
   }
 }
@@ -355,7 +355,7 @@ ol.children:last-child {
   }
 
   label {
-    color: $notation_neutral_primary_color;
+    color: $wp_notes_neutral_primary_color;
     font-weight: normal;
     font-size: rem(14px);
     line-height: 24px;
@@ -376,10 +376,10 @@ ol.children:last-child {
   font-size: rem(13px);
   margin-top: 0;
   text-decoration: none;
-  color: $notation_neutral_black !important;
+  color: $wp_notes_neutral_black !important;
 
   &:hover {
-    color: $notation_branding_color;
+    color: $wp_notes_branding_color;
   }
 }
 
@@ -391,7 +391,7 @@ ol.children:last-child {
 .comment-notes {
   font-size: rem(13px);
   font-weight: var(--text-typography-variant);
-  color: $notation_neutral_primary_color;
+  color: $wp_notes_neutral_primary_color;
   margin-top: 0;
 }
 
@@ -401,10 +401,10 @@ ol.children:last-child {
   input {
     font-weight: var(--heading-typography-variant);
     padding: 10px 24px;
-    background-color: $notation_neutral_white;
-    color: $notation_neutral_white;
+    background-color: $wp_notes_neutral_white;
+    color: $wp_notes_neutral_white;
     cursor: pointer;
-    transition: $notation_global_transition;
+    transition: $wp_notes_global_transition;
 
     &:hover {
       background-color: #2B2B2B;
@@ -422,19 +422,19 @@ ol.children:last-child {
 .logged-in-as {
 
   a {
-    color: $notation_branding_color;
+    color: $wp_notes_branding_color;
     text-decoration: none;
 
     &:hover {
-      color: $notation_neutral_primary_color;
+      color: $wp_notes_neutral_primary_color;
     }
   }
 
   a:first-child {
-    color: $notation_neutral_black;
+    color: $wp_notes_neutral_black;
 
     &:hover {
-      color: $notation_branding_color;
+      color: $wp_notes_branding_color;
     }
   }
 }
@@ -483,5 +483,5 @@ ol.children:last-child {
 
 .comment-content__comment {
   font-size: rem(13px);
-  color: $notation_neutral_primary_color;
+  color: $wp_notes_neutral_primary_color;
 }

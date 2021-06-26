@@ -1,11 +1,11 @@
 input, select, textarea {
   border: none;
   padding: rem(16px);
-  background-color: $notation_neutral_tertiary_color;
+  background-color: $wp_notes_neutral_tertiary_color;
   margin: rem(4px) 0;
-  border-radius: $notation_global_radius2x;
+  border-radius: $wp_notes_global_radius2x;
   font-family: inherit;
-  transition: $notation_global_transition;
+  transition: $wp_notes_global_transition;
   width: calc(100% - 2rem);
   font-size: rem(12px);
 
@@ -14,7 +14,7 @@ input, select, textarea {
   }
 
   &::placeholder {
-    color: $notation_neutral_primary_color;
+    color: $wp_notes_neutral_primary_color;
     opacity: 1;
     font-size: rem(12px);
 
@@ -42,17 +42,17 @@ button, input[type='submit'] {
   letter-spacing: 0.025em;
   text-transform: capitalize;
   box-sizing: border-box;
-  border-radius: $notation_global_radius;
-  transition: $notation_global_transition;
+  border-radius: $wp_notes_global_radius;
+  transition: $wp_notes_global_transition;
   padding: rem(10px 16px);
   text-decoration: none;
   display: inline-block;
-  background: $notation_branding_color;
-  border: rem(1px) solid $notation_branding_color;
-  color: $notation_neutral_white !important;
+  background: $wp_notes_branding_color;
+  border: rem(1px) solid $wp_notes_branding_color;
+  color: $wp_notes_neutral_white !important;
 
   &:hover {
-    background-color: $notation_branding_color_accent;
-    color: $notation_neutral_white !important;
+    background-color: $wp_notes_branding_color_accent;
+    color: $wp_notes_neutral_white !important;
   }
 }

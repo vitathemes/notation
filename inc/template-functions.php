@@ -2,28 +2,28 @@
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
- * @package Notation
+ * @package Wp_notes
  */
 
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
-function notation_pingback_header() {
+function wp_notes_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
 }
 
-add_action( 'wp_head', 'notation_pingback_header' );
+add_action( 'wp_head', 'wp_notes_pingback_header' );
 
 
-if ( ! function_exists( 'notation_branding' ) ) {
+if ( ! function_exists( 'wp_notes_branding' ) ) {
 	/**
 	 * Displays branding
 	 *
 	 * If there is not any custom logo the function will show site title
 	 */
-	function notation_branding() {
+	function wp_notes_branding() {
 		if ( has_custom_logo() ) {
 			the_custom_logo();
 		} else {
@@ -45,33 +45,33 @@ if ( ! function_exists( 'notation_branding' ) ) {
 
 	}
 
-	add_action( 'notation_branding_hook', 'notation_branding' );
+	add_action( 'wp_notes_branding_hook', 'wp_notes_branding' );
 }
 
-if ( ! function_exists( 'notation_header' ) ) {
+if ( ! function_exists( 'wp_notes_header' ) ) {
 	/**
 	 * Displays header nav
 	 *
 	 * This function will show header nav
 	 */
-	function notation_header() {
-		notation_header_nav();
-		notation_show_header_icons();
+	function wp_notes_header() {
+		wp_notes_header_nav();
+		wp_notes_show_header_icons();
 	}
 
-	add_action( 'notation_header_hook', 'notation_header' );
+	add_action( 'wp_notes_header_hook', 'wp_notes_header' );
 }
 
-if ( ! function_exists( 'notation_theme_settings' ) ) {
-	function notation_theme_settings() {
+if ( ! function_exists( 'wp_notes_theme_settings' ) ) {
+	function wp_notes_theme_settings() {
 		$vars = ':root {	
-	            --notation-branding-color: ' . get_theme_mod( "color_primary_color", "#EC7160" ) . ';
-	            --notation-branding-accent-color: ' . get_theme_mod( "color_primary_accent_color", "#DA5745" ) . ';
-	            --notation-primary-color: ' . get_theme_mod( "color_1", "#303030" ) . ';
-	            --notation-secondary-color: ' . get_theme_mod( "color_2", "#898989" ) . ';
-	            --notation-tertiary-color: ' . get_theme_mod( "color_3", "#E7E7E9" ) . ';
-	            --notation-quaternary-color: ' . get_theme_mod( "color_4", "#F6F6F6" ) . ';
-	            --notation-quinary-color: ' . get_theme_mod( "color_5", "#F9F9F9" ) . ';
+	            --wp_notes-branding-color: ' . get_theme_mod( "color_primary_color", "#EC7160" ) . ';
+	            --wp_notes-branding-accent-color: ' . get_theme_mod( "color_primary_accent_color", "#DA5745" ) . ';
+	            --wp_notes-primary-color: ' . get_theme_mod( "color_1", "#303030" ) . ';
+	            --wp_notes-secondary-color: ' . get_theme_mod( "color_2", "#898989" ) . ';
+	            --wp_notes-tertiary-color: ' . get_theme_mod( "color_3", "#E7E7E9" ) . ';
+	            --wp_notes-quaternary-color: ' . get_theme_mod( "color_4", "#F6F6F6" ) . ';
+	            --wp_notes-quinary-color: ' . get_theme_mod( "color_5", "#F9F9F9" ) . ';
 	        
 			}';
 
@@ -82,17 +82,17 @@ if ( ! function_exists( 'notation_theme_settings' ) ) {
 		<?php
 	}
 }
-add_action( 'wp_head', 'notation_theme_settings' );
+add_action( 'wp_head', 'wp_notes_theme_settings' );
 
-if ( ! function_exists( 'notation_reply_title' ) ) {
-	function notation_reply_title( $defaults ) {
+if ( ! function_exists( 'wp_notes_reply_title' ) ) {
+	function wp_notes_reply_title( $defaults ) {
 		$defaults['title_reply_before'] = '<h3 id="reply-title" class="h2 comment-reply-title">';
 		$defaults['title_reply_after']  = '</h3>';
 
 		return $defaults;
 	}
 }
-add_filter( 'comment_form_defaults', 'notation_reply_title' );
+add_filter( 'comment_form_defaults', 'wp_notes_reply_title' );
 
 
 /**
@@ -100,21 +100,21 @@ add_filter( 'comment_form_defaults', 'notation_reply_title' );
  *
  * @return string The blog posts page URL.
  */
-if ( ! function_exists( 'notation_get_sidebar_button' ) ) {
-	function notation_get_sidebar_button() {
+if ( ! function_exists( 'wp_notes_get_sidebar_button' ) ) {
+	function wp_notes_get_sidebar_button() {
 
 		// If front page is set to display a static page, get the URL of the posts page.
 		if ( 'page' === get_option( 'show_on_front' ) ) {
-			$notation_blog_page_url = get_permalink( get_option( 'page_for_posts' ) );
+			$wp_notes_blog_page_url = get_permalink( get_option( 'page_for_posts' ) );
 			printf( '<div class="c-sidebar__footer"><a class="c-btn c-btn--secondary c-btn--fw" href="%s">%s</a></div>',
-				esc_url( $notation_blog_page_url ),
-				esc_html__( 'All Posts', 'notation' ) );
+				esc_url( $wp_notes_blog_page_url ),
+				esc_html__( 'All Posts', 'wp-notes' ) );
 		}
 
 		if ( get_theme_mod( 'blog_content', true ) ) {
 			printf( '<div class="c-sidebar__footer"><a class="c-btn c-btn--secondary c-btn--fw" href="%s">%s</a></div>',
 				esc_url( get_home_url() ),
-				esc_html__( 'All Posts', 'notation' ) );
+				esc_html__( 'All Posts', 'wp-notes' ) );
 		}
 	}
 }
@@ -124,8 +124,8 @@ if ( ! function_exists( 'notation_get_sidebar_button' ) ) {
  * Homepage - Show latest sticky post
  */
 
-if ( ! function_exists( 'notation_show_latest_post' ) ) {
-	function notation_show_latest_post() {
+if ( ! function_exists( 'wp_notes_show_latest_post' ) ) {
+	function wp_notes_show_latest_post() {
 		$stickies = get_option( 'sticky_posts' );
 		wp_reset_query();
 		wp_reset_postdata();
@@ -158,8 +158,8 @@ if ( ! function_exists( 'notation_show_latest_post' ) ) {
 	}
 }
 
-if ( ! function_exists( 'notation_get_excerpt' ) ) {
-	function notation_get_excerpt() {
+if ( ! function_exists( 'wp_notes_get_excerpt' ) ) {
+	function wp_notes_get_excerpt() {
 		if ( get_theme_mod( 'limit_sidebar_posts_excerpt_toggle', false ) ) {
 			$count   = get_theme_mod( 'limit_sidebar_posts_excerpt', 100 );
 			$excerpt = get_the_content();
@@ -174,8 +174,8 @@ if ( ! function_exists( 'notation_get_excerpt' ) ) {
 	}
 }
 
-if ( ! function_exists( 'notation_is_page_for_posts' ) ) {
-	function notation_is_page_for_posts() {
+if ( ! function_exists( 'wp_notes_is_page_for_posts' ) ) {
+	function wp_notes_is_page_for_posts() {
 		$result = false;
 
 		if ( is_home() && ! is_front_page() ) {

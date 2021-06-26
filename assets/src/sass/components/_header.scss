@@ -13,14 +13,14 @@
     top: 0;
     height: 100vh;
     z-index: unset;
-    background-color: $notation_neutral_tertiary_color;
+    background-color: $wp_notes_neutral_tertiary_color;
     display: block;
     padding: 3rem 1.5rem;
     width: calc(18% - 3rem);
   }
 
   &.is-search-open {
-    background-color: $notation_neutral_tertiary_color;
+    background-color: $wp_notes_neutral_tertiary_color;
 
     .c-header__Search__wrapper {
       display: block;
@@ -29,10 +29,10 @@
       left: 0;
       top: rem(56px);
       padding: rem(20px 16px);
-      background-color: $notation_neutral_tertiary_color;
+      background-color: $wp_notes_neutral_tertiary_color;
       transform: translateY(0);
       visibility: visible;
-      transition-delay: $notation_global_transition;
+      transition-delay: $wp_notes_global_transition;
     }
   }
 }
@@ -75,7 +75,7 @@
 }
 
 .c-header__branding__title {
-  color: $notation_branding_color;
+  color: $wp_notes_branding_color;
   text-decoration: none;
   margin: 0;
   @include h2;
@@ -91,7 +91,7 @@
   font-size: inherit;
 
   &:hover {
-    color: $notation_branding_color;
+    color: $wp_notes_branding_color;
   }
 }
 
@@ -102,10 +102,10 @@
   left: 0;
   top: rem(56px);
   padding: rem(20px 16px);
-  background-color: $notation_neutral_tertiary_color;
+  background-color: $wp_notes_neutral_tertiary_color;
   visibility: hidden;
   transform: translateY(-200%);
-  transition: $notation_global_transition;
+  transition: $wp_notes_global_transition;
   transition-delay: 0s;
 
   @include mq(desktop) {
@@ -141,7 +141,7 @@
     background-color: transparent;
 
     .c-header__link__icon {
-      fill: $notation_branding_color;
+      fill: $wp_notes_branding_color;
     }
   }
 
@@ -190,8 +190,8 @@
 }
 
 .c-header__link__icon {
-  fill: $notation_headings_color;
-  transition: $notation_global_transition;
+  fill: $wp_notes_headings_color;
+  transition: $wp_notes_global_transition;
 
   &:hover {
     background-color: transparent;
@@ -208,7 +208,7 @@
   content: '';
   width: rem(1px);
   height: rem(17px);
-  background-color: $notation_neutral_primary_color;
+  background-color: $wp_notes_neutral_primary_color;
   display: none;
   margin-left: rem(32px);
 
@@ -237,7 +237,7 @@
   }
 
   .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-    background: $notation_neutral_black;
+    background: $wp_notes_neutral_black;
   }
 
 
@@ -255,7 +255,7 @@
   visibility: hidden;
   min-width: 60%;
   top: 0;
-  background-color: $notation_neutral_tertiary_color;
+  background-color: $wp_notes_neutral_tertiary_color;
 
   @include mq(desktop) {
     display: block;

@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Notation
+ * @package Wp_notes
  */
 
 get_header();

@@ -16,17 +16,17 @@
       font-weight: 500;
       line-height: rem(21px);
       text-transform: uppercase;
-      background: $notation_neutral_black;
+      background: $wp_notes_neutral_black;
       box-sizing: border-box;
-      border-radius: $notation_global_radius;
+      border-radius: $wp_notes_global_radius;
       padding: rem(6px);
       width: calc(100% - 0.6rem);
       text-align: center;
       display: block;
-      color: $notation_neutral_white;
+      color: $wp_notes_neutral_white;
       font-family: inherit;
       margin-top: rem(32px);
-      border: 1px solid $notation_neutral_black;
+      border: 1px solid $wp_notes_neutral_black;
       font-size: rem(12px);
 
       @include mq(desktop) {
@@ -36,8 +36,8 @@
       }
 
       &:hover {
-        background-color: $notation_neutral_white;
-        color: $notation_neutral_black;
+        background-color: $wp_notes_neutral_white;
+        color: $wp_notes_neutral_black;
       }
 
       @include mq(tablet) {
@@ -47,7 +47,7 @@
   }
 
   .c-account__forgot-password {
-    color: $notation_headings_color;
+    color: $wp_notes_headings_color;
     font-size: rem(16px);
     line-height: rem(21px);
     text-align: center;
@@ -61,26 +61,26 @@
     text-decoration: none;
 
     &:hover {
-      color: $notation_branding_color;
+      color: $wp_notes_branding_color;
     }
   }
 
   .c-account__register-form .woocommerce-privacy-policy-link {
-    color: $notation_headings_color;
+    color: $wp_notes_headings_color;
     font-size: rem(16px);
     line-height: rem(21px);
     text-align: center;
     margin: rem(16) 0 0;
 
     &:hover {
-      color: $notation_branding_color;
+      color: $wp_notes_branding_color;
     }
   }
 }
 
 .c-account__nav__items {
-  background-color: $notation_neutral_tertiary_color;
-  border-radius: $notation_global_radius2x;
+  background-color: $wp_notes_neutral_tertiary_color;
+  border-radius: $wp_notes_global_radius2x;
   padding: rem(2px);
   display: flex;
   justify-content: space-between;
@@ -94,24 +94,24 @@
   width: 49%;
   padding: rem(6px);
   background-color: transparent;
-  border-radius: $notation_global_radius;
+  border-radius: $wp_notes_global_radius;
   border: none;
   cursor: pointer;
-  transition: $notation_global_transition;
+  transition: $wp_notes_global_transition;
   font-size: rem(12px);
 
   @include mq(desktop) {
     padding: rem(12px);
     font-size: rem(16px);
-    border-radius: $notation_global_radius2x;
+    border-radius: $wp_notes_global_radius2x;
   }
 
   &:hover {
-    background-color: $notation_neutral_secondary_color;
+    background-color: $wp_notes_neutral_secondary_color;
   }
 
   &.is-active {
-    background-color: $notation_neutral_white;
+    background-color: $wp_notes_neutral_white;
     box-shadow: rem(1px 1px 4px) rgba(0, 0, 0, 0.1);
   }
 }

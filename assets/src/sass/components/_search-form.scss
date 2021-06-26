@@ -9,11 +9,11 @@
 
 .c-search-form__label__field {
   border: none;
-  background-color: $notation_neutral_white;
+  background-color: $wp_notes_neutral_white;
   font-size: 1rem;
-  border-radius: $notation_global_radius2x;
+  border-radius: $wp_notes_global_radius2x;
   padding: rem(12px 3px 12px 40px);
-  color: $notation_neutral_primary_color;
+  color: $wp_notes_neutral_primary_color;
   width: 100%;
 
   @include mq(tablet) {
@@ -38,7 +38,7 @@
     background-color: transparent;
 
     .c-search-form__submit__icon {
-      fill: $notation_branding_color;
+      fill: $wp_notes_branding_color;
     }
   }
 }
@@ -47,8 +47,8 @@
 .c-search-form__submit__icon {
   width: 1.45rem;
   height: 1.45rem;
-  fill: $notation_neutral_primary_color;
-  transition: $notation_global_transition;
+  fill: $wp_notes_neutral_primary_color;
+  transition: $wp_notes_global_transition;
 }
 
 .c-widget.widget_search, .c-widget.woocommerce.widget_product_search {
@@ -80,11 +80,11 @@
   .c-search-form__label__field {
     border: none;
     padding: rem(16px);
-    background-color: $notation_neutral_tertiary_color;
+    background-color: $wp_notes_neutral_tertiary_color;
     margin: rem(4px) 0;
-    border-radius: $notation_global_radius2x;
+    border-radius: $wp_notes_global_radius2x;
     font-family: inherit;
-    transition: $notation_global_transition;
+    transition: $wp_notes_global_transition;
     width: calc(100% - 2rem);
     font-size: rem(12px);
 
@@ -115,7 +115,7 @@
     &:hover {
 
       .c-search-form__submit__icon {
-        fill: $notation_branding_color;
+        fill: $wp_notes_branding_color;
       }
     }
   }

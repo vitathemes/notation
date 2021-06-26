@@ -1,12 +1,12 @@
 html {
   scroll-behavior: smooth;
-  font: 16px/#{$notation_default_line_height} $notation_default_font_family;
+  font: 16px/#{$wp_notes_default_line_height} $wp_notes_default_font_family;
 
   @include mq(tablet) {
-    font: 16px/#{$notation_default_line_height} $notation_default_font_family;
+    font: 16px/#{$wp_notes_default_line_height} $wp_notes_default_font_family;
   }
 
   @include mq(desktop) {
-    font: #{$notation_default_font_size}/#{$notation_default_line_height} $notation_default_font_family;
+    font: #{$wp_notes_default_font_size}/#{$wp_notes_default_line_height} $wp_notes_default_font_family;
   }
 }

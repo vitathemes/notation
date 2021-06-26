@@ -14,7 +14,7 @@
  * require_once dirname( __FILE__ ) . '/path/to/class-tgm-plugin-activation.php';
  */
 
-add_action( 'tgmpa_register', 'notation_register_recommended_plugins' );
+add_action( 'tgmpa_register', 'wp_notes_register_recommended_plugins' );
 
 /**
  * Register the recommended plugins for this theme.
@@ -33,7 +33,7 @@ add_action( 'tgmpa_register', 'notation_register_recommended_plugins' );
  *
  * This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10.
  */
-function notation_register_recommended_plugins() {
+function wp_notes_register_recommended_plugins() {
 	/*
 	 * Array of plugin arrays. recommended keys are name and slug.
 	 * If the source is NOT from the .org repo, then source is also recommended.
@@ -56,7 +56,7 @@ function notation_register_recommended_plugins() {
 	 * Only uncomment the strings in the config array if you want to customize the strings.
 	 */
 	$config = array(
-		'id'           => 'notation',
+		'id'           => 'wp-notes',
 		'default_path' => '',
 		'menu'         => 'tgmpa-install-plugins',
 		'has_notices'  => true,

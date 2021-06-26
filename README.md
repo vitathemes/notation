@@ -1,5 +1,5 @@
-# Notation - [Demo](https://demo.vitathemes.com/notation/) | [Download](https://wordpress.org/themes/notation/)
-Notation is a simple, super fast, and content-first blog theme
+# Wp-Notes - [Demo](demo.vitathemes.com/wp-notes) | [Download](https://wordpress.org/themes/wp-notes/)
+Wp-Notes is a simple, super fast, and content-first blog theme
 
 ![Home Page](screenshot.png)
 
@@ -20,7 +20,7 @@ Notation is a simple, super fast, and content-first blog theme
 * GNU GPL version 2.0 licensed
 * …and much more
 
-See a working example at [https://demo.vitathemes.com/notation/](https://demo.vitathemes.com/notation/).
+See a working example at [demo.vitathemes.com/wp-notes](demo.vitathemes.com/wp-notes).
 
 ## Theme installation
 
@@ -32,7 +32,7 @@ See a working example at [https://demo.vitathemes.com/notation/](https://demo.vi
 ## Theme structure
 
 ```shell
-themes/notation/          # → Root of your theme
+themes/wp-notes/          # → Root of your theme
 │── assets/               # → All assets goes here
 │   │── css               # → Compiled css
 │   │── fonts             # → Fonts
@@ -64,4 +64,4 @@ Edit `functions.php` to enable or disable theme features, setup navigation menus
 
 ## License
 
-Notation is licensed under [GNU GPL](LICENSE).
+Wp-Notes is licensed under [GNU GPL](LICENSE).

@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Notation
+ * @package Wp_notes
  */
 
 get_header();
@@ -45,7 +45,7 @@ get_header();
 			endwhile; ?>
             <div class="c-pagination s-pagination">
 				<?php
-				notation_posts_pagination();
+				wp_notes_posts_pagination();
 				?>
             </div>
 		<?php

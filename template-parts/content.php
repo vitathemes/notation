@@ -4,10 +4,10 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Notation
+ * @package Wp_notes
  */
 
-if ( is_singular() || ! notation_is_page_for_posts() && ! get_theme_mod( 'blog_content', true ) && ! is_page() && ! is_archive() ) :
+if ( is_singular() || ! wp_notes_is_page_for_posts() && ! get_theme_mod( 'blog_content', true ) && ! is_page() && ! is_archive() ) :
 	$classes = "c-post c-post--single";
 	if ( is_home() && get_theme_mods( 'blog_content', true ) || is_archive() ) {
 		$classes .= " c-post--default-post";
@@ -22,14 +22,14 @@ if ( is_singular() || ! notation_is_page_for_posts() && ! get_theme_mod( 'blog_c
 				?>
                 <div class="c-post__meta">
 					<?php
-					notation_post_meta();
+					wp_notes_post_meta();
 					?>
                 </div><!-- .entry-meta -->
 			<?php endif; ?>
         </header><!-- .entry-header -->
 
 		<?php if ( get_theme_mod( 'show_post_thumbnail', true ) ) {
-			notation_post_thumbnail();
+			wp_notes_post_thumbnail();
 		} ?>
 
         <div class="c-post__content s-post-content entry-content">
@@ -38,7 +38,7 @@ if ( is_singular() || ! notation_is_page_for_posts() && ! get_theme_mod( 'blog_c
 				sprintf(
 					wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'notation' ),
+						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'wp-notes' ),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -51,7 +51,7 @@ if ( is_singular() || ! notation_is_page_for_posts() && ! get_theme_mod( 'blog_c
 
 			wp_link_pages(
 				array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'notation' ),
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wp-notes' ),
 					'after'  => '</div>',
 				)
 			);
@@ -59,7 +59,7 @@ if ( is_singular() || ! notation_is_page_for_posts() && ! get_theme_mod( 'blog_c
         </div><!-- .entry-content -->
 
         <footer class="c-post__footer">
-			<?php notation_entry_footer(); ?>
+			<?php wp_notes_entry_footer(); ?>
         </footer><!-- .entry-footer -->
     </article><!-- #post-<?php the_ID(); ?> -->
 	<?php
@@ -87,7 +87,7 @@ else:
             <footer class="c-post__footer">
                 <div class="c-post__footer__meta">
 					<?php
-					notation_posted_on();
+					wp_notes_posted_on();
 					?>
                 </div><!-- .entry-meta -->
             </footer>
