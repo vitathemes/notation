@@ -285,7 +285,7 @@ if ( ! function_exists( 'wp_notes_footer_credit_text' ) ) :
 		$wp_notes_credit = '<span>%s</span><a href="%s" class="customize-unpreviewable">%s</a>';
 		echo wp_kses(
 			sprintf( $wp_notes_credit,
-				esc_html__( 'Wp-Notes theme by ', 'wp-notes' ),
+				esc_html__( 'WP Notes theme by ', 'wp-notes' ),
 				esc_url( 'https://vitathemes.com' ),
 				esc_html__( 'VitaThemes', 'wp-notes' ) ),
 			$allowed_html );

@@ -10,11 +10,11 @@ Stable tag: 1.0.0
 License: GPL-2.0-or-later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Wp-Notes is a simple, super fast, and content-first blog theme
+WP Notes is a simple, super fast, and content-first blog theme
 
 == Description ==
 
-Wp-Notes is simple, super fast, and content-first blog theme
+WP Notes is simple, super fast, and content-first blog theme
 
 == Features ==
 * Notebook design
@@ -53,7 +53,7 @@ Wp-Notes is simple, super fast, and content-first blog theme
 
 == Copyright ==
 
-Wp-Notes is distributed under the terms of the GNU GPL.
+WP Notes is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -65,9 +65,9 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-Wp-Notes is distributed under the terms of the GNU GPL version 2.0
+WP Notes is distributed under the terms of the GNU GPL version 2.0
 
-Wp-Notes bundles the following third-party resources:
+WP Notes bundles the following third-party resources:
 
 Phosphor by Phosphor Icons
 License: MIT, https://github.com/phosphor-icons/phosphor-icons/blob/master/LICENSE

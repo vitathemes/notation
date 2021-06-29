@@ -1,5 +1,5 @@
-# Wp-Notes - [Demo](demo.vitathemes.com/wp-notes) | [Download](https://wordpress.org/themes/wp-notes/)
-Wp-Notes is a simple, super fast, and content-first blog theme
+# WP Notes - [Demo](demo.vitathemes.com/wp-notes) | [Download](https://wordpress.org/themes/wp-notes/)
+WP Notes is a simple, super fast, and content-first blog theme
 
 ![Home Page](screenshot.png)
 
@@ -64,4 +64,4 @@ Edit `functions.php` to enable or disable theme features, setup navigation menus
 
 ## License
 
-Wp-Notes is licensed under [GNU GPL](LICENSE).
+WP Notes is licensed under [GNU GPL](LICENSE).

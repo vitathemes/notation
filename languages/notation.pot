@@ -336,7 +336,7 @@ msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
 #: inc/template-tags.php:289 inc/template-tags.php:299
-msgid "Wp-Notes theme by "
+msgid "WP Notes theme by "
 msgstr ""
 
 #: inc/template-tags.php:291 inc/template-tags.php:301
