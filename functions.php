@@ -7,9 +7,9 @@
  * @package wp_notes
  */
 
-if ( ! defined( 'THEME_VERSION' ) ) {
+if ( ! defined( 'WP_NOTES_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'THEME_VERSION', '1.0.0' );
+	define( 'WP_NOTES_VERSION', '1.0.1' );
 }
 
 if ( ! function_exists( 'wp_notes_setup' ) ) :
@@ -130,8 +130,8 @@ add_action( 'after_setup_theme', 'wp_notes_content_width', 0 );
 function wp_notes_scripts() {
 	wp_enqueue_style( 'wp_notes-style', get_template_directory_uri() . '/assets/css/main.css', array(), '1.0.1' );
 
-	wp_enqueue_script( 'wp_notes-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), THEME_VERSION, true );
-	wp_enqueue_script( 'wp_notes-main-scripts', get_template_directory_uri() . '/assets/js/main.js', array(), THEME_VERSION, true );
+	wp_enqueue_script( 'wp_notes-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), WP_NOTES_VERSION, true );
+	wp_enqueue_script( 'wp_notes-main-scripts', get_template_directory_uri() . '/assets/js/main.js', array(), WP_NOTES_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

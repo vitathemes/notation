@@ -54,7 +54,7 @@ if ( ! function_exists( 'wp_notes_comments_num' ) ) :
 			esc_html( get_comments_number() )
 		);
 
-		echo '<span class="c-post__comments"><a class="c-post__comments__link url fn n" href="' . get_the_permalink() . '#comments"> ' . $byline . '</a></span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<span class="c-post__comments"><a class="c-post__comments__link url fn n" href="' . esc_url(get_the_permalink()) . '#comments"> ' . $byline . '</a></span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
 endif;
@@ -187,13 +187,13 @@ if ( ! function_exists( 'wp_notes_post_thumbnail' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'wp_body_open' ) ) :
+if ( ! function_exists( 'wp_notes_body_open' ) ) :
 	/**
 	 * Shim for sites older than 5.2.
 	 *
 	 * @link https://core.trac.wordpress.org/ticket/12563
 	 */
-	function wp_body_open() {
+	function wp_notes_body_open() {
 		do_action( 'wp_body_open' );
 	}
 endif;

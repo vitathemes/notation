@@ -5,18 +5,6 @@
  * @package wp_notes
  */
 
-function wp_wp_notes_enqueue_customizer_style( $hook_suffix ) {
-	// Load your css.
-	wp_register_style( 'kirki-styles-css',
-		get_template_directory_uri() . '/assets//css/kirki-controls-style.css',
-		false,
-		'1.0.0' );
-	wp_enqueue_style( 'kirki-styles-css' );
-}
-
-add_action( 'admin_enqueue_scripts', 'wp_wp_notes_enqueue_customizer_style' );
-
-
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
  *
@@ -70,9 +58,9 @@ function wp_notes_customize_partial_blogdescription() {
  */
 function wp_notes_customize_preview_js() {
 	wp_enqueue_script( 'wp_notes-customizer',
-		get_template_directory_uri() . '/js/customizer.js',
+		get_template_directory_uri() . '/assets/js/customizer.js',
 		array( 'customize-preview' ),
-		THEME_VERSION,
+		WP_NOTES_VERSION,
 		true );
 }
 
@@ -838,7 +826,7 @@ if ( function_exists( 'kirki' ) ) {
 		] );
 	// Homepage
 
-	function wp_indigo_add_edit_icons( $wp_customize ) {
+	function wp_notes_add_edit_icons( $wp_customize ) {
 
 		$wp_customize->selective_refresh->add_partial( 'show_post_thumbnail',
 			array(
@@ -856,5 +844,5 @@ if ( function_exists( 'kirki' ) ) {
 			) );
 	}
 
-	add_action( 'customize_preview_init', 'wp_indigo_add_edit_icons' );
+	add_action( 'customize_preview_init', 'wp_notes_add_edit_icons' );
 }

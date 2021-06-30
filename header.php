@@ -21,7 +21,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
+<?php wp_notes_body_open(); ?>
 <div id="page" class="o-grid-noGutter c-site js-site">
     <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wp-notes' ); ?></a>
 
