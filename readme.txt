@@ -43,7 +43,10 @@ WP Notes is simple, super fast, and content-first blog theme
 
 == Changelog ==
 
-= 1.0 - May 12 2015 =
+= 1.0.1 =
+* Fixed minor issues
+
+= 1.0.1 =
 * Initial release
 
 == Credits ==
