@@ -1,0 +1,70 @@
+.o-page {
+  margin: rem(0 0 48px);
+
+  @include mq(desktop) {
+    margin: rem(96px 0 96px);
+  }
+}
+
+.single-product .o-page {
+  margin: rem(64px 0 16px);
+
+  @include mq(desktop) {
+    margin: rem(96px 0 96px);
+  }
+}
+
+.o-page__grid {
+  display: flex;
+}
+
+.o-page__grid--has-sidebar {
+  flex-wrap: wrap;
+
+  @include mq(tablet) {
+    flex-wrap: nowrap;
+  }
+}
+
+.o-page__main {
+  flex-grow: 1;
+  width: 75%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.o-page__wrapper {
+  max-width: rem(670px);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.o-page__title {
+  text-align: center;
+  margin: 0 0 rem(20px);
+
+  @include mq(desktop) {
+    margin: 0 0 rem(40px);
+  }
+}
+
+.o-page__header {
+  margin-bottom: 1.5rem;
+
+  @include mq(desktop) {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.o-page__header__title {
+  margin: 0;
+}
+
+// 404
+.o-page--404 {
+  text-align: center;
+
+  .page-content {
+    color: $wp_notes_neutral_primary_color;
+  }
+}

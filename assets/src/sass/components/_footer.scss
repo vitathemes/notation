@@ -1,0 +1,150 @@
+.c-footer {
+  margin-top: auto;
+  font-size: 0.75rem;
+  padding: rem(48px) 0 0;
+
+  @include mq(desktop) {
+    padding: rem(128px) 0 0;
+  }
+}
+
+.c-footer__top {
+  background-color: $wp_notes_neutral_white;
+}
+
+.c-footer__top__back-to-top__link {
+  width: 63px;
+  height: 63px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: $wp_notes_neutral_white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 5px;
+  text-decoration: none;
+  border-radius: 50%;
+  transform: translateY(27px);
+
+  .dashicons {
+    font-size: 14px;
+  }
+}
+
+.c-footer__top__back-to-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.c-footer__bottom {
+  padding: 0;
+}
+
+.c-footer__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @include mq(desktop) {
+    flex-wrap: nowrap;
+  }
+}
+
+.c-footer__copyright {
+  //padding: 0 15px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: $wp_notes_neutral_primary_color;
+
+  p {
+    margin: rem(14px) 0 0;
+  }
+
+  @include mq(desktop) {
+    margin-top: 0;
+    padding: 0;
+  }
+}
+
+.c-footer__copyright__text {
+  color: $wp_notes_headings_color;
+
+  a {
+    color: $wp_notes_neutral_primary_color;
+    text-decoration: none;
+
+    &:hover {
+      color: $wp_notes_branding_color;
+    }
+  }
+}
+
+.c-footer__socials {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 42px;
+  padding: 0 15px;
+
+  @include mq(desktop) {
+    width: auto;
+    margin-top: 0;
+    padding: 0;
+  }
+}
+
+.s-footer-socials {
+
+  a {
+    text-decoration: none;
+    color: $wp_notes_neutral_primary_color;
+    margin-right: 24px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+
+      span {
+        color: $wp_notes_branding_color;
+      }
+    }
+  }
+}
+
+.c-footer__branding {
+  margin-bottom: rem(32px);
+
+  @include mq(tablet) {
+    margin-right: rem(42px);
+    margin-bottom: rem(16px);
+  }
+}
+
+.s-footer-branding {
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    height: 28px;
+    width: auto;
+  }
+}
+
+.rtl {
+
+  .c-footer__branding {
+
+    @include mq(tablet) {
+      margin-left: rem(42px);
+      margin-right: 0;
+    }
+  }
+}

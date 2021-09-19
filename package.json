@@ -1,0 +1,26 @@
+{
+  "name": "wp-notes",
+  "version": "1.0.0",
+  "description": "WP Notes is a simple, super fast, and content-first blog theme",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitathemes/notation"
+  },
+  "author": "VitaThemes",
+  "license": "GPL-V2",
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^5.0.0"
+  },
+  "dependencies": {
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-rtlcss": "^1.4.1"
+  }
+}

@@ -1,0 +1,141 @@
+.c-sidebar {
+  position: relative;
+  width: 100%;
+  transition: width 0.8s 0s, transform 0.8s 0s;
+  display: none;
+
+  @include mq(desktop) {
+    display: block;
+    padding: rem(48px) 0;
+    width: calc(22% - 2rem);
+    transition: width 0.8s 0s, transform 0.8s 0.3s;
+    border-right: 1px solid $wp_notes_neutral_secondary_color;
+  }
+
+  &.is-minimized {
+    transition: width 0.7s 0.3s, transform 0.8s;
+    width: 0;
+    transform: translateX(-100%);
+
+    .c-sidebar__title, .c-sidebar__main, .c-sidebar__footer {
+      visibility: hidden;
+      opacity: 0;
+      transform: translateX(-100%);
+      transition: transform $wp_notes_global_transition 0.7s, opacity $wp_notes_global_transition;
+      animation: sidebarAnimation 0s linear 0.5s forwards;
+    }
+  }
+
+  &.c-sidebar--archives {
+    display: block;
+  }
+}
+
+.c-sidebar__title {
+  font-weight: normal;
+  font-size: rem(13px);
+  line-height: rem(20px);
+  color: $wp_notes_branding_color;
+  display: block;
+  padding: rem(10px 28px);
+  margin: rem(16px 0);
+  transition: transform $wp_notes_global_transition 0s, opacity $wp_notes_global_transition 0.9s;
+  &:first-of-type {
+    margin: rem(0 0 8px);
+    padding-bottom: rem(4px);
+  }
+}
+
+.c-sidebar__title--other {
+  border-bottom: 1px solid $wp_notes_neutral_secondary_color;
+  border-top: 1px solid $wp_notes_neutral_secondary_color;
+}
+
+.c-sidebar__main {
+  padding: 0 rem(12px);
+  transition: transform $wp_notes_global_transition 0.7s, opacity $wp_notes_global_transition 0.9s;
+}
+
+.c-sidebar__toggle {
+  border: 1px solid $wp_notes_neutral_secondary_color;
+  background-color: $wp_notes_neutral_white;
+  width: rem(28px);
+  height: rem(28px);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  position: absolute;
+  right: rem(-14px);
+  top: rem(134px);
+  cursor: pointer;
+  transition: ($wp_notes_global_transition - 0.15s);
+  z-index: 5;
+  display: none;
+
+  @include mq(desktop) {
+    display: flex;
+  }
+
+  &:hover {
+    border-color: $wp_notes_neutral_secondary_color;
+    background-color: $wp_notes_neutral_secondary_color;
+
+    .c-sidebar__toggle__icon {
+      //fill: $wp_notes_branding_color;
+    }
+  }
+
+  &.is-active {
+    transform-origin: center center;
+    transform: rotate(180deg);
+  }
+}
+
+.c-sidebar__toggle__icon {
+  fill: $wp_notes_neutral_primary_color;
+  transition: $wp_notes_global_transition;
+}
+
+
+.c-sidebar__footer {
+  padding: 0 rem(28px);
+  margin-top: rem(48px);
+  transition: transform $wp_notes_global_transition 0s, opacity $wp_notes_global_transition 0.5s;
+}
+
+@keyframes sidebarAnimation {
+  0% {
+    max-height: unset;
+  }
+  99% {
+    max-height: unset;
+    overflow-x: visible;
+    display: block;
+  }
+  100% {
+    display: none;
+    max-height: 0;
+    overflow-x: hidden
+  }
+}
+
+.rtl {
+  .c-sidebar {
+    border-left: 1px solid $wp_notes_neutral_secondary_color;
+    border-right: unset;
+
+    &.is-minimized {
+      transform: translateX(100%);
+
+      .c-sidebar__title, .c-sidebar__main, .c-sidebar__footer {
+        transform: translateX(100%);
+      }
+    }
+  }
+
+  .c-sidebar__toggle {
+    right: unset;
+    left: rem(-14px);
+  }
+}

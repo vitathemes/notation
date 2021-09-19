@@ -1,0 +1,10 @@
+ol, ul {
+  margin: rem(12px) 0;
+}
+
+ul li {
+
+  &::marker {
+    color: $wp_notes_branding_color;
+  }
+}

@@ -1,0 +1,8 @@
+.c-site {
+  transition: $wp_notes_global_transition;
+  min-height: 100vh;
+}
+
+.c-site.is-menu-open {
+  overflow-x: hidden;
+}

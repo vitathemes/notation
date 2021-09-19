@@ -1,0 +1,27 @@
+@mixin container {
+  width: 100%;
+  max-width: calc(100% - 2rem);
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  @include mq(desktop) {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+
+@mixin container-half-padding {
+  width: 100%;
+  max-width: calc(100% - 2rem);
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  @include mq(desktop) {
+    padding-right: 1.75rem;
+    padding-left: 1.75rem;
+  }
+}

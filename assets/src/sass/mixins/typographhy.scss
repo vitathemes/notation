@@ -1,0 +1,41 @@
+@mixin h1 {
+  font-size: rem(26px);
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+@mixin h2 {
+  font-size: rem(20px);
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+@mixin h3 {
+  font-size: rem(16px);
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+@mixin h4 {
+  font-size: rem(14px);
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+@mixin h5 {
+  font-size: rem(13px);
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+@mixin h6 {
+  font-size: rem(12px);
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+@mixin h7 {
+  font-size: rem(12px);
+  line-height: 1.4;
+  font-weight: 400;
+}

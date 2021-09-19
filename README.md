@@ -1,16 +1,13 @@
-# Holo - [Demo](https://demo.vitathemes.com/Holo/) | [Download](https://wordpress.org/themes/Holo/)
-Holo is a Shopping theme and ready to use WooCommerce as your e-commerce WordPress plugin
+# WP Notes - [Demo](demo.vitathemes.com/wp-notes) | [Download](https://wordpress.org/themes/wp-notes/)
+WP Notes is a simple, super fast, and content-first blog theme
 
 ![Home Page](screenshot.png)
 
-![Single Page](screenshot-2.png)
-
 ## Features
-* WooCoomerce Support
+* Notebook design
 * No additional JS
 * Sass for stylesheets
-* Compatible with [Contact Form 7](https://wordpress.org/plugins/contact-form-7/)
-* Fast & lightweight (Google Speed: 99/100)
+* Fast & lightweight (Google Speed (PageSpeed Insights): 100/100)
 * Theme options built directly into WordPress native live theme customizer
 * Responsive design
 * Cross-browser compatibility
@@ -23,32 +20,36 @@ Holo is a Shopping theme and ready to use WooCommerce as your e-commerce WordPre
 * GNU GPL version 2.0 licensed
 * …and much more
 
-See a working example at [https://demo.vitathemes.com/meliora/](https://demo.vitathemes.com/meliora/).
+See a working example at [demo.vitathemes.com/wp-notes](demo.vitathemes.com/wp-notes).
 
 ## Theme installation
+
 1. Simply install as a normal WordPress theme and activate.
-2. In your admin panel, navigate to `Appearance > Customize`.
-3. Put the finishing touches on your website by adding a logo, typography settings, custom colors and etc.
+2. Install recommended plugins
+3. In your admin panel, navigate to `Appearance > Customize`.
+4. Put the finishing touches on your website by adding a logo, typography settings, custom colors and etc.
 
 ## Theme structure
 
 ```shell
-themes/Holo/        # → Root of your theme
-│── css/                  # → Compiled CSS file
-│── js/                   # → Theme js files
-│── sass/                 # → Theme scss files
+themes/wp-notes/          # → Root of your theme
+│── assets/               # → All assets goes here
+│   │── css               # → Compiled css
+│   │── fonts             # → Fonts
+│   │── js                # → Js files
+│   └── src               # → source files
 ├── languages/            # → Theme Language files
 ├── template-parts/       # → Theme Part files (Include)
 ├── node_modules/         # → Node.js packages
-├── vendor/               # → Third Party Packages (Managed by Composer, Currently we use [Kirki Framework](https://github.com/aristath/kirki) for customizer)
 ├── package.json          # → Node.js dependencies and scripts
 │── classes/              # → Custom PHP classes
 ├── inc/                  # → Theme functions
-│   ├── kirki/            # → Kirki Customization framework
+│   ├── TGMPA/            # → TGMPA library
 │   ├── customizer.php    # → All codes related to WordPress Customizer (We use Kirki Framework)
 │   ├── template-functions.php    # → Custom template tweaks
 │   └── template-tags.php         # → Custom template tags
 │   └── hooks.php         # → Theme custom hooks
+│   └── tgmpa-config.php         # → Configuration file for TGMPA
 └── page-templates/       # → Page Templates
 ```
 
@@ -61,14 +62,6 @@ Edit `functions.php` to enable or disable theme features, setup navigation menus
 * Run `npm install` from the theme directory to install dependencies
 * Run `gulp` from the root of theme directory and it's starting to watch any changes in scss files from the `assets/src/sass` folder
 
-## Contributing
-
-Contributions are welcome from everyone. We have [contributing guidelines](CONTRIBUTING.md) to help you get started.
-
-## Changelog
-
-See the [Changelog](CHANGELOG.md)
-
 ## License
 
-Holo is licensed under [GNU GPL](LICENSE).
+WP Notes is licensed under [GNU GPL](LICENSE).

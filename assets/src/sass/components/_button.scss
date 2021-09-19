@@ -1,0 +1,85 @@
+.c-btn {
+  @include h6;
+  font-weight: 400;
+  font-size: rem(12px);
+  letter-spacing: 0.025em;
+  text-transform: capitalize;
+  box-sizing: border-box;
+  border-radius: $wp_notes_global_radius;
+  transition: $wp_notes_global_transition;
+  padding: rem(10px 16px);
+  text-decoration: none;
+  display: inline-block;
+
+  @include mq(desktop) {
+    font-size: rem(14px);
+  }
+}
+
+.c-btn--primary {
+  background: $wp_notes_neutral_black;
+  border: rem(1px) solid $wp_notes_neutral_black;
+  color: $wp_notes_neutral_white !important;
+
+  &:hover {
+    background-color: $wp_notes_neutral_white;
+    color: $wp_notes_neutral_black !important;
+  }
+}
+
+.c-btn--secondary {
+  background: transparent;
+  border: rem(1px) solid $wp_notes_neutral_secondary_color;
+  color: $wp_notes_neutral_black;
+
+  &:hover {
+    background-color: $wp_notes_neutral_secondary_color;
+    border-color: $wp_notes_neutral_secondary_color;
+    color: $wp_notes_neutral_black;
+  }
+}
+
+.c-btn--ghost.c-btn--primary {
+  background-color: transparent;
+  color: $wp_notes_neutral_black !important;
+
+  &:hover {
+    background-color: $wp_notes_neutral_black;
+    border-color: $wp_notes_neutral_black;
+    color: $wp_notes_neutral_white !important;
+  }
+}
+
+.c-btn--ghost.c-btn--secondary {
+  background-color: transparent;
+  color: $wp_notes_branding_color !important;
+
+  &:hover {
+    background-color: $wp_notes_branding_color;
+    border-color: $wp_notes_branding_color;
+    color: $wp_notes_neutral_white !important;
+  }
+}
+
+
+.c-btn--sm {
+  font-size: rem(12px) !important;
+  padding: rem(7px 12px);
+}
+
+
+.c-btn.c-btn--lg {
+  font-size: rem(12px);
+  padding: rem(16px 32px);
+
+  @include mq(desktop) {
+    font-size: rem(16px);
+  }
+}
+
+
+.c-btn--fw {
+  width: 100%;
+  display: block;
+  text-align: center;
+}

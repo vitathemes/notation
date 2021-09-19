@@ -1,0 +1,30 @@
+// Globals
+$global_media_queries: (
+        xs: 36em,
+        sm: 48em,
+        md: 64em,
+        lg: 80em
+) !default;
+$wp_notes_global_transition: 0.25s !default;
+$wp_notes_global_radius: 0.225rem !default;
+$wp_notes_global_radius2x: 0.45rem !default;
+
+// Colors
+$wp_notes_headings_color: var(--wp_notes-primary-color);
+$wp_notes_neutral_primary_color: var(--wp_notes-secondary-color);
+$wp_notes_neutral_secondary_color: var(--wp_notes-tertiary-color);
+$wp_notes_neutral_tertiary_color: var(--wp_notes-quaternary-color);
+$wp_notes_neutral_white: #fff;
+$wp_notes_neutral_black: var(--wp_notes-primary-color);
+
+$wp_notes_branding_color: var(--wp_notes-branding-color);
+$wp_notes_branding_color_accent: var(--wp_notes-branding-accent-color);
+
+$wp_notes_error_color: #D82700;
+
+// Typography (Fallback)
+$wp_notes_default_font_family: 'Inter', Arial;
+$wp_notes_default_font_size: 16px;
+$wp_notes_default_line_height: 1.563;
+
+

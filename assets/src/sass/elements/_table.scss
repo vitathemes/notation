@@ -1,0 +1,10 @@
+table {
+  border-collapse: collapse;
+  border: 1px solid $wp_notes_neutral_primary_color;
+}
+
+td, th {
+  border: 1px solid $wp_notes_neutral_primary_color;
+  padding: rem(8px);
+}
+

@@ -1,0 +1,15 @@
+* {
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+}
+
+body.is-menu-open {
+  overflow: hidden;
+}
+
+body.is-menu-open {
+
+  .c-header, .c-main , .c-sidebar {
+    transform: translateX(70%);
+  }
+}

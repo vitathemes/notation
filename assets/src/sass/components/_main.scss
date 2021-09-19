@@ -1,0 +1,118 @@
+.c-main {
+  width: calc(100% - 28px);
+  flex-grow: 1;
+  padding: rem(16px 14px);
+  display: flex;
+  flex-direction: column;
+  transition: margin 0.1s, all 0.8s;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mq(desktop) {
+    max-width: 500px;
+  }
+
+  @include mq(wide) {
+    max-width: 700px;
+  }
+
+  @include mq(desktop) {
+    width: calc(60% - 12%);
+    padding: rem(48px) 0;
+    margin-right: auto;
+    margin-left: 9%;
+
+    &.is-centered {
+      margin-left: 9%;
+    }
+  }
+
+  @media screen and (min-width: 1600px) {
+    margin-left: 11%;
+
+    &.is-centered {
+      margin-left: 11%;
+    }
+  }
+
+  @media screen and (min-width: 1920px) {
+    margin-left: 13%;
+
+    &.is-centered {
+      margin-left: 13%;
+    }
+  }
+
+  @media screen and (min-width: 1600px) {
+    margin-left: 13%;
+
+    &.is-centered {
+      margin-left: 13%;
+    }
+  }
+
+  @media screen and (min-width: 2300px) {
+    margin-left: 15%;
+
+    &.is-centered {
+      margin-left: 15%;
+    }
+  }
+
+  @media screen and (min-width: 2560px) {
+    margin-left: 17%;
+
+    &.is-centered {
+      margin-left: 17%;
+    }
+  }
+
+  @media screen and (min-width: 2880px) {
+    margin-left: 18%;
+
+    &.is-centered {
+      margin-left: 18%;
+    }
+  }
+
+  @media screen and (min-width: 3840px) {
+    margin-left: 20%;
+
+    &.is-centered {
+      margin-left: 20%;
+    }
+  }
+
+  @media screen and (min-width: 5120px) {
+    margin-left: 22%;
+
+    &.is-centered {
+      margin-left: 22%;
+    }
+  }
+
+  @include mq(wide) {
+    width: calc(60% - 10%);
+    padding: rem(48px) 0;
+  }
+}
+
+.c-main__wrapper {
+}
+
+.c-main__title {
+  margin: 0 0 rem(14px);
+}
+
+.c-main__desc {
+  margin: 0 0 1.25rem;
+  font-size: rem(16px);
+  color: $wp_notes_neutral_primary_color;
+}
+
+.rtl {
+  .c-main {
+    margin-right: 15%;
+    margin-left: auto;
+  }
+}
