@@ -5,7 +5,7 @@ input, select, textarea {
   margin: rem(4px) 0;
   border-radius: $wp_notes_global_radius2x;
   font-family: inherit;
-  transition: $wp_notes_global_transition;
+  transition: all $wp_notes_global_transition, outline 0s;
   width: calc(100% - 2rem);
   font-size: rem(12px);
 
@@ -21,6 +21,11 @@ input, select, textarea {
     @include mq(tablet) {
       ont-size: rem(14px);
     }
+  }
+
+  &:focus {
+    outline: $wp-notes_branding_color solid 2px;
+    border: none;
   }
 }
 
