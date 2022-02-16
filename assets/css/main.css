@@ -537,7 +537,7 @@ input, select, textarea {
   margin: 0.25rem 0;
   border-radius: 0.45rem;
   font-family: inherit;
-  transition: 0.25s;
+  transition: all 0.25s, outline 0s;
   width: calc(100% - 2rem);
   font-size: 0.75rem; }
   @media (min-width: 48em) {
@@ -562,6 +562,9 @@ input, select, textarea {
         ont-size: 0.875rem; }
       input::placeholder, select::placeholder, textarea::placeholder {
         ont-size: 0.875rem; } }
+  input:focus, select:focus, textarea:focus {
+    outline: var(--wp_notes-branding-color) solid 2px;
+    border: none; }
 
 input[type="submit"], input[type="checkbox"], input[type="radio"] {
   width: auto; }
