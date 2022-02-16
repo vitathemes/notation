@@ -4,17 +4,17 @@ Contributors: vitathemes
 Tags: custom-background, custom-logo, custom-menu, threaded-comments, translation-ready
 
 Requires at least: 5.6
-Tested up to: 5.7
+Tested up to: 5.9
 Requires PHP: 5.6
 Stable tag: 1.0.0
 License: GPL-2.0-or-later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-WP Notes is a simple, super fast, and content-first blog theme
+WP Notes is a simple, super-fast, and content-first blog theme
 
 == Description ==
 
-WP Notes is simple, super fast, and content-first blog theme
+WP Notes is simple, super-fast, and content-first blog theme
 
 == Features ==
 * Notebook design

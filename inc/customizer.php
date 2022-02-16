@@ -820,7 +820,7 @@ if ( function_exists( 'kirki' ) ) {
 			'type'            => 'custom',
 			'settings'        => 'custom_setting',
 			'section'         => 'blog_opts',
-			'default'         => '<p>' . __( "*If there is any sticky post, it will show the latest published post.",
+			'default'         => '<p>' . __( "*If there is no sticky post, it will show the latest published post.",
 					'wp-notes' ) . '</p>',
 			'priority'        => 10,
 		] );
